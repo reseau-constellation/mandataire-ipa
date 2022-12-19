@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "Un mandataire très léger pour le client Constellation.",
   "author": "Julien Jean Malard-Adam",
-  "private": false,
   "keywords": [
     "Constellation",
     "pair à pair"
