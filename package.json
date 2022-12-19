@@ -8,6 +8,9 @@
     "pair à pair"
   ],
   "license": "AGPL-3.0-or-later",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "./dist/index.js",
   "type": "module",
   "types": "./dist/index.d.ts",
