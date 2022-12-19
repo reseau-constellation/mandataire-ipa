@@ -1,0 +1,50 @@
+{
+  "name": "@constl/mandataire",
+  "version": "0.1.0",
+  "description": "Un mandataire Constellation léger.",
+  "author": "Julien Jean Malard-Adam",
+  "keywords": [
+    "Constellation",
+    "pair à pair"
+  ],
+  "license": "AGPL-3.0-or-later",
+  "main": "./dist/index.js",
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "exports": "./dist/index.js",
+  "scripts": {
+    "nettoyer": "rimraf dist",
+    "compiler:esm": "ttsc -p tsconfig.build.json",
+    "compiler": "pnpm versioner && pnpm nettoyer && pnpm compiler:esm",
+    "test": "node --no-warnings --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand",
+    "test:proc": "env PROXY=PROC pnpm test",
+    "test:tous": "env PROXY=TOUS pnpm test",
+    "couverture": "pnpm test -- --coverage",
+    "couverture:tous": "pnpm test:tous -- --coverage --bail",
+    "formatter": "pnpm prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\" && pnpm eslint --ext .js,.ts src",
+    "publier": "pnpm versioner && pnpm compiler && git commit -a -m 'version' && pnpm publish",
+    "versioner": "pnpm genversion  --es6 --semi src/version.ts"
+  },
+  "dependencies": {
+    "events": "^3.3.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@constl/ipa": "^0.5.8",
+    "@types/uuid": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "genversion": "^3.1.1",
+    "jest": "^29.3.1",
+    "prettier": "^2.8.1",
+    "rimraf": "^3.0.2",
+    "ttypescript": "^1.5.15",
+    "typescript": "^4.9.4",
+    "typescript-transform-paths": "^3.4.4"
+  },
+  "peerDependencies": {
+    "@constl/ipa": "^0.5.8"
+  }
+}
