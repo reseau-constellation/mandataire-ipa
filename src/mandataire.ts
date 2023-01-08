@@ -115,13 +115,22 @@ export abstract class ClientMandatairifiable extends Callable {
           fonction.join("."),
       });
     }
-    if (Object.keys(args).length !== Object.keys(argsSansF).length + 1) {
+    if (Object.keys(args).length > Object.keys(argsSansF).length + 1) {
       this.erreur({
         erreur:
           "Plus d'un argument pour " +
           fonction.join(".") +
           " est une fonction : " +
           JSON.stringify(args),
+        id,
+      });
+      return new Promise((_résoudre, rejeter) => rejeter());
+    } else if (typeof f !== "function") {
+      this.erreur({
+        erreur:
+          "Argument " +
+          nomArgFonction +
+          "n'est pas une fonction : ",
         id,
       });
       return new Promise((_résoudre, rejeter) => rejeter());
