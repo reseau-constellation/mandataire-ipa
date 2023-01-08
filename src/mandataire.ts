@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
 import { EventEmitter, once } from "events";
 
-import type { utils, proxy, client } from "@constl/ipa";
+import type { utils, mandataire, client } from "@constl/ipa";
 
 interface Tâche {
   id: string;
@@ -33,12 +33,12 @@ export abstract class ClientMandatairifiable extends Callable {
     this.tâches = {};
     this.erreurs = [];
 
-    this.événements.on("message", (m: proxy.messages.MessageDeTravailleur) => {
+    this.événements.on("message", (m: mandataire.messages.MessageDeTravailleur) => {
       const { type } = m;
       switch (type) {
         case "suivre": {
           const { id, données } =
-            m as proxy.messages.MessageSuivreDeTravailleur;
+            m as mandataire.messages.MessageSuivreDeTravailleur;
           if (!this.tâches[id]) return;
           const { fSuivre } = this.tâches[id];
           fSuivre(données);
@@ -46,18 +46,18 @@ export abstract class ClientMandatairifiable extends Callable {
         }
         case "suivrePrêt": {
           const { id, fonctions } =
-            m as proxy.messages.MessageSuivrePrêtDeTravailleur;
+            m as mandataire.messages.MessageSuivrePrêtDeTravailleur;
           this.événements.emit(id, { fonctions });
           break;
         }
         case "action": {
           const { id, résultat } =
-            m as proxy.messages.MessageActionDeTravailleur;
+            m as mandataire.messages.MessageActionDeTravailleur;
           this.événements.emit(id, { résultat });
           break;
         }
         case "erreur": {
-          const { erreur, id } = m as proxy.messages.MessageErreurDeTravailleur;
+          const { erreur, id } = m as mandataire.messages.MessageErreurDeTravailleur;
           if (id) this.événements.emit(id, { erreur });
           else this.erreur({ erreur, id });
           break;
@@ -80,7 +80,7 @@ export abstract class ClientMandatairifiable extends Callable {
       throw new Error(`La fonction ${fonction.join(
         "."
       )} fut appelée avec arguments ${args}. 
-      Toute fonction proxy Constellation doit être appelée avec un seul argument en format d'objet (dictionnaire).`);
+      Toute fonction mandataire Constellation doit être appelée avec un seul argument en format d'objet (dictionnaire).`);
     const id = uuidv4();
     const nomArgFonction = Object.entries(args).find(
       (x) => typeof x[1] === "function"
@@ -127,7 +127,7 @@ export abstract class ClientMandatairifiable extends Callable {
       return new Promise((_résoudre, rejeter) => rejeter());
     }
 
-    const message: proxy.messages.MessageSuivrePourTravailleur = {
+    const message: mandataire.messages.MessageSuivrePourTravailleur = {
       type: "suivre",
       id,
       fonction,
@@ -136,7 +136,7 @@ export abstract class ClientMandatairifiable extends Callable {
     };
 
     const fRetour = async (fonction: string, args?: unknown[]) => {
-      const messageRetour: proxy.messages.MessageRetourPourTravailleur = {
+      const messageRetour: mandataire.messages.MessageRetourPourTravailleur = {
         type: "retour",
         id,
         fonction,
@@ -187,7 +187,7 @@ export abstract class ClientMandatairifiable extends Callable {
     fonction: string[],
     args: { [key: string]: unknown }
   ): Promise<T> {
-    const message: proxy.messages.MessageActionPourTravailleur = {
+    const message: mandataire.messages.MessageActionPourTravailleur = {
       type: "action",
       id,
       fonction,
@@ -222,7 +222,7 @@ export abstract class ClientMandatairifiable extends Callable {
     delete this.tâches[id];
   }
 
-  abstract envoyerMessage(message: proxy.messages.MessagePourTravailleur): void;
+  abstract envoyerMessage(message: mandataire.messages.MessagePourTravailleur): void;
 }
 
 class Handler {
@@ -256,11 +256,11 @@ export type MandataireClientConstellation = client.default &
   ClientMandatairifiable;
 
 export const générerMandataire = (
-  proxyClient: ClientMandatairifiable
+  mandataireClient: ClientMandatairifiable
 ): MandataireClientConstellation => {
   const handler = new Handler();
   return new Proxy<ClientMandatairifiable>(
-    proxyClient,
+    mandataireClient,
     handler
   ) as MandataireClientConstellation;
 };
