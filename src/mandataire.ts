@@ -83,10 +83,10 @@ export abstract class ClientMandatairifiable extends Callable {
     if (typeof args !== "object")
       this.erreur({
         erreur: `La fonction ${fonction.join(
-        "."
-      )} fut appelée avec arguments ${args}. 
-      Toute fonction mandataire Constellation doit être appelée avec un seul argument en format d'objet (dictionnaire).`
-    });
+          "."
+        )} fut appelée avec arguments ${args}. 
+      Toute fonction mandataire Constellation doit être appelée avec un seul argument en format d'objet (dictionnaire).`,
+      });
     const id = uuidv4();
     const nomArgFonction = Object.entries(args).find(
       (x) => typeof x[1] === "function"

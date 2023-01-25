@@ -1,37 +1,40 @@
 import { client, utils, mandataire, utilsTests } from "@constl/ipa";
-import { générerMandataire, ClientMandatairifiable, MandataireClientConstellation } from "@/mandataire.js";
+import {
+  générerMandataire,
+  ClientMandatairifiable,
+  MandataireClientConstellation,
+} from "@/mandataire.js";
 
 import { join, sep } from "path";
 import { tmpdir } from "os";
 import { mkdtempSync } from "fs";
 import rimraf from "rimraf";
 
-
 class Mandataire extends ClientMandatairifiable {
-    gestionnaireClient: mandataire.gestionnaireClient.default;
-    constructor({opts}: {opts: client.optsConstellation}) {
-        super();
-        this.gestionnaireClient = new mandataire.gestionnaireClient.default(
-        (m: mandataire.messages.MessageDeTravailleur) =>
-            this.événements.emit("message", m),
-        (e: string, idRequète?: string) =>
-            this.événements.emit("message", {
-            type: "erreur",
-            erreur: e,
-            id: idRequète,
-            }),
-            opts
-        );
-    }
+  gestionnaireClient: mandataire.gestionnaireClient.default;
+  constructor({ opts }: { opts: client.optsConstellation }) {
+    super();
+    this.gestionnaireClient = new mandataire.gestionnaireClient.default(
+      (m: mandataire.messages.MessageDeTravailleur) =>
+        this.événements.emit("message", m),
+      (e: string, idRequète?: string) =>
+        this.événements.emit("message", {
+          type: "erreur",
+          erreur: e,
+          id: idRequète,
+        }),
+      opts
+    );
+  }
 
-    envoyerMessage(message: mandataire.messages.MessagePourTravailleur): void {
-        this.gestionnaireClient.gérerMessage(message);
-    }
+  envoyerMessage(message: mandataire.messages.MessagePourTravailleur): void {
+    this.gestionnaireClient.gérerMessage(message);
+  }
 }
 
 describe("Mandataire", () => {
   let mnd: MandataireClientConstellation;
-  let fOublierConstellation: utils.schémaFonctionOublier
+  let fOublierConstellation: utils.schémaFonctionOublier;
 
   const attendreNoms = new utilsTests.AttendreRésultat<{
     [clef: string]: string;
@@ -46,21 +49,22 @@ describe("Mandataire", () => {
     const dossierSFIP = join(dirTemp, "sfip");
     const dsfip = await utilsTests.initierSFIP(dossierSFIP);
 
-    
-    mnd = générerMandataire(new Mandataire({
+    mnd = générerMandataire(
+      new Mandataire({
         opts: {
-            orbite: {
-                dossier: join(dirTemp, "orbite"),
-                sfip: { sfip: dsfip.api },
-              },
-        }
-    }));
+          orbite: {
+            dossier: join(dirTemp, "orbite"),
+            sfip: { sfip: dsfip.api },
+          },
+        },
+      })
+    );
     fOublierConstellation = async () => {
-        await mnd.fermer();
-        await utilsTests.arrêterSFIP(dsfip);
-        rimraf.sync(dirTemp);
-    }
-  })
+      await mnd.fermer();
+      await utilsTests.arrêterSFIP(dsfip);
+      rimraf.sync(dirTemp);
+    };
+  });
 
   afterAll(async () => {
     attendreNoms.toutAnnuler();
@@ -147,42 +151,34 @@ describe("Mandataire", () => {
     await fOublier();
   });
 
-  test(
-    "Erreur fonction suivi inexistante",
-    async () => {
-      await expect(() =>
-        // @ts-ignore
-        mnd.jeNeSuisPasUneFonction()
-      ).rejects.toThrow();
-    }
-    );
+  test("Erreur fonction suivi inexistante", async () => {
+    await expect(() =>
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      mnd.jeNeSuisPasUneFonction()
+    ).rejects.toThrow();
+  });
 
-  test(
-    "Erreur action inexistante",
-    async () => {
-      await expect(() =>
-        // @ts-ignore
-        mnd.jeNeSuisPasUnAtribut.ouUneFonction()
-      ).rejects.toThrow();
-    }
-  );
+  test("Erreur action inexistante", async () => {
+    await expect(() =>
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      mnd.jeNeSuisPasUnAtribut.ouUneFonction()
+    ).rejects.toThrow();
+  });
 
-  test(
-    "Erreur suivi trop de fonctions",
-    async () => {
-      await expect(() =>
-        // @ts-ignore
-        mnd.profil.suivreNoms({f: utils.faisRien, f2: utils.faisRien})
-      ).rejects.toThrow();
-    }
-  );
-  test(
-    "Erreur format paramètres",
-    async () => {
-      expect(() =>
-        // @ts-ignore
-        mnd.profil.suivreNoms(utils.faisRien)
-      ).toThrowError();
-    }
-  );
+  test("Erreur suivi trop de fonctions", async () => {
+    await expect(() =>
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      mnd.profil.suivreNoms({ f: utils.faisRien, f2: utils.faisRien })
+    ).rejects.toThrow();
+  });
+  test("Erreur format paramètres", async () => {
+    expect(() =>
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      mnd.profil.suivreNoms(utils.faisRien)
+    ).toThrowError();
+  });
 });
