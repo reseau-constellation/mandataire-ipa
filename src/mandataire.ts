@@ -33,43 +33,47 @@ export abstract class ClientMandatairifiable extends Callable {
     this.tâches = {};
     this.erreurs = [];
 
-    this.événements.on("message", (m: mandataire.messages.MessageDeTravailleur) => {
-      const { type } = m;
-      switch (type) {
-        case "suivre": {
-          const { id, données } =
-            m as mandataire.messages.MessageSuivreDeTravailleur;
-          if (!this.tâches[id]) return;
-          const { fSuivre } = this.tâches[id];
-          fSuivre(données);
-          break;
-        }
-        case "suivrePrêt": {
-          const { id, fonctions } =
-            m as mandataire.messages.MessageSuivrePrêtDeTravailleur;
-          this.événements.emit(id, { fonctions });
-          break;
-        }
-        case "action": {
-          const { id, résultat } =
-            m as mandataire.messages.MessageActionDeTravailleur;
-          this.événements.emit(id, { résultat });
-          break;
-        }
-        case "erreur": {
-          const { erreur, id } = m as mandataire.messages.MessageErreurDeTravailleur;
-          if (id) this.événements.emit(id, { erreur });
-          else this.erreur({ erreur, id });
-          break;
-        }
-        default: {
-          this.erreur({
-            erreur: `Type inconnu ${type} dans message ${m}.`,
-            id: m.id,
-          });
+    this.événements.on(
+      "message",
+      (m: mandataire.messages.MessageDeTravailleur) => {
+        const { type } = m;
+        switch (type) {
+          case "suivre": {
+            const { id, données } =
+              m as mandataire.messages.MessageSuivreDeTravailleur;
+            if (!this.tâches[id]) return;
+            const { fSuivre } = this.tâches[id];
+            fSuivre(données);
+            break;
+          }
+          case "suivrePrêt": {
+            const { id, fonctions } =
+              m as mandataire.messages.MessageSuivrePrêtDeTravailleur;
+            this.événements.emit(id, { fonctions });
+            break;
+          }
+          case "action": {
+            const { id, résultat } =
+              m as mandataire.messages.MessageActionDeTravailleur;
+            this.événements.emit(id, { résultat });
+            break;
+          }
+          case "erreur": {
+            const { erreur, id } =
+              m as mandataire.messages.MessageErreurDeTravailleur;
+            if (id) this.événements.emit(id, { erreur });
+            else this.erreur({ erreur, id });
+            break;
+          }
+          default: {
+            this.erreur({
+              erreur: `Type inconnu ${type} dans message ${m}.`,
+              id: m.id,
+            });
+          }
         }
       }
-    });
+    );
   }
 
   __call__(
@@ -77,10 +81,12 @@ export abstract class ClientMandatairifiable extends Callable {
     args: { [key: string]: unknown } = {}
   ): Promise<unknown> {
     if (typeof args !== "object")
-      throw new Error(`La fonction ${fonction.join(
+      this.erreur({
+        erreur: `La fonction ${fonction.join(
         "."
       )} fut appelée avec arguments ${args}. 
-      Toute fonction mandataire Constellation doit être appelée avec un seul argument en format d'objet (dictionnaire).`);
+      Toute fonction mandataire Constellation doit être appelée avec un seul argument en format d'objet (dictionnaire).`
+    });
     const id = uuidv4();
     const nomArgFonction = Object.entries(args).find(
       (x) => typeof x[1] === "function"
@@ -124,16 +130,11 @@ export abstract class ClientMandatairifiable extends Callable {
           JSON.stringify(args),
         id,
       });
-      return new Promise((_résoudre, rejeter) => rejeter());
     } else if (typeof f !== "function") {
       this.erreur({
-        erreur:
-          "Argument " +
-          nomArgFonction +
-          "n'est pas une fonction : ",
+        erreur: "Argument " + nomArgFonction + "n'est pas une fonction : ",
         id,
       });
-      return new Promise((_résoudre, rejeter) => rejeter());
     }
 
     const message: mandataire.messages.MessageSuivrePourTravailleur = {
@@ -173,7 +174,6 @@ export abstract class ClientMandatairifiable extends Callable {
     };
     if (erreur) {
       this.erreur({ erreur, id });
-      throw new Error(erreur);
     }
 
     if (fonctions && fonctions[0]) {
@@ -231,7 +231,9 @@ export abstract class ClientMandatairifiable extends Callable {
     delete this.tâches[id];
   }
 
-  abstract envoyerMessage(message: mandataire.messages.MessagePourTravailleur): void;
+  abstract envoyerMessage(
+    message: mandataire.messages.MessagePourTravailleur
+  ): void;
 }
 
 class Handler {
