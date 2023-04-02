@@ -54,7 +54,7 @@ describe("Mandataire", () => {
         opts: {
           orbite: {
             dossier: join(dirTemp, "orbite"),
-            sfip: { sfip: dsfip.api },
+            sfip: { sfip: dsfip },
           },
         },
       })
