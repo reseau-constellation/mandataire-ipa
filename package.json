@@ -1,6 +1,6 @@
 {
   "name": "@constl/mandataire",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Un mandataire très léger pour le client Constellation.",
   "author": "Julien Jean Malard-Adam",
   "keywords": [
