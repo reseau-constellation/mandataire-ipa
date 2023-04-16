@@ -1,6 +1,6 @@
 {
   "name": "@constl/mandataire",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Un mandataire très léger pour le client Constellation.",
   "author": "Julien Jean Malard-Adam",
   "keywords": [
@@ -29,7 +29,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@constl/ipa": "^0.6.48",
+    "@constl/ipa": "^0.6.50",
     "@types/jest": "^29.4.0",
     "@types/uuid": "^9.0.0",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
@@ -44,9 +44,6 @@
     "ttypescript": "^1.5.15",
     "typescript": "^4.9.4",
     "typescript-transform-paths": "^3.4.6"
-  },
-  "peerDependencies": {
-    "@constl/ipa": "^0.6.45"
   },
   "resolutions": {
     "iso-constants": "git+https://github.com/inverted-capital/iso-constants.git#patch-1"

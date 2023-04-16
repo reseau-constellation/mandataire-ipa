@@ -36,10 +36,10 @@ describe("Mandataire", () => {
   let mnd: MandataireClientConstellation;
   let fOublierConstellation: utils.schémaFonctionOublier;
 
-  const attendreNoms = new utilsTests.AttendreRésultat<{
+  const attendreNoms = new utilsTests.attente.AttendreRésultat<{
     [clef: string]: string;
   }>();
-  const attendreMC = new utilsTests.AttendreRésultat<
+  const attendreMC = new utilsTests.attente.AttendreRésultat<
     utils.résultatRecherche<utils.infoRésultatTexte>[]
   >();
 
@@ -47,7 +47,7 @@ describe("Mandataire", () => {
     const dirTemp = mkdtempSync(`${tmpdir()}${sep}`);
 
     const dossierSFIP = join(dirTemp, "sfip");
-    const dsfip = await utilsTests.initierSFIP(dossierSFIP);
+    const dsfip = await utilsTests.sfip.initierSFIP(dossierSFIP);
 
     mnd = générerMandataire(
       new Mandataire({
@@ -61,7 +61,7 @@ describe("Mandataire", () => {
     );
     fOublierConstellation = async () => {
       await mnd.fermer();
-      await utilsTests.arrêterSFIP(dsfip);
+      await utilsTests.sfip.arrêterSFIP(dsfip);
       rimraf.sync(dirTemp);
     };
   });
