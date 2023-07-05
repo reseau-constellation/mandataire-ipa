@@ -120,14 +120,14 @@ describe("Mandataire", () => {
       });
 
     const idMotClef1 = await mnd.motsClefs.créerMotClef();
-    await mnd.motsClefs.ajouterNomsMotClef({
-      id: idMotClef1,
+    await mnd.motsClefs.sauvegarderNomsMotClef({
+      idMotClef: idMotClef1,
       noms: { fr: "Météo à Montréal" },
     });
 
     const idMotClef2 = await mnd.motsClefs.créerMotClef();
-    await mnd.motsClefs.ajouterNomsMotClef({
-      id: idMotClef2,
+    await mnd.motsClefs.sauvegarderNomsMotClef({
+      idMotClef: idMotClef2,
       noms: { fr: "Météo Montréal" },
     });
 
