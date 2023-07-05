@@ -8,7 +8,7 @@ import {
 import { join, sep } from "path";
 import { tmpdir } from "os";
 import { mkdtempSync } from "fs";
-import rimraf from "rimraf";
+import { rimraf } from "rimraf";
 
 class Mandataire extends ClientMandatairifiable {
   gestionnaireClient: mandataire.gestionnaireClient.default;
