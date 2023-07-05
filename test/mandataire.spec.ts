@@ -10,6 +10,9 @@ import { tmpdir } from "os";
 import { mkdtempSync } from "fs";
 import { rimraf } from "rimraf";
 
+import { expect, chai, chaiAsPromised } from "aegir/chai";
+chai.use(chaiAsPromised);
+
 class Mandataire extends ClientMandatairifiable {
   gestionnaireClient: mandataire.gestionnaireClient.default;
   constructor({ opts }: { opts: client.optsConstellation }) {
@@ -43,7 +46,7 @@ describe("Mandataire", () => {
     utils.résultatRecherche<utils.infoRésultatTexte>[]
   >();
 
-  beforeAll(async () => {
+  before(async () => {
     const dirTemp = mkdtempSync(`${tmpdir()}${sep}`);
 
     const dossierSFIP = join(dirTemp, "sfip");
@@ -66,31 +69,31 @@ describe("Mandataire", () => {
     };
   });
 
-  afterAll(async () => {
+  after(async () => {
     attendreNoms.toutAnnuler();
     attendreMC.toutAnnuler();
     if (fOublierConstellation) await fOublierConstellation();
   });
 
-  test("Action", async () => {
+  it("Action", async () => {
     const idCompte = await mnd.obtIdCompte();
-    expect(utils.adresseOrbiteValide(idCompte)).toBeTruthy();
+    expect(utils.adresseOrbiteValide(idCompte)).to.be.true();
   });
 
-  test("Action avec arguments", async () => {
+  it("Action avec arguments", async () => {
     const idVariable = await mnd.variables.créerVariable({
       catégorie: "audio",
     });
-    expect(utils.adresseOrbiteValide(idVariable)).toBeTruthy();
+    expect(utils.adresseOrbiteValide(idVariable)).to.be.true();
   });
 
-  test("Suivi", async () => {
+  it("Suivi", async () => {
     const oublierNoms = await mnd.profil!.suivreNoms({
       f: (n) => attendreNoms.mettreÀJour(n),
     });
 
     const val = await attendreNoms.attendreExiste();
-    expect(Object.keys(val)).toHaveLength(0);
+    expect(Object.keys(val).length).to.eq(0);
 
     await mnd.profil!.sauvegarderNom({
       langue: "fr",
@@ -99,7 +102,7 @@ describe("Mandataire", () => {
     const val2 = await attendreNoms.attendreQue(
       (x) => Object.keys(x).length > 0
     );
-    expect(val2).toEqual({ fr: "Julien Jean Malard-Adam" });
+    expect(val2).to.deep.equal({ fr: "Julien Jean Malard-Adam" });
 
     await oublierNoms();
 
@@ -107,10 +110,10 @@ describe("Mandataire", () => {
       langue: "es",
       nom: "Julien Jean Malard-Adam",
     });
-    expect(attendreNoms.val).toEqual({ fr: "Julien Jean Malard-Adam" });
+    expect(attendreNoms.val).to.deep.equal({ fr: "Julien Jean Malard-Adam" });
   });
 
-  test("Recherche", async () => {
+  it("Recherche", async () => {
     // Eléments détectés
     const { fOublier, fChangerN } =
       await mnd.recherche.rechercherMotClefSelonNom({
@@ -134,51 +137,55 @@ describe("Mandataire", () => {
     const val = await attendreMC.attendreQue(
       (x) => x.length > 0 && x[0].id === idMotClef2
     );
-    expect(val.map((r) => r.id)).toEqual(expect.arrayContaining([idMotClef2]));
+    expect(val.map((r) => r.id)).to.deep.equal([idMotClef2]);
 
     // Augmenter N résultats désirés
     await fChangerN(2);
     const val2 = await attendreMC.attendreQue((x) => x.length > 1);
-    expect(val2.map((r) => r.id)).toEqual(
-      expect.arrayContaining([idMotClef1, idMotClef2])
-    );
+    expect(val2.map((r) => r.id)).to.have.members([idMotClef1, idMotClef2]);
 
     // Diminuer N
     await fChangerN(1);
     const val3 = await attendreMC.attendreQue((x) => x.length <= 1);
-    expect(val3.map((r) => r.id)).toEqual(expect.arrayContaining([idMotClef2]));
+    expect(val3.map((r) => r.id)).to.deep.equal([idMotClef2]);
 
     await fOublier();
   });
 
-  test("Erreur fonction suivi inexistante", async () => {
-    await expect(() =>
+  it("Erreur fonction suivi inexistante", async () => {
+    return expect(
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
+      // @ts-expect-error  on fait exprès
       mnd.jeNeSuisPasUneFonction()
-    ).rejects.toThrow();
+    ).to.be.rejectedWith(
+      Error,
+      "Fonction ClientConstellation.jeNeSuisPasUneFonction n'existe pas ou n'est pas une fonction."
+    );
   });
 
-  test("Erreur action inexistante", async () => {
-    await expect(() =>
+  it("Erreur action inexistante", async () => {
+    expect(
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
+      // @ts-expect-error  on fait exprès
       mnd.jeNeSuisPasUnAtribut.ouUneFonction()
-    ).rejects.toThrow();
+    ).to.be.rejectedWith(
+      Error,
+      "Fonction ClientConstellation.jeNeSuisPasUnAtribut.ouUneFonction() n'existe pas ou n'est pas une fonction."
+    );
   });
 
-  test("Erreur suivi trop de fonctions", async () => {
-    await expect(() =>
+  it("Erreur suivi trop de fonctions", async () => {
+    expect(
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
+      // @ts-expect-error  on fait exprès
       mnd.profil.suivreNoms({ f: utils.faisRien, f2: utils.faisRien })
-    ).rejects.toThrow();
+    ).to.be.rejectedWith(Error, "abc");
   });
-  test("Erreur format paramètres", async () => {
+  it("Erreur format paramètres", async () => {
     expect(() =>
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       mnd.profil.suivreNoms(utils.faisRien)
-    ).toThrowError();
+    ).to.throw();
   });
 });
