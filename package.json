@@ -1,6 +1,6 @@
 {
   "name": "@constl/mandataire",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Un mandataire très léger pour le client Constellation.",
   "author": "Julien Jean Malard-Adam",
   "keywords": [
@@ -13,7 +13,7 @@
   },
   "main": "./dist/src/index.js",
   "type": "module",
-  "types": "./dist/src/.d.ts",
+  "types": "./dist/src/index.d.ts",
   "exports": "./dist/src/index.js",
   "scripts": {
     "nettoyer": "rimraf dist",
