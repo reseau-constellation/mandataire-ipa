@@ -72,24 +72,24 @@ export abstract class ClientMandatairifiable extends Callable {
             });
           }
         }
-      }
+      },
     );
   }
 
   __call__(
     fonction: string[],
-    args: { [key: string]: unknown } = {}
+    args: { [key: string]: unknown } = {},
   ): Promise<unknown> {
     if (typeof args !== "object")
       this.erreur({
         erreur: `La fonction ${fonction.join(
-          "."
+          ".",
         )} fut appelée avec arguments ${args}. 
       Toute fonction mandataire Constellation doit être appelée avec un seul argument en format d'objet (dictionnaire).`,
       });
     const id = uuidv4();
     const nomArgFonction = Object.entries(args).find(
-      (x) => typeof x[1] === "function"
+      (x) => typeof x[1] === "function",
     )?.[0];
 
     if (nomArgFonction) {
@@ -103,14 +103,14 @@ export abstract class ClientMandatairifiable extends Callable {
     id: string,
     fonction: string[],
     args: { [key: string]: unknown },
-    nomArgFonction: string
+    nomArgFonction: string,
   ): Promise<
     | utils.schémaFonctionOublier
     | { [key: string]: (...args: unknown[]) => void }
   > {
     const f = args[nomArgFonction] as utils.schémaFonctionSuivi<unknown>;
     const argsSansF = Object.fromEntries(
-      Object.entries(args).filter((x) => typeof x[1] !== "function")
+      Object.entries(args).filter((x) => typeof x[1] !== "function"),
     );
     if (f === undefined) {
       this.erreur({
@@ -194,7 +194,7 @@ export abstract class ClientMandatairifiable extends Callable {
   async appelerFonctionAction<T>(
     id: string,
     fonction: string[],
-    args: { [key: string]: unknown }
+    args: { [key: string]: unknown },
   ): Promise<T> {
     const message: mandataire.messages.MessageActionPourTravailleur = {
       type: "action",
@@ -232,7 +232,7 @@ export abstract class ClientMandatairifiable extends Callable {
   }
 
   abstract envoyerMessage(
-    message: mandataire.messages.MessagePourTravailleur
+    message: mandataire.messages.MessagePourTravailleur,
   ): void;
 }
 
@@ -257,7 +257,7 @@ class Handler {
   apply(
     target: ClientMandatairifiable,
     _thisArg: Handler,
-    args: [{ [key: string]: unknown }]
+    args: [{ [key: string]: unknown }],
   ) {
     return target.__call__(this.listeAtributs, args[0]);
   }
@@ -267,11 +267,11 @@ export type MandataireClientConstellation =
   Required<client.ClientConstellation> & ClientMandatairifiable;
 
 export const générerMandataire = (
-  mandataireClient: ClientMandatairifiable
+  mandataireClient: ClientMandatairifiable,
 ): MandataireClientConstellation => {
   const handler = new Handler();
   return new Proxy<ClientMandatairifiable>(
     mandataireClient,
-    handler
+    handler,
   ) as MandataireClientConstellation;
 };

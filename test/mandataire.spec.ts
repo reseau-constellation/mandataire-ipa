@@ -23,7 +23,7 @@ class Mandataire extends ClientMandatairifiable {
           erreur: e,
           id: idRequète,
         }),
-      opts
+      opts,
     );
   }
 
@@ -67,7 +67,7 @@ describe("Mandataire", () => {
             sfip: { sfip: dsfip },
           },
         },
-      })
+      }),
     );
     fOublierConstellation = async () => {
       await mnd.fermer();
@@ -110,7 +110,7 @@ describe("Mandataire", () => {
       nom: "Julien Jean Malard-Adam",
     });
     const val2 = await attendreNoms.attendreQue(
-      (x) => Object.keys(x).length > 0
+      (x) => Object.keys(x).length > 0,
     );
     expect(val2).to.deep.equal({ fr: "Julien Jean Malard-Adam" });
 
@@ -145,7 +145,7 @@ describe("Mandataire", () => {
     });
 
     const val = await attendreMC.attendreQue(
-      (x) => x.length > 0 && x[0].id === idMotClef2
+      (x) => x.length > 0 && x[0].id === idMotClef2,
     );
     expect(val.map((r) => r.id)).to.deep.equal([idMotClef2]);
 
@@ -166,7 +166,7 @@ describe("Mandataire", () => {
     return expect(
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error  on fait exprès
-      mnd.jeNeSuisPasUneFonction()
+      mnd.jeNeSuisPasUneFonction(),
     ).to.be.rejected();
   });
 
@@ -174,7 +174,7 @@ describe("Mandataire", () => {
     expect(
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error  on fait exprès
-      mnd.jeNeSuisPasUnAtribut.ouUneFonction()
+      mnd.jeNeSuisPasUnAtribut.ouUneFonction(),
     ).to.be.rejected();
   });
 
@@ -182,14 +182,14 @@ describe("Mandataire", () => {
     expect(
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error  on fait exprès
-      mnd.profil.suivreNoms({ f: utils.faisRien, f2: utils.faisRien })
+      mnd.profil.suivreNoms({ f: utils.faisRien, f2: utils.faisRien }),
     ).to.be.rejected();
   });
   it("Erreur format paramètres", async () => {
     expect(() =>
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      mnd.profil.suivreNoms(utils.faisRien)
+      mnd.profil.suivreNoms(utils.faisRien),
     ).to.throw();
   });
 });
