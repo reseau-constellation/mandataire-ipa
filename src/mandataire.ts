@@ -263,8 +263,8 @@ class Handler {
   }
 }
 
-export type MandataireClientConstellation = client.default &
-  ClientMandatairifiable;
+export type MandataireClientConstellation =
+  Required<client.ClientConstellation> & ClientMandatairifiable;
 
 export const générerMandataire = (
   mandataireClient: ClientMandatairifiable
