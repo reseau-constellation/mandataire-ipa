@@ -1,11 +1,12 @@
 import { v4 as uuidv4 } from "uuid";
 import { EventEmitter, once } from "events";
 
-import type { utils, mandataire, client } from "@constl/ipa";
+import type { mandataire, types } from "@constl/ipa";
+import { MessageDeTravailleur } from "@constl/ipa/dist/src/mandataire/messages";
 
 interface Tâche {
   id: string;
-  fSuivre: utils.schémaFonctionSuivi<unknown>;
+  fSuivre: types.schémaFonctionSuivi<unknown>;
   fRetour: (fonction: string, args?: unknown[]) => Promise<void>;
 }
 
@@ -68,7 +69,7 @@ export abstract class ClientMandatairifiable extends Callable {
           default: {
             this.erreur({
               erreur: `Type inconnu ${type} dans message ${m}.`,
-              id: m.id,
+              id: (m as MessageDeTravailleur).id,
             });
           }
         }
@@ -105,10 +106,10 @@ export abstract class ClientMandatairifiable extends Callable {
     args: { [key: string]: unknown },
     nomArgFonction: string,
   ): Promise<
-    | utils.schémaFonctionOublier
+    | types.schémaFonctionOublier
     | { [key: string]: (...args: unknown[]) => void }
   > {
-    const f = args[nomArgFonction] as utils.schémaFonctionSuivi<unknown>;
+    const f = args[nomArgFonction] as types.schémaFonctionSuivi<unknown>;
     const argsSansF = Object.fromEntries(
       Object.entries(args).filter((x) => typeof x[1] !== "function"),
     );
@@ -263,15 +264,15 @@ class Handler {
   }
 }
 
-export type MandataireClientConstellation =
-  Required<client.ClientConstellation> & ClientMandatairifiable;
+export type MandataireClientConstellation<T> = Required<T> &
+  ClientMandatairifiable;
 
-export const générerMandataire = (
+export const générerMandataire = <T>(
   mandataireClient: ClientMandatairifiable,
-): MandataireClientConstellation => {
+): MandataireClientConstellation<T> => {
   const handler = new Handler();
   return new Proxy<ClientMandatairifiable>(
     mandataireClient,
     handler,
-  ) as MandataireClientConstellation;
+  ) as MandataireClientConstellation<T>;
 };

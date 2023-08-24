@@ -1,4 +1,6 @@
-import { client, utils, mandataire, utilsTests } from "@constl/ipa";
+import { client, types, mandataire } from "@constl/ipa";
+import { faisRien, adresseOrbiteValide } from "@constl/utils-ipa";
+import { attente, sfip } from "@constl/utils-tests";
 import {
   générerMandataire,
   ClientMandatairifiable,
@@ -33,14 +35,14 @@ class Mandataire extends ClientMandatairifiable {
 }
 
 describe("Mandataire", () => {
-  let mnd: MandataireClientConstellation;
-  let fOublierConstellation: utils.schémaFonctionOublier;
+  let mnd: MandataireClientConstellation<client.ClientConstellation>;
+  let fOublierConstellation: types.schémaFonctionOublier;
 
-  const attendreNoms = new utilsTests.attente.AttendreRésultat<{
+  const attendreNoms = new attente.AttendreRésultat<{
     [clef: string]: string;
   }>();
-  const attendreMC = new utilsTests.attente.AttendreRésultat<
-    utils.résultatRecherche<utils.infoRésultatTexte>[]
+  const attendreMC = new attente.AttendreRésultat<
+    types.résultatRecherche<types.infoRésultatTexte>[]
   >();
 
   before(async () => {
@@ -57,7 +59,7 @@ describe("Mandataire", () => {
       dossierOrbite = path.join(dossierTempo, "orbite");
     }
 
-    const dsfip = await utilsTests.sfip.initierSFIP(dossierSFIP);
+    const dsfip = await sfip.initierSFIP(dossierSFIP);
 
     mnd = générerMandataire(
       new Mandataire({
@@ -71,7 +73,7 @@ describe("Mandataire", () => {
     );
     fOublierConstellation = async () => {
       await mnd.fermer();
-      await utilsTests.sfip.arrêterSFIP(dsfip);
+      await sfip.arrêterSFIP(dsfip);
       if (isNode || isElectronMain) {
         const rimraf = await import("rimraf");
         rimraf.sync(dossierTempo);
@@ -87,14 +89,14 @@ describe("Mandataire", () => {
 
   it("Action", async () => {
     const idCompte = await mnd.obtIdCompte();
-    expect(utils.adresseOrbiteValide(idCompte)).to.be.true();
+    expect(adresseOrbiteValide(idCompte)).to.be.true();
   });
 
   it("Action avec arguments", async () => {
     const idVariable = await mnd.variables.créerVariable({
       catégorie: "audio",
     });
-    expect(utils.adresseOrbiteValide(idVariable)).to.be.true();
+    expect(adresseOrbiteValide(idVariable)).to.be.true();
   });
 
   it("Suivi", async () => {
@@ -126,7 +128,7 @@ describe("Mandataire", () => {
   it("Recherche", async () => {
     // Eléments détectés
     const { fOublier, fChangerN } =
-      await mnd.recherche.rechercherMotClefSelonNom({
+      await mnd.recherche.rechercherMotsClefsSelonNom({
         nomMotClef: "Météo Montréal",
         f: (x) => attendreMC.mettreÀJour(x),
         nRésultatsDésirés: 1,
@@ -182,14 +184,14 @@ describe("Mandataire", () => {
     expect(
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error  on fait exprès
-      mnd.profil.suivreNoms({ f: utils.faisRien, f2: utils.faisRien }),
+      mnd.profil.suivreNoms({ f: faisRien, f2: faisRien }),
     ).to.be.rejected();
   });
   it("Erreur format paramètres", async () => {
     expect(() =>
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
-      mnd.profil.suivreNoms(utils.faisRien),
+      mnd.profil.suivreNoms(faisRien),
     ).to.throw();
   });
 });
