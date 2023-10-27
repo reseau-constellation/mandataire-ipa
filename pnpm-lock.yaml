@@ -20,8 +20,8 @@ devDependencies:
     specifier: ^0.9.0
     version: 0.9.3(wrtc@0.4.7)
   '@constl/utils-ipa':
-    specifier: ^0.1.2
-    version: 0.1.2(wrtc@0.4.7)
+    specifier: ^0.2.0
+    version: 0.2.0(wrtc@0.4.7)
   '@constl/utils-tests':
     specifier: ^0.1.1
     version: 0.1.1(@constl/ipa@0.9.3)(go-ipfs@0.22.0)(ipfs@0.66.1)(ipfsd-ctl@13.0.0)(wrtc@0.4.7)
@@ -2567,7 +2567,7 @@ packages:
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
     dependencies:
       cborg: 2.0.4
-      multiformats: 12.0.1
+      multiformats: 12.1.3
     dev: true
 
   /@ipld/dag-cbor@9.0.6:
@@ -2575,7 +2575,7 @@ packages:
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
     dependencies:
       cborg: 4.0.5
-      multiformats: 12.0.1
+      multiformats: 12.1.3
     dev: true
 
   /@ipld/dag-json@10.1.3:
@@ -2583,14 +2583,14 @@ packages:
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
     dependencies:
       cborg: 2.0.4
-      multiformats: 12.0.1
+      multiformats: 12.1.3
     dev: true
 
   /@ipld/dag-pb@4.0.5:
     resolution: {integrity: sha512-El2Jhmv6bWuakhvnw1dl6xOhqLeVhlY8DIAJ06NtZRAoDcOzeGzvOtPzMCszVgCT0EQz+LOctyfgQ5Oszba19A==}
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
     dependencies:
-      multiformats: 12.0.1
+      multiformats: 12.1.3
     dev: true
 
   /@isaacs/cliui@8.0.2:
@@ -3097,7 +3097,7 @@ packages:
       abortable-iterator: 5.0.1
       it-pushable: 3.2.1
       it-stream-types: 2.0.1
-      multiformats: 12.0.1
+      multiformats: 12.1.3
       p-defer: 4.0.0
       uint8arraylist: 2.4.3
     transitivePeerDependencies:
@@ -3196,7 +3196,7 @@ packages:
       '@multiformats/multiaddr': 12.1.7
       debug: 4.3.4(supports-color@8.1.1)
       interface-datastore: 8.2.4
-      multiformats: 12.0.1
+      multiformats: 12.1.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3320,7 +3320,7 @@ packages:
     resolution: {integrity: sha512-133qGXu9UBiqsYm7nBDJaAh4eiKe79DPLKF+/aRu0Z7gKcX7I0+LewEky4kBt3olhYQSF1CAnJIzD8Dmsn40Yw==}
     dependencies:
       '@libp2p/interface': 0.1.2
-      multiformats: 12.0.1
+      multiformats: 12.1.3
       uint8arrays: 4.0.6
     transitivePeerDependencies:
       - supports-color
@@ -3770,7 +3770,7 @@ packages:
       '@chainsafe/netmask': 2.0.0
       '@libp2p/interface': 0.1.2
       dns-over-http-resolver: 2.1.2
-      multiformats: 12.0.1
+      multiformats: 12.1.3
       uint8-varint: 2.0.1
       uint8arrays: 4.0.6
     transitivePeerDependencies:
@@ -3781,7 +3781,7 @@ packages:
     resolution: {integrity: sha512-kpJDN+o8B0gJaaqbdV/spIVPj35hqew4rEw8VzPmcITsLpHSgP8pJDeaVaGGVeX/UM8n4IGctLCxw7PBfVks+A==}
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
     dependencies:
-      multiformats: 12.0.1
+      multiformats: 12.1.3
       murmurhash3js-revisited: 3.0.0
     dev: true
 
@@ -12717,11 +12717,6 @@ packages:
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
     dev: true
 
-  /multiformats@12.0.1:
-    resolution: {integrity: sha512-s01wijBJoDUqESWSzePY0lvTw7J3PVO9x2Cc6ASI5AMZM2Gnhh7BC17+nlFhHKU7dDzaCaRfb+NiqNzOsgPUoQ==}
-    engines: {node: '>=16.0.0', npm: '>=7.0.0'}
-    dev: true
-
   /multiformats@12.1.3:
     resolution: {integrity: sha512-eajQ/ZH7qXZQR2AgtfpmSMizQzmyYVmCql7pdhldPuYQi4atACekbJaQplk6dWyIi10jCaFnd6pqvcEFXjbaJw==}
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
@@ -16288,7 +16283,7 @@ packages:
   /uint8arrays@4.0.6:
     resolution: {integrity: sha512-4ZesjQhqOU2Ip6GPReIwN60wRxIupavL8T0Iy36BBHr2qyMrNxsPJvr7vpS4eFt8F8kSguWUPad6ZM9izs/vyw==}
     dependencies:
-      multiformats: 12.0.1
+      multiformats: 12.1.3
     dev: true
 
   /unbox-primitive@1.0.2:
