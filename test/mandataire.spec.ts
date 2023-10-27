@@ -1,6 +1,7 @@
 import { client, types, mandataire } from "@constl/ipa";
-import { faisRien, adresseOrbiteValide } from "@constl/utils-ipa";
+import { faisRien } from "@constl/utils-ipa";
 import { attente, sfip } from "@constl/utils-tests";
+import { isValidAddress } from "@orbitdb/core";
 import {
   générerMandataire,
   ClientMandatairifiable,
@@ -89,14 +90,14 @@ describe("Mandataire", () => {
 
   it("Action", async () => {
     const idCompte = await mnd.obtIdCompte();
-    expect(adresseOrbiteValide(idCompte)).to.be.true();
+    expect(isValidAddress(idCompte)).to.be.true();
   });
 
   it("Action avec arguments", async () => {
     const idVariable = await mnd.variables.créerVariable({
       catégorie: "audio",
     });
-    expect(adresseOrbiteValide(idVariable)).to.be.true();
+    expect(isValidAddress(idVariable)).to.be.true();
   });
 
   it("Suivi", async () => {
