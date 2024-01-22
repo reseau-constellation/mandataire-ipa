@@ -31,7 +31,7 @@
   "devDependencies": {
     "@constl/ipa": "^0.9.6",
     "@constl/orbit-db-types": "^1.2.8",
-    "@constl/utils-ipa": "^0.2.1",
+    "@constl/utils-ipa": "^1.0.0",
     "@constl/utils-tests": "^0.2.2",
     "@orbitdb/core": "^2.0.0",
     "@types/mocha": "^10.0.3",
