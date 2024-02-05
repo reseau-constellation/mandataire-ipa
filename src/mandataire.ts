@@ -2,7 +2,6 @@ import { v4 as uuidv4 } from "uuid";
 import { EventEmitter, once } from "events";
 
 import type { mandataire, types } from "@constl/ipa";
-import { MessageDeTravailleur } from "@constl/ipa/dist/src/mandataire/messages";
 
 interface Tâche {
   id: string;
@@ -69,7 +68,7 @@ export abstract class ClientMandatairifiable extends Callable {
           default: {
             this.erreur({
               erreur: `Type inconnu ${type} dans message ${m}.`,
-              id: (m as MessageDeTravailleur).id,
+              id: (m as mandataire.messages.MessageDeTravailleur).id,
             });
           }
         }

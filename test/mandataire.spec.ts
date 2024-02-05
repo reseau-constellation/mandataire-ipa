@@ -35,7 +35,7 @@ class Mandataire extends ClientMandatairifiable {
   }
 }
 
-describe("Mandataire", () => {
+describe("Mandataire Constellation", () => {
   let mnd: MandataireClientConstellation<client.ClientConstellation>;
   let fOublierConstellation: types.schémaFonctionOublier;
 
@@ -49,7 +49,6 @@ describe("Mandataire", () => {
   before(async () => {
     let dossierTempo: string | undefined = undefined;
     let dossierSFIP: string | undefined = undefined;
-    let dossierOrbite: string | undefined = undefined;
 
     if (isNode || isElectronMain) {
       const fs = await import("fs");
@@ -57,24 +56,23 @@ describe("Mandataire", () => {
       const os = await import("os");
       dossierTempo = fs.mkdtempSync(path.join(os.tmpdir(), "constl-ipa"));
       dossierSFIP = path.join(dossierTempo, "sfip");
-      dossierOrbite = path.join(dossierTempo, "orbite");
     }
 
-    const dsfip = await sfip.initierSFIP(dossierSFIP);
+    const sfip1 = await sfip.créerHéliaTest({ dossier: dossierSFIP });
 
     mnd = générerMandataire(
       new Mandataire({
         opts: {
+          dossier: dossierTempo,
           orbite: {
-            dossier: dossierOrbite,
-            sfip: { sfip: dsfip },
+            ipfs: sfip1,
           },
         },
       }),
     );
     fOublierConstellation = async () => {
       await mnd.fermer();
-      await sfip.arrêterSFIP(dsfip);
+      await sfip1.stop();
       if (isNode || isElectronMain) {
         const rimraf = await import("rimraf");
         rimraf.sync(dossierTempo);
@@ -167,31 +165,27 @@ describe("Mandataire", () => {
 
   it("Erreur fonction suivi inexistante", async () => {
     return expect(
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error  on fait exprès
+      // @ts-expect-error on fait exprès
       mnd.jeNeSuisPasUneFonction(),
     ).to.be.rejected();
   });
 
   it("Erreur action inexistante", async () => {
     expect(
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error  on fait exprès
+      // @ts-expect-error on fait exprès
       mnd.jeNeSuisPasUnAtribut.ouUneFonction(),
     ).to.be.rejected();
   });
 
   it("Erreur suivi trop de fonctions", async () => {
     expect(
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error  on fait exprès
+      // @ts-expect-error on fait exprès
       mnd.profil.suivreNoms({ f: faisRien, f2: faisRien }),
     ).to.be.rejected();
   });
   it("Erreur format paramètres", async () => {
     expect(() =>
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
+      // @ts-expect-error on fait exprès
       mnd.profil.suivreNoms(faisRien),
     ).to.throw();
   });
