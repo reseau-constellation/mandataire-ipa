@@ -14,8 +14,8 @@ dependencies:
 
 devDependencies:
   '@constl/ipa':
-    specifier: 0.9.26-fd39d6da4.0
-    version: 0.9.26-fd39d6da4.0(react-native@0.73.3)(wrtc@0.4.7)
+    specifier: 1.0.1-ec2b9d2da.0
+    version: 1.0.1-ec2b9d2da.0(react-native@0.73.3)(wrtc@0.4.7)
   '@constl/orbit-db-types':
     specifier: ^2.0.0
     version: 2.0.0(react-native@0.73.3)
@@ -2215,6 +2215,8 @@ packages:
       uint8arraylist: 2.4.8
       uint8arrays: 5.0.1
       wherearewe: 2.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@chainsafe/libp2p-noise@15.0.0:
@@ -2238,6 +2240,8 @@ packages:
       uint8arraylist: 2.4.8
       uint8arrays: 5.0.1
       wherearewe: 2.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@chainsafe/libp2p-yamux@6.0.1:
@@ -2297,8 +2301,8 @@ packages:
       - supports-color
     dev: true
 
-  /@constl/ipa@0.9.26-fd39d6da4.0(react-native@0.73.3)(wrtc@0.4.7):
-    resolution: {integrity: sha512-fnQAg69aClXVc0ARbsG5dte7STRuzonh8LUZ426pRMBVh5ZueNMaj4rTbAYFQJDIjloA0A6xOmIKgOXwx9Loig==}
+  /@constl/ipa@1.0.1-ec2b9d2da.0(react-native@0.73.3)(wrtc@0.4.7):
+    resolution: {integrity: sha512-fxtECyyQUN5kUGOoggXLhK6PWUjQTnPNN5diR33JPMH1LL1eWMv2cKIqtZGRZ5ozHYnwszAsonSEPIvAMHQVNA==}
     engines: {node: '>=20'}
     peerDependencies:
       wrtc: ^0.4.7
@@ -2315,7 +2319,7 @@ packages:
       '@helia/block-brokers': 2.0.1
       '@helia/unixfs': 3.0.0
       '@ipld/dag-cbor': 9.1.0
-      '@lassi-js/kili': 0.3.6(@constl/ipa@0.9.26-fd39d6da4.0)
+      '@lassi-js/kili': 0.3.6(@constl/ipa@1.0.1-ec2b9d2da.0)
       '@libp2p/bootstrap': 10.0.13
       '@libp2p/circuit-relay-v2': 1.0.13
       '@libp2p/identify': 1.0.12
@@ -2340,7 +2344,7 @@ packages:
       crypto-js: 4.2.0
       deep-equal: 2.2.3
       deepcopy: 2.1.0
-      ennikkai: 2.2.5(@constl/ipa@0.9.26-fd39d6da4.0)
+      ennikkai: 2.2.5(@constl/ipa@1.0.1-ec2b9d2da.0)
       env-paths: 3.0.0
       events: 3.3.0
       genversion: 3.2.0
@@ -3239,13 +3243,13 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /@lassi-js/kili@0.3.6(@constl/ipa@0.9.26-fd39d6da4.0):
+  /@lassi-js/kili@0.3.6(@constl/ipa@1.0.1-ec2b9d2da.0):
     resolution: {integrity: sha512-tahzK8iaCfg/sNAqbZKnow5W1PoQDXiTBXvFkTUqwn6zPbbvY/a8L6kDWm6ZwWqWQ4VupqC59kMSslLgGuNOAA==}
     peerDependencies:
       '@constl/ipa': ^0.9.15
     dependencies:
       '@achingbrain/nat-port-mapper': 1.0.8
-      '@constl/ipa': 0.9.26-fd39d6da4.0(react-native@0.73.3)(wrtc@0.4.7)
+      '@constl/ipa': 1.0.1-ec2b9d2da.0(react-native@0.73.3)(wrtc@0.4.7)
       '@constl/utils-ipa': 0.2.4
       '@orbitdb/core': 1.0.2
       deepcopy: 2.1.0
@@ -3338,6 +3342,8 @@ packages:
       protons-runtime: 5.1.0
       uint8arraylist: 2.4.3
       uint8arrays: 5.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@libp2p/crypto@4.0.1:
@@ -3351,6 +3357,8 @@ packages:
       protons-runtime: 5.4.0
       uint8arraylist: 2.4.8
       uint8arrays: 5.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@libp2p/dcutr@1.0.10:
@@ -3539,6 +3547,8 @@ packages:
       multiformats: 13.0.1
       sanitize-filename: 1.6.3
       uint8arrays: 5.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@libp2p/logger@2.1.1:
@@ -3620,6 +3630,8 @@ packages:
       uint8-varint: 2.0.4
       uint8arraylist: 2.4.8
       uint8arrays: 5.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@libp2p/peer-collections@5.1.5:
@@ -3627,6 +3639,8 @@ packages:
     dependencies:
       '@libp2p/interface': 1.1.2
       '@libp2p/peer-id': 4.0.5
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@libp2p/peer-id-factory@4.0.5:
@@ -3638,6 +3652,8 @@ packages:
       protons-runtime: 5.4.0
       uint8arraylist: 2.4.8
       uint8arrays: 5.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@libp2p/peer-id@3.0.6:
@@ -3656,6 +3672,8 @@ packages:
       '@libp2p/interface': 1.1.2
       multiformats: 13.0.1
       uint8arrays: 5.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@libp2p/peer-record@7.0.7:
@@ -4257,6 +4275,8 @@ packages:
       p-queue: 8.0.1
       timeout-abort-controller: 3.0.0
       uint8arrays: 5.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@orbitdb/feed-db@1.0.0(react-native@0.73.3):
@@ -7989,13 +8009,13 @@ packages:
       once: 1.4.0
     dev: true
 
-  /ennikkai@2.2.5(@constl/ipa@0.9.26-fd39d6da4.0):
+  /ennikkai@2.2.5(@constl/ipa@1.0.1-ec2b9d2da.0):
     resolution: {integrity: sha512-zzyBrfQlzTJKv9OhzdC4+QbqIaqOsmjsJf4lxqGF6PSuDaPDJewKSUOEcE90sOU3rcMWE9IFtxwgCq+Jw4t7lA==}
     peerDependencies:
       '@constl/ipa': ^0.9.6
     dependencies:
-      '@constl/ipa': 0.9.26-fd39d6da4.0(react-native@0.73.3)(wrtc@0.4.7)
-      '@lassi-js/kili': 0.3.6(@constl/ipa@0.9.26-fd39d6da4.0)
+      '@constl/ipa': 1.0.1-ec2b9d2da.0(react-native@0.73.3)(wrtc@0.4.7)
+      '@lassi-js/kili': 0.3.6(@constl/ipa@1.0.1-ec2b9d2da.0)
       deepmerge: 4.3.1
       events: 3.3.0
     transitivePeerDependencies:

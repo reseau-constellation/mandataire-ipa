@@ -22,6 +22,8 @@ const esbuild = {
     "zlib",
     "rimraf",
     "electron",
+    "env-paths",
+    "@libp2p/tcp",
   ],
   plugins: [
     {

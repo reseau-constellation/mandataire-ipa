@@ -19,6 +19,8 @@
     "nettoyer": "rimraf dist",
     "compiler": "pnpm versioner && pnpm formatter && pnpm nettoyer && pnpm tspc -p tsconfig.build.json",
     "test": "pnpm compiler && pnpm aegir test -t node && pnpm aegir test -t browser",
+    "test:node": "pnpm compiler && pnpm aegir test -t node --cov",
+    "test:navig": "pnpm compiler && pnpm aegir test -t browser --cov",
     "couverture": "pnpm test -- --coverage",
     "formatter": "pnpm prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\" && pnpm eslint --ext .js,.ts src",
     "publier": "pnpm test && (git commit -a -m 'version' || true) && pnpm publish",
@@ -29,7 +31,7 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@constl/ipa": "0.9.26-fd39d6da4.0",
+    "@constl/ipa": "1.0.1-ec2b9d2da.0",
     "@constl/orbit-db-types": "^2.0.0",
     "@constl/utils-ipa": "^1.0.0",
     "@constl/utils-tests": "1.0.3-96c8dff.0",
