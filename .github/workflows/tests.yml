@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: pnpm
 
       - name: Installer
         run: pnpm install --lockfile=false
@@ -50,7 +50,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+          cache: pnpm
 
       - name: Installer
         run: pnpm install --lockfile=false
