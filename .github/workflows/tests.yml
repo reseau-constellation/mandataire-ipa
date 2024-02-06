@@ -61,3 +61,29 @@ jobs:
       - name: Envoyer couverure à Codecov
         uses: codecov/codecov-action@v4
 
+  test-electron-principal:
+    name: Tests sur Électron principal
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ouvrir la branche
+        uses: actions/checkout@v4
+
+      - name: Installer pnpm
+        uses: pnpm/action-setup@v2.4.0
+        with:
+          version: latest
+
+      - name: Préparation de Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Installer
+        run: pnpm install --lockfile=false
+
+      - name: Vérifier les tests
+        run: pnpm test:électron-principal
+
+      - name: Envoyer couverure à Codecov
+        uses: codecov/codecov-action@v3
