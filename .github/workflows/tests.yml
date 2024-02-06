@@ -63,7 +63,10 @@ jobs:
 
   test-electron-principal:
     name: Tests sur Électron principal
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+    runs-on: ${{ matrix.os }}
     needs: tests-nodejs
     steps:
       - name: Ouvrir la branche
