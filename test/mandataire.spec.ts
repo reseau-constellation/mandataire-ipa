@@ -164,29 +164,46 @@ describe("Mandataire Constellation", () => {
   });
 
   it("Erreur fonction suivi inexistante", async () => {
-    return expect(
+    await expect(
       // @ts-expect-error on fait exprès
       mnd.jeNeSuisPasUneFonction(),
-    ).to.be.rejected();
+    ).to.be.rejectedWith("n'existe pas ou n'est pas une fonction");
   });
 
   it("Erreur action inexistante", async () => {
-    expect(
+    await expect(
       // @ts-expect-error on fait exprès
       mnd.jeNeSuisPasUnAtribut.ouUneFonction(),
-    ).to.be.rejected();
+    ).to.be.rejectedWith("n'existe pas ou n'est pas une fonction");
   });
 
   it("Erreur suivi trop de fonctions", async () => {
-    expect(
+    await expect(
       // @ts-expect-error on fait exprès
       mnd.profil.suivreNoms({ f: faisRien, f2: faisRien }),
-    ).to.be.rejected();
+    ).to.be.rejectedWith("Plus d'un argument pour");
   });
+
+  it("Erreur suivi sans fonction", async () => {
+    await expect(
+      // @ts-expect-error on fait exprès
+      mnd.profil.suivreNoms({}),
+    ).to.be.rejectedWith("Aucun argument n'est une fonction");
+  });
+
+  it("Erreur suivi fonction n'est pas une fonction", async () => {
+    await expect(
+      // @ts-expect-error on fait exprès
+      mnd.profil.suivreNoms({ f: 123 }),
+    ).to.be.rejectedWith("Aucun argument n'est une fonction");
+  });
+
   it("Erreur format paramètres", async () => {
     expect(() =>
       // @ts-expect-error on fait exprès
       mnd.profil.suivreNoms(faisRien),
-    ).to.throw();
+    ).to.throw(
+      "doit être appelée avec un seul argument en format d'objet (dictionnaire)",
+    );
   });
 });
