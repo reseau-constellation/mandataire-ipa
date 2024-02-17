@@ -1,6 +1,6 @@
 {
   "name": "@constl/mandataire",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "Un mandataire très léger pour le client Constellation.",
   "author": "Julien Jean Malard-Adam",
   "keywords": [
@@ -32,50 +32,31 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@constl/ipa": "1.0.1-ec2b9d2da.0",
+    "@constl/ipa": "1.0.12",
     "@constl/orbit-db-types": "^2.0.0",
     "@constl/utils-ipa": "^1.0.0",
-    "@constl/utils-tests": "1.1.2",
-    "@orbitdb/core": "^2.0.0",
-    "@types/mocha": "^10.0.3",
-    "@types/uuid": "^9.0.6",
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
-    "@typescript-eslint/parser": "^7.0.0",
-    "aegir": "^42.0.0",
+    "@constl/utils-tests": "1.2.5",
+    "@orbitdb/core": "^2.2.0",
+    "@types/mocha": "^10.0.6",
+    "@types/uuid": "^9.0.8",
+    "@typescript-eslint/eslint-plugin": "^7.8.0",
+    "@typescript-eslint/parser": "^7.8.0",
+    "aegir": "^42.2.11",
     "browserify-fs": "^1.0.0",
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.0",
-    "eslint": "^8.52.0",
-    "eslint-config-prettier": "^9.0.0",
-    "genversion": "^3.1.1",
-    "mocha": "^10.2.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "genversion": "^3.2.0",
+    "mocha": "^10.4.0",
     "os-browserify": "^0.3.0",
-    "prettier": "^3.0.3",
+    "prettier": "^3.2.5",
     "process": "^0.11.10",
     "rimraf": "^5.0.5",
-    "ts-patch": "^3.0.2",
-    "typescript": "^5.2.2",
-    "typescript-transform-paths": "^3.4.6",
+    "ts-patch": "^3.1.2",
+    "typescript": "^5.4.5",
+    "typescript-transform-paths": "^3.4.7",
     "url": "^0.11.3",
     "wherearewe": "^2.0.1"
-  },
-  "jest": {
-    "transform": {
-      "(.*).ts$": [
-        "ts-jest",
-        {
-          "useESM": true
-        }
-      ]
-    },
-    "preset": "ts-jest/presets/default-esm",
-    "moduleNameMapper": {
-      "^@/(.*).js$": "<rootDir>/src/$1",
-      "^@/(.*)$": "<rootDir>/src/$1"
-    },
-    "testMatch": [
-      "**/*.test.ts"
-    ],
-    "testEnvironment": "node"
   }
 }

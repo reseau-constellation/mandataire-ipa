@@ -14,20 +14,21 @@ import { expect, chai, chaiAsPromised } from "aegir/chai";
 chai.use(chaiAsPromised);
 
 class Mandataire extends ClientMandatairifiable {
-  gestionnaireClient: mandataire.gestionnaireClient.default;
+  gestionnaireClient: mandataire.gestionnaireClient.GestionnaireClient;
   constructor({ opts }: { opts: client.optsConstellation }) {
     super();
-    this.gestionnaireClient = new mandataire.gestionnaireClient.default(
-      (m: mandataire.messages.MessageDeTravailleur) =>
-        this.événements.emit("message", m),
-      (e: string, idRequète?: string) =>
-        this.événements.emit("message", {
-          type: "erreur",
-          erreur: e,
-          id: idRequète,
-        }),
-      opts,
-    );
+    this.gestionnaireClient =
+      new mandataire.gestionnaireClient.GestionnaireClient(
+        (m: mandataire.messages.MessageDeTravailleur) =>
+          this.événements.emit("message", m),
+        (e: string, idRequète?: string) =>
+          this.événements.emit("message", {
+            type: "erreur",
+            erreur: e,
+            id: idRequète,
+          }),
+        opts,
+      );
   }
 
   envoyerMessage(message: mandataire.messages.MessagePourTravailleur): void {
