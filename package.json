@@ -35,7 +35,7 @@
     "@constl/ipa": "1.0.1-ec2b9d2da.0",
     "@constl/orbit-db-types": "^2.0.0",
     "@constl/utils-ipa": "^1.0.0",
-    "@constl/utils-tests": "1.1.0",
+    "@constl/utils-tests": "1.1.2",
     "@orbitdb/core": "^2.0.0",
     "@types/mocha": "^10.0.3",
     "@types/uuid": "^9.0.6",
