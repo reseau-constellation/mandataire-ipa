@@ -60,7 +60,7 @@ devDependencies:
     version: 9.1.0(eslint@8.57.0)
   genversion:
     specifier: ^3.1.1
-    version: 3.1.1
+    version: 3.2.0
   mocha:
     specifier: ^10.2.0
     version: 10.2.0
@@ -8646,15 +8646,6 @@ packages:
   /gensync@1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
     engines: {node: '>=6.9.0'}
-    dev: true
-
-  /genversion@3.1.1:
-    resolution: {integrity: sha512-/H861PMsihhjgX2qqhTN8egM11V04imhA+3JRFY3jjPua2Sy1NqaqqQPjSP8rdM9jZoKpFhVj9g3Fs9XPCjBYQ==}
-    engines: {node: '>=10.0.0'}
-    hasBin: true
-    dependencies:
-      commander: 7.2.0
-      find-package: 1.0.0
     dev: true
 
   /genversion@3.2.0:
