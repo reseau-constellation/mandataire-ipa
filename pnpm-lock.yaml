@@ -44,7 +44,7 @@ importers:
         version: 7.7.1(eslint@8.57.0)(typescript@5.4.5)
       aegir:
         specifier: ^42.0.0
-        version: 42.2.7(@babel/core@7.24.4)(@typescript-eslint/parser@7.7.1(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-n@16.6.2(eslint@8.57.0))
+        version: 42.2.8(@babel/core@7.24.4)(@typescript-eslint/parser@7.7.1(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-n@16.6.2(eslint@8.57.0))
       browserify-fs:
         specifier: ^1.0.0
         version: 1.0.0
@@ -2314,8 +2314,8 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  aegir@42.2.7:
-    resolution: {integrity: sha512-a3I4Ao8mvOH0k5zvGKzjsTj6SQWz0bE1CI4uxZG3+1DfoZwtRDkmKejQma92R+TNGVQ5TJLPHuWPyI/Z9ZORMg==}
+  aegir@42.2.8:
+    resolution: {integrity: sha512-3WQaxohtRrVaRxApZ8rcIrEe6tmyhpsMRhl/kFbwidw1fNqZM43PxRpzGrNVlmwLuSQstYwdShH23pAgJUFA1w==}
     hasBin: true
 
   agent-base@7.1.1:
@@ -5239,6 +5239,10 @@ packages:
 
   lru-cache@10.2.0:
     resolution: {integrity: sha512-2bIM8x+VAf6JT4bKAljS1qUWgMsqZRPGJS6FSahIMPVvctcNhyVp7AJu7quxOW9jwkryBReKZY5tY5JYv2n/7Q==}
+    engines: {node: 14 || >=16.14}
+
+  lru-cache@10.2.1:
+    resolution: {integrity: sha512-tS24spDe/zXhWbNPErCHs/AGOzbKGHT+ybSBqmdLm8WZ1xXLWvH8Qn71QPAlqVhd0qUTWjy+Kl9JmISgDdEjsA==}
     engines: {node: 14 || >=16.14}
 
   lru-cache@5.1.1:
@@ -11457,7 +11461,7 @@ snapshots:
 
   acorn@8.11.3: {}
 
-  aegir@42.2.7(@babel/core@7.24.4)(@typescript-eslint/parser@7.7.1(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-n@16.6.2(eslint@8.57.0)):
+  aegir@42.2.8(@babel/core@7.24.4)(@typescript-eslint/parser@7.7.1(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-n@16.6.2(eslint@8.57.0)):
     dependencies:
       '@anolilab/multi-semantic-release': 1.0.3(semantic-release@23.0.8(typescript@5.4.5))(typescript@5.4.5)
       '@electron/get': 3.0.0
@@ -14050,7 +14054,7 @@ snapshots:
 
   hosted-git-info@7.0.1:
     dependencies:
-      lru-cache: 10.2.0
+      lru-cache: 10.2.1
 
   html-escaper@2.0.2: {}
 
@@ -15125,6 +15129,8 @@ snapshots:
   lowercase-keys@2.0.0: {}
 
   lru-cache@10.2.0: {}
+
+  lru-cache@10.2.1: {}
 
   lru-cache@5.1.1:
     dependencies:
