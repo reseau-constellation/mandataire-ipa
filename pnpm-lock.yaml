@@ -14,7 +14,7 @@ dependencies:
 
 devDependencies:
   '@constl/ipa':
-    specifier: 1.0.12
+    specifier: ^1.0.12
     version: 1.0.12(react-native@0.74.1)
   '@constl/orbit-db-types':
     specifier: ^2.0.0
@@ -23,10 +23,10 @@ devDependencies:
     specifier: ^1.0.0
     version: 1.0.0
   '@constl/utils-tests':
-    specifier: 1.2.5
+    specifier: ^1.2.5
     version: 1.2.5(react-native@0.74.1)
   '@orbitdb/core':
-    specifier: ^2.2.0
+    specifier: ^2.0.1
     version: 2.2.0
   '@types/mocha':
     specifier: ^10.0.6
@@ -16171,7 +16171,7 @@ packages:
   /wide-align@1.1.5:
     resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
     dependencies:
-      string-width: 1.0.2
+      string-width: 4.2.3
     dev: true
 
   /winston@2.4.7:
