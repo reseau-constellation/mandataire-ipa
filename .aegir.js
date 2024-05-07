@@ -25,6 +25,8 @@ const esbuild = {
     "env-paths",
     "@libp2p/tcp",
     "@libp2p/mdns",
+    "execa",
+    "module",
   ],
   plugins: [
     {
