@@ -46,7 +46,7 @@
     "browserify-fs": "^1.0.0",
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.0",
-    "electron": "^30.0.9",
+    "electron": "^31.0.0",
     "eslint": "^9.4.0",
     "eslint-config-prettier": "^9.1.0",
     "genversion": "^3.2.0",
