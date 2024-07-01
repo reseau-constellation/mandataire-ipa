@@ -21,9 +21,11 @@ class Mandataire extends Mandatairifiable {
     super();
     this.gestionnaireClient =
       new mandataire.gestionnaireClient.GestionnaireClient(
-        (m: MessageDIpa) => this.événements.emit("message", m),
+        (m: MessageDIpa) => {
+          this.recevoirMessageDIpa(m);
+        },
         (e: string, idRequète?: string) =>
-          this.événements.emit("message", {
+          this.recevoirMessageDIpa({
             type: "erreur",
             erreur: e,
             id: idRequète,

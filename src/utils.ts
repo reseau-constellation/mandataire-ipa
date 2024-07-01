@@ -1,10 +1,10 @@
 import TypedEmitter, { type EventMap } from "typed-emitter";
 
-export const lorsque = async <T extends EventMap>(
-  émetteur: TypedEmitter<T>,
-  clef: keyof T,
-): Promise<Parameters<T[keyof T]>> => {
+export const lorsque = async <Events extends EventMap, E extends keyof Events>(
+  émetteur: TypedEmitter<Events>,
+  clef: E,
+): Promise<Parameters<Events[E]>[0]> => {
   return new Promise((résoudre) => {
-    return émetteur.once(clef, résoudre as T[keyof T]);
+    return émetteur.once(clef, résoudre as Events[E]);
   });
 };

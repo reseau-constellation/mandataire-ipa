@@ -63,7 +63,9 @@ export abstract class Mandatairifiable extends Callable {
 
     this.événements = new EventEmitter() as TypedEmitter<ÉvénementsMandataire>;
     this.événementsInternes = new EventEmitter() as TypedEmitter<{
-      [id: string]: (x: unknown) => void;
+      [id: string]: (
+        x: MessageActionDIpa | MessageSuivrePrêtDIpa | MessageErreurDIpa,
+      ) => void;
     }>;
 
     this.tâches = {};
@@ -171,7 +173,7 @@ export abstract class Mandatairifiable extends Callable {
 
     this.envoyerMessageÀIpa(message);
 
-    const retour = (await lorsque(this.événementsInternes, id))[0];
+    const retour = await lorsque(this.événementsInternes, id);
 
     if (retour.type === "erreur") {
       this.erreur({ erreur: retour.erreur, id, code: ERREUR_EXÉCUTION_IPA });
@@ -208,8 +210,7 @@ export abstract class Mandatairifiable extends Callable {
     };
 
     const promesse = new Promise<T>((résoudre, rejeter) => {
-      lorsque(this.événementsInternes, id).then((données) => {
-        const retour = données[0];
+      lorsque(this.événementsInternes, id).then((retour) => {
         if (retour.type === "erreur") rejeter(new Error(retour.erreur));
         else if (retour.type === "action") résoudre(retour.résultat as T);
       });
@@ -230,7 +231,7 @@ export abstract class Mandatairifiable extends Callable {
     id?: string;
   }): void {
     this.événements.emit("erreur", { erreur, id, code });
-    // throw new Error(JSON.stringify(infoErreur));
+    throw new Error(JSON.stringify({ erreur, id, code }));
   }
 
   async oublierTâche(id: string): Promise<void> {
