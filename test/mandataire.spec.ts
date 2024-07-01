@@ -40,7 +40,7 @@ class Mandataire extends Mandatairifiable {
 }
 
 describe("Mandataire Constellation", () => {
-  let mnd: MandataireConstellation<client.ClientConstellation>;
+  let mnd: MandataireConstellation<client.Constellation>;
   let fOublierConstellation: types.schémaFonctionOublier;
 
   const attendreNoms = new attente.AttendreRésultat<{
