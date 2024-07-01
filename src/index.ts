@@ -14,6 +14,6 @@ export type {
   MessageSuivrePourIpa,
   MessageActionPourIpa,
   MessageRetourPourIpa,
-} from "@/messages.js"
+} from "@/messages.js";
 
 export { version } from "@/version.js";
