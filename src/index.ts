@@ -2,6 +2,7 @@ export {
   MandataireConstellation,
   Mandatairifiable,
   générerMandataire,
+  type ErreurMandataire,
 } from "@/mandataire.js";
 export type {
   MessageDIpa,
