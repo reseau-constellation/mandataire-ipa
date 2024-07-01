@@ -41,9 +41,11 @@ class Callable extends Function {
   }
 }
 
+export type ErreurMandataire = { code: string; erreur: string; id?: string };
+
 type ÉvénementsMandataire = {
   message: (m: MessageDIpa) => void;
-  erreur: (e: { code: string; erreur: string; id?: string }) => void;
+  erreur: (e: ErreurMandataire) => void;
 };
 
 export abstract class Mandatairifiable extends Callable {
@@ -270,6 +272,12 @@ export abstract class Mandatairifiable extends Callable {
       }
     }
   }
+
+  // Fonctions publiques
+  suivreErreurs({f}: {f: (x: ErreurMandataire) => void}) {
+    this.événements.on("erreur", f);
+    return () => this.événements.off("erreur", f);
+  }
 }
 
 class Handler {
@@ -280,7 +288,7 @@ class Handler {
   }
 
   get(obj: Mandatairifiable, prop: string): unknown {
-    const directes = ["événements", "erreurs"];
+    const directes = ["suivreErreurs"];
     if (directes.includes(prop)) {
       return obj[prop as keyof Mandatairifiable];
     } else {
