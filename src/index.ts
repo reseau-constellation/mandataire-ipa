@@ -1,6 +1,6 @@
 export {
-  MandataireClientConstellation,
-  ClientMandatairifiable,
+  MandataireConstellation,
+  Mandatairifiable,
   générerMandataire,
 } from "@/mandataire.js";
 

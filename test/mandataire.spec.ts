@@ -1,11 +1,13 @@
+import type { MessageDIpa, MessagePourIpa } from "@/messages.js";
+
 import { client, types, mandataire } from "@constl/ipa";
 import { faisRien } from "@constl/utils-ipa";
 import { attente, sfip } from "@constl/utils-tests";
 import { isValidAddress } from "@orbitdb/core";
 import {
   générerMandataire,
-  ClientMandatairifiable,
-  MandataireClientConstellation,
+  Mandatairifiable,
+  MandataireConstellation,
 } from "@/mandataire.js";
 
 import { isNode, isElectronMain } from "wherearewe";
@@ -13,14 +15,13 @@ import { isNode, isElectronMain } from "wherearewe";
 import { expect, chai, chaiAsPromised } from "aegir/chai";
 chai.use(chaiAsPromised);
 
-class Mandataire extends ClientMandatairifiable {
+class Mandataire extends Mandatairifiable {
   gestionnaireClient: mandataire.gestionnaireClient.GestionnaireClient;
   constructor({ opts }: { opts: client.optsConstellation }) {
     super();
     this.gestionnaireClient =
       new mandataire.gestionnaireClient.GestionnaireClient(
-        (m: mandataire.messages.MessageDeTravailleur) =>
-          this.événements.emit("message", m),
+        (m: MessageDIpa) => this.événements.emit("message", m),
         (e: string, idRequète?: string) =>
           this.événements.emit("message", {
             type: "erreur",
@@ -31,13 +32,13 @@ class Mandataire extends ClientMandatairifiable {
       );
   }
 
-  envoyerMessage(message: mandataire.messages.MessagePourTravailleur): void {
+  envoyerMessageÀIpa(message: MessagePourIpa): void {
     this.gestionnaireClient.gérerMessage(message);
   }
 }
 
 describe("Mandataire Constellation", () => {
-  let mnd: MandataireClientConstellation<client.ClientConstellation>;
+  let mnd: MandataireConstellation<client.ClientConstellation>;
   let fOublierConstellation: types.schémaFonctionOublier;
 
   const attendreNoms = new attente.AttendreRésultat<{
