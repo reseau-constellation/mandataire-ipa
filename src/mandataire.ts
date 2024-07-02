@@ -291,7 +291,7 @@ class Handler {
   get(obj: Mandatairifiable, prop: string): unknown {
     const directes = ["suivreErreurs"];
     if (directes.includes(prop)) {
-      return obj[prop as keyof Mandatairifiable];
+      return obj[prop as keyof Mandatairifiable].bind(obj);
     } else {
       const listeAtributs = [...this.listeAtributs, prop];
       const h = new Handler(listeAtributs);
