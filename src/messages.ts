@@ -25,6 +25,7 @@ export interface MessageActionDIpa {
 export interface MessageErreurDIpa {
   type: "erreur";
   id?: string;
+  codeErreur?: string;
   erreur: string;
 }
 
