@@ -40,10 +40,10 @@ importers:
         specifier: ^10.0.0
         version: 10.0.0
       '@typescript-eslint/eslint-plugin':
-        specifier: ^7.14.1
+        specifier: ^7.15.0
         version: 7.15.0(@typescript-eslint/parser@7.15.0(eslint@9.6.0)(typescript@5.5.3))(eslint@9.6.0)(typescript@5.5.3)
       '@typescript-eslint/parser':
-        specifier: ^7.14.1
+        specifier: ^7.15.0
         version: 7.15.0(eslint@9.6.0)(typescript@5.5.3)
       aegir:
         specifier: ^44.0.1
@@ -61,7 +61,7 @@ importers:
         specifier: ^31.1.0
         version: 31.1.0
       eslint:
-        specifier: ^9.5.0
+        specifier: ^9.6.0
         version: 9.6.0
       eslint-config-prettier:
         specifier: ^9.1.0
@@ -91,10 +91,10 @@ importers:
         specifier: ^2.1.0
         version: 2.1.0
       typescript:
-        specifier: ^5.5.2
+        specifier: ^5.5.3
         version: 5.5.3
       typescript-eslint:
-        specifier: ^7.14.1
+        specifier: ^7.15.0
         version: 7.15.0(eslint@9.6.0)(typescript@5.5.3)
       typescript-transform-paths:
         specifier: ^3.4.7
@@ -897,8 +897,8 @@ packages:
     resolution: {integrity: sha512-RidararWtpIouHRpInx3eZgzjUb+a/Dleh+a3ayiG+CCuKPVg1pZCuoOH4UNJN6XR9uy9HREG+i7D/O2+D5fkA==}
     engines: {node: '>=20'}
 
-  '@constl/mandataire@2.0.3':
-    resolution: {integrity: sha512-fQhJ+p28yG6hM3QY95/hjBab6NHEb1fL1Oh9Ufq7FPCx2Q+9FHJ9qVX6xHmB2VRvlO84AIMROCpniJE5H/Z5Lg==}
+  '@constl/mandataire@2.0.6':
+    resolution: {integrity: sha512-qoEXmMu2YCTzns1xWjBplXUaTvuG9ZaB9fkcdLuKQPXeh2u2IwbdPboxFt022ISzYaYK3k6fs6crpo1fWUjqJg==}
 
   '@constl/orbit-db-types@2.0.0':
     resolution: {integrity: sha512-7B6/s6yAesWbL6IsVCfAG66b1xa7P0e49qNUjvCFxOuk6T4f05xjmi5KOljRLUi05B6GV6uwhLPTj9brPr3Alg==}
@@ -1564,8 +1564,8 @@ packages:
   '@noble/ciphers@0.5.3':
     resolution: {integrity: sha512-B0+6IIHiqEs3BPMT0hcRmHvEj2QHOLu+uwt+tqDDeVd0oyVzh7BPrDcPjRnV1PV/5LaknXJJQvOuRGR0zQJz+w==}
 
-  '@noble/curves@1.4.1':
-    resolution: {integrity: sha512-YauqjToufM2CIOvRchuB8ZxbB2g2VbOvuv1HkiRkeOz0RTbcFhHaS/TV84MUWuMVjbJ5VfhQSlFS5RZDvAVQRA==}
+  '@noble/curves@1.4.2':
+    resolution: {integrity: sha512-TavHr8qycMChk8UwMld0ZDRvatedkzWfH8IiaeGCfymOP5i0hSCozz9vHOL0nkwk7HRMlFnAiKpS2jrUmSybcw==}
 
   '@noble/hashes@1.4.0':
     resolution: {integrity: sha512-V1JJ1WTRUqHHrOSh597hURcMqVKVGL/ea3kv0gSnEdsEZ0/+VyPghM1lMNGc00z7CIQorSvbKpuJkxvuHbvdbg==}
@@ -1602,8 +1602,8 @@ packages:
   '@octokit/openapi-types@22.2.0':
     resolution: {integrity: sha512-QBhVjcUa9W7Wwhm6DBFu6ZZ+1/t/oYxqc2tp81Pi41YNuJinbFRx8B133qVOrAaBbF7D/m0Et6f9/pZt9Rc+tg==}
 
-  '@octokit/plugin-paginate-rest@11.3.0':
-    resolution: {integrity: sha512-n4znWfRinnUQF6TPyxs7EctSAA3yVSP4qlJP2YgI3g9d4Ae2n5F3XDOjbUluKRxPU3rfsgpOboI4O4VtPc6Ilg==}
+  '@octokit/plugin-paginate-rest@11.3.3':
+    resolution: {integrity: sha512-o4WRoOJZlKqEEgj+i9CpcmnByvtzoUYC6I8PD2SA95M+BJ2x8h7oLcVOg9qcowWXBOdcTRsMZiwvM3EyLm9AfA==}
     engines: {node: '>= 18'}
     peerDependencies:
       '@octokit/core': '>=6'
@@ -1861,8 +1861,8 @@ packages:
     peerDependencies:
       semantic-release: '>=18.0.0'
 
-  '@semantic-release/github@10.0.6':
-    resolution: {integrity: sha512-sS4psqZacGTFEN49UQGqwFNG6Jyx2/RX1BhhDGn/2WoPbhAHislohOY05/5r+JoL4gJMWycfH7tEm1eGVutYeg==}
+  '@semantic-release/github@10.0.7':
+    resolution: {integrity: sha512-J7JiFvOu/8QKqFF5FDTk/k19Z/Jku4LdDof/+LsjaGgLOISJR7TL66q89c2YXV6Dh5Jw5VmiT4uK4q6SSfbQGA==}
     engines: {node: '>=20.8.1'}
     peerDependencies:
       semantic-release: '>=20.1.0'
@@ -3304,8 +3304,8 @@ packages:
     engines: {node: '>= 7.0.0'}
     hasBin: true
 
-  electron-to-chromium@1.4.815:
-    resolution: {integrity: sha512-OvpTT2ItpOXJL7IGcYakRjHCt8L5GrrN/wHCQsRB4PQa1X9fe+X9oen245mIId7s14xvArCGSTIq644yPUKKLg==}
+  electron-to-chromium@1.4.816:
+    resolution: {integrity: sha512-EKH5X5oqC6hLmiS7/vYtZHZFTNdhsYG5NVPRN6Yn0kQHNBlT59+xSM8HBy66P5fxWpKgZbPqb+diC64ng295Jw==}
 
   electron-window@0.8.1:
     resolution: {integrity: sha512-W1i9LfnZJozk3MXE8VgsL2E5wOUHSgyCvcg1H2vQQjj+gqhO9lVudgY3z3SF7LJAmi+0vy3CJkbMqsynWB49EA==}
@@ -5577,8 +5577,8 @@ packages:
   multiformats@13.1.0:
     resolution: {integrity: sha512-HzdtdBwxsIkzpeXzhQ5mAhhuxcHbjEHH+JQoxt7hG/2HGFjjwyolLo7hbaexcnhoEuV4e0TNJ8kkpMjiEYY4VQ==}
 
-  multiformats@13.1.1:
-    resolution: {integrity: sha512-JiptvwMmlxlzIlLLwhCi/srf/nk409UL0eUBr0kioRJq15hqqKyg68iftrBvhCRjR6Rw4fkNnSc4ZJXJDuta/Q==}
+  multiformats@13.1.3:
+    resolution: {integrity: sha512-CZPi9lFZCM/+7oRolWYsvalsyWQGFo+GpdaTmjxXXomC+nP/W1Rnxb9sUgjvmNmRZ5bOPqRAl4nuK+Ydw/4tGw==}
 
   multiformats@9.9.0:
     resolution: {integrity: sha512-HoMUjhH9T8DDBNT+6xzkrd9ga/XiBI4xLr58LJACwK6G3HTOPeMz4nB4KJs33L2BelrIJa7P0VuNaVF3hMYfjg==}
@@ -6376,8 +6376,8 @@ packages:
     resolution: {integrity: sha512-pMpnA0qRdFp32b1sJl1wOJNxZLQ2cbQx+k6tjNtZ8CpvVhNqEPRgivZ2WOUev2YMajecdH7ctUPDvEe87nariQ==}
     engines: {node: '>=6.0.0'}
 
-  qs@6.12.1:
-    resolution: {integrity: sha512-zWmv4RSuB9r2mYQw3zxQuHWeU+42aKi1wWig/j4ele4ygELZ7PEO6MM7rim9oAQH2A5MWfsAVf/jPvTPgCbvUQ==}
+  qs@6.12.2:
+    resolution: {integrity: sha512-x+NLUpx9SYrcwXtX7ob1gnkSems4i/mGZX5SlYxwIau6RrUSODO89TR/XDGGpn5RPWSYIB+aSfuSlV5+CmbTBg==}
     engines: {node: '>=0.6'}
 
   querystring@0.2.1:
@@ -8847,7 +8847,7 @@ snapshots:
       '@libp2p/interface': 1.5.0
       '@libp2p/peer-id': 4.1.4
       '@noble/ciphers': 0.4.1
-      '@noble/curves': 1.4.1
+      '@noble/curves': 1.4.2
       '@noble/hashes': 1.4.0
       it-byte-stream: 1.0.12
       it-length-prefixed: 9.0.4
@@ -8868,7 +8868,7 @@ snapshots:
       '@libp2p/interface': 1.5.0
       '@libp2p/peer-id': 4.1.4
       '@noble/ciphers': 0.5.3
-      '@noble/curves': 1.4.1
+      '@noble/curves': 1.4.2
       '@noble/hashes': 1.4.0
       it-length-prefixed: 9.0.4
       it-length-prefixed-stream: 1.1.8
@@ -8923,7 +8923,7 @@ snapshots:
       '@chainsafe/libp2p-yamux': 6.0.2
       '@chriscdn/promise-semaphore': 2.0.9
       '@constl/bohr-db': 1.1.0(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0))
-      '@constl/mandataire': 2.0.3
+      '@constl/mandataire': 2.0.6
       '@constl/utils-ipa': 1.0.1
       '@helia/block-brokers': 1.0.0
       '@helia/unixfs': 3.0.6
@@ -8987,7 +8987,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@constl/mandataire@2.0.3':
+  '@constl/mandataire@2.0.6':
     dependencies:
       events: 3.3.0
       uuid: 10.0.0
@@ -9540,7 +9540,7 @@ snapshots:
   '@libp2p/crypto@2.0.8':
     dependencies:
       '@libp2p/interface': 0.1.6
-      '@noble/curves': 1.4.1
+      '@noble/curves': 1.4.2
       '@noble/hashes': 1.4.0
       multiformats: 12.1.3
       node-forge: 1.3.1
@@ -9551,9 +9551,9 @@ snapshots:
   '@libp2p/crypto@3.0.4':
     dependencies:
       '@libp2p/interface': 1.5.0
-      '@noble/curves': 1.4.1
+      '@noble/curves': 1.4.2
       '@noble/hashes': 1.4.0
-      multiformats: 13.1.1
+      multiformats: 13.1.3
       node-forge: 1.3.1
       protons-runtime: 5.4.0
       uint8arraylist: 2.4.8
@@ -9562,10 +9562,10 @@ snapshots:
   '@libp2p/crypto@4.1.4':
     dependencies:
       '@libp2p/interface': 1.5.0
-      '@noble/curves': 1.4.1
+      '@noble/curves': 1.4.2
       '@noble/hashes': 1.4.0
       asn1js: 3.0.5
-      multiformats: 13.1.1
+      multiformats: 13.1.0
       protons-runtime: 5.4.0
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
@@ -9678,7 +9678,7 @@ snapshots:
       '@multiformats/multiaddr': 12.3.0
       it-pushable: 3.2.3
       it-stream-types: 2.0.1
-      multiformats: 13.1.1
+      multiformats: 13.1.0
       progress-events: 1.0.0
       uint8arraylist: 2.4.8
 
@@ -9756,7 +9756,7 @@ snapshots:
       '@multiformats/multiaddr': 12.3.0
       debug: 4.3.5
       interface-datastore: 8.2.11
-      multiformats: 13.1.1
+      multiformats: 13.1.0
     transitivePeerDependencies:
       - supports-color
 
@@ -9824,7 +9824,7 @@ snapshots:
   '@libp2p/peer-id@4.1.4':
     dependencies:
       '@libp2p/interface': 1.5.0
-      multiformats: 13.1.1
+      multiformats: 13.1.0
       uint8arrays: 5.1.0
 
   '@libp2p/peer-record@7.0.20':
@@ -9851,7 +9851,7 @@ snapshots:
       interface-datastore: 8.2.11
       it-all: 3.0.6
       mortice: 3.0.4
-      multiformats: 13.1.1
+      multiformats: 13.1.3
       protons-runtime: 5.4.0
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
@@ -10101,7 +10101,7 @@ snapshots:
     dependencies:
       '@chainsafe/is-ip': 2.0.2
       '@multiformats/multiaddr': 12.3.0
-      multiformats: 13.1.1
+      multiformats: 13.1.0
 
   '@multiformats/multiaddr-to-uri@10.1.0':
     dependencies:
@@ -10113,7 +10113,7 @@ snapshots:
       '@chainsafe/netmask': 2.0.0
       '@libp2p/interface': 1.5.0
       '@multiformats/dns': 1.0.6
-      multiformats: 13.1.1
+      multiformats: 13.1.0
       uint8-varint: 2.0.4
       uint8arrays: 5.1.0
 
@@ -10126,7 +10126,7 @@ snapshots:
 
   '@noble/ciphers@0.5.3': {}
 
-  '@noble/curves@1.4.1':
+  '@noble/curves@1.4.2':
     dependencies:
       '@noble/hashes': 1.4.0
 
@@ -10169,7 +10169,7 @@ snapshots:
 
   '@octokit/openapi-types@22.2.0': {}
 
-  '@octokit/plugin-paginate-rest@11.3.0(@octokit/core@6.1.2)':
+  '@octokit/plugin-paginate-rest@11.3.3(@octokit/core@6.1.2)':
     dependencies:
       '@octokit/core': 6.1.2
       '@octokit/types': 13.5.0
@@ -10659,10 +10659,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@semantic-release/github@10.0.6(semantic-release@24.0.0(typescript@5.5.3))':
+  '@semantic-release/github@10.0.7(semantic-release@24.0.0(typescript@5.5.3))':
     dependencies:
       '@octokit/core': 6.1.2
-      '@octokit/plugin-paginate-rest': 11.3.0(@octokit/core@6.1.2)
+      '@octokit/plugin-paginate-rest': 11.3.3(@octokit/core@6.1.2)
       '@octokit/plugin-retry': 7.1.1(@octokit/core@6.1.2)
       '@octokit/plugin-throttling': 9.3.0(@octokit/core@6.1.2)
       '@semantic-release/error': 4.0.0
@@ -11185,7 +11185,7 @@ snapshots:
       '@semantic-release/changelog': 6.0.3(semantic-release@24.0.0(typescript@5.5.3))
       '@semantic-release/commit-analyzer': 13.0.0(semantic-release@24.0.0(typescript@5.5.3))
       '@semantic-release/git': 10.0.1(semantic-release@24.0.0(typescript@5.5.3))
-      '@semantic-release/github': 10.0.6(semantic-release@24.0.0(typescript@5.5.3))
+      '@semantic-release/github': 10.0.7(semantic-release@24.0.0(typescript@5.5.3))
       '@semantic-release/npm': 12.0.1(semantic-release@24.0.0(typescript@5.5.3))
       '@semantic-release/release-notes-generator': 14.0.1(semantic-release@24.0.0(typescript@5.5.3))
       '@types/chai': 4.3.16
@@ -11599,7 +11599,7 @@ snapshots:
       it-filter: 3.1.1
       it-merge: 3.0.5
       it-pushable: 3.2.3
-      multiformats: 13.1.1
+      multiformats: 13.1.3
     transitivePeerDependencies:
       - supports-color
 
@@ -11699,7 +11699,7 @@ snapshots:
   browserslist@4.23.1:
     dependencies:
       caniuse-lite: 1.0.30001639
-      electron-to-chromium: 1.4.815
+      electron-to-chromium: 1.4.816
       node-releases: 2.0.14
       update-browserslist-db: 1.0.16(browserslist@4.23.1)
 
@@ -12519,7 +12519,7 @@ snapshots:
       which: 2.0.2
       yargs: 16.2.0
 
-  electron-to-chromium@1.4.815: {}
+  electron-to-chromium@1.4.816: {}
 
   electron-window@0.8.1:
     dependencies:
@@ -12775,7 +12775,7 @@ snapshots:
       eslint-plugin-jsdoc: 48.5.0(eslint@8.57.0)
       eslint-plugin-no-only-tests: 3.1.0
       eslint-plugin-node: 11.1.0(eslint@8.57.0)
-      eslint-plugin-promise: 6.4.0(eslint@8.57.0)
+      eslint-plugin-promise: 6.4.0(eslint@9.6.0)
     optionalDependencies:
       typescript: 5.5.3
     transitivePeerDependencies:
@@ -12792,7 +12792,7 @@ snapshots:
       eslint: 8.57.0
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.15.0(eslint@9.6.0)(typescript@5.5.3))(eslint@9.6.0)
       eslint-plugin-n: 16.6.2(eslint@9.6.0)
-      eslint-plugin-promise: 6.4.0(eslint@8.57.0)
+      eslint-plugin-promise: 6.4.0(eslint@9.6.0)
       typescript: 5.5.3
     transitivePeerDependencies:
       - supports-color
@@ -12806,7 +12806,7 @@ snapshots:
       eslint: 8.57.0
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.15.0(eslint@9.6.0)(typescript@5.5.3))(eslint@9.6.0)
       eslint-plugin-n: 16.6.2(eslint@9.6.0)
-      eslint-plugin-promise: 6.4.0(eslint@8.57.0)
+      eslint-plugin-promise: 6.4.0(eslint@9.6.0)
 
   eslint-etc@5.2.1(eslint@8.57.0)(typescript@5.5.3):
     dependencies:
@@ -12972,6 +12972,10 @@ snapshots:
   eslint-plugin-promise@6.4.0(eslint@8.57.0):
     dependencies:
       eslint: 8.57.0
+
+  eslint-plugin-promise@6.4.0(eslint@9.6.0):
+    dependencies:
+      eslint: 9.6.0
 
   eslint-scope@5.1.1:
     dependencies:
@@ -13921,7 +13925,7 @@ snapshots:
   interface-blockstore@5.2.10:
     dependencies:
       interface-store: 5.1.8
-      multiformats: 13.1.1
+      multiformats: 13.1.0
 
   interface-datastore@8.2.11:
     dependencies:
@@ -14718,7 +14722,7 @@ snapshots:
       it-merge: 3.0.5
       it-parallel: 3.0.8
       merge-options: 3.0.4
-      multiformats: 13.1.1
+      multiformats: 13.1.3
       p-defer: 4.0.1
       race-event: 1.3.0
       race-signal: 1.0.2
@@ -15673,7 +15677,7 @@ snapshots:
 
   multiformats@13.1.0: {}
 
-  multiformats@13.1.1: {}
+  multiformats@13.1.3: {}
 
   multiformats@9.9.0: {}
 
@@ -16460,7 +16464,7 @@ snapshots:
 
   pvutils@1.1.3: {}
 
-  qs@6.12.1:
+  qs@6.12.2:
     dependencies:
       side-channel: 1.0.6
 
@@ -16927,7 +16931,7 @@ snapshots:
     dependencies:
       '@semantic-release/commit-analyzer': 13.0.0(semantic-release@24.0.0(typescript@5.5.3))
       '@semantic-release/error': 4.0.0
-      '@semantic-release/github': 10.0.6(semantic-release@24.0.0(typescript@5.5.3))
+      '@semantic-release/github': 10.0.7(semantic-release@24.0.0(typescript@5.5.3))
       '@semantic-release/npm': 12.0.1(semantic-release@24.0.0(typescript@5.5.3))
       '@semantic-release/release-notes-generator': 14.0.1(semantic-release@24.0.0(typescript@5.5.3))
       aggregate-error: 5.0.0
@@ -17783,7 +17787,7 @@ snapshots:
   url@0.11.3:
     dependencies:
       punycode: 1.4.1
-      qs: 6.12.1
+      qs: 6.12.2
 
   utf8-byte-length@1.0.5: {}
 
