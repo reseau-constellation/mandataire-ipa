@@ -24,11 +24,20 @@ class Mandataire extends Mandatairifiable {
         (m: MessageDIpa) => {
           this.recevoirMessageDIpa(m);
         },
-        (e: string, idRequète?: string) =>
+        ({
+          erreur,
+          idRequète,
+          code,
+        }: {
+          erreur: string;
+          idRequète?: string;
+          code?: string;
+        }) =>
           this.recevoirMessageDIpa({
             type: "erreur",
-            erreur: e,
+            erreur,
             id: idRequète,
+            codeErreur: code,
           }),
         opts,
       );

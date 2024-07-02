@@ -32,7 +32,7 @@
     "uuid": "^10.0.0"
   },
   "devDependencies": {
-    "@constl/ipa": "^1.0.30",
+    "@constl/ipa": "^1.0.31",
     "@constl/orbit-db-types": "^2.0.0",
     "@constl/utils-ipa": "^1.0.1",
     "@constl/utils-tests": "^1.2.7",
