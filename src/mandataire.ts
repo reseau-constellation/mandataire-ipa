@@ -231,8 +231,11 @@ export abstract class Mandatairifiable extends Callable {
     id?: string;
   }): void {
     // Si l'IPA n'a pas bien été initialisée, toutes les autres erreurs sont pas très importantes
-    if (this.dernièreErreur?.code !== ERREUR_INIT_IPA && this.dernièreErreur?.code !== ERREUR_INIT_IPA_DÉJÀ_LANCÉ) {
-      this.dernièreErreur = { erreur, id, code }
+    if (
+      this.dernièreErreur?.code !== ERREUR_INIT_IPA &&
+      this.dernièreErreur?.code !== ERREUR_INIT_IPA_DÉJÀ_LANCÉ
+    ) {
+      this.dernièreErreur = { erreur, id, code };
     }
     this.événements.emit("erreur", this.dernièreErreur);
     throw new Error(JSON.stringify(this.dernièreErreur));
