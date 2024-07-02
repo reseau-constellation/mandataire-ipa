@@ -79,7 +79,7 @@ describe("Mandataire Constellation", () => {
       await sfip1.stop();
       if (isNode || isElectronMain) {
         const rimraf = await import("rimraf");
-        rimraf.sync(dossierTempo);
+        if (dossierTempo) rimraf.sync(dossierTempo);
       }
     };
   });

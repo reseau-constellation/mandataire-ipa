@@ -18,6 +18,8 @@ import {
   ERREUR_EXÉCUTION_IPA,
   ERREUR_FONCTION_MANQUANTE,
   ERREUR_FORMAT_ARGUMENTS,
+  ERREUR_INIT_IPA,
+  ERREUR_INIT_IPA_DÉJÀ_LANCÉ,
   ERREUR_MESSAGE_INCONNU,
   ERREUR_MULTIPLES_FONCTIONS,
   ERREUR_PAS_UNE_FONCTION,
@@ -44,11 +46,11 @@ class Callable extends Function {
 export type ErreurMandataire = { code: string; erreur: string; id?: string };
 
 type ÉvénementsMandataire = {
-  message: (m: MessageDIpa) => void;
   erreur: (e: ErreurMandataire) => void;
 };
 
 export abstract class Mandatairifiable extends Callable {
+  dernièreErreur?: ErreurMandataire;
   événements: TypedEmitter<ÉvénementsMandataire>;
   événementsInternes: TypedEmitter<{
     [id: string]: (
@@ -56,7 +58,6 @@ export abstract class Mandatairifiable extends Callable {
     ) => void;
   }>;
   tâches: { [key: string]: Tâche };
-  erreurs: { erreur: string; id?: string }[];
 
   constructor() {
     super();
@@ -69,11 +70,6 @@ export abstract class Mandatairifiable extends Callable {
     }>;
 
     this.tâches = {};
-    this.erreurs = [];
-
-    this.événements.on("message", (m) => {
-      this.recevoirMessageDIpa(m);
-    });
   }
 
   __call__(
@@ -176,7 +172,11 @@ export abstract class Mandatairifiable extends Callable {
     const retour = await lorsque(this.événementsInternes, id);
 
     if (retour.type === "erreur") {
-      this.erreur({ erreur: retour.erreur, id, code: ERREUR_EXÉCUTION_IPA });
+      this.erreur({
+        erreur: retour.erreur,
+        id,
+        code: retour.erreur || ERREUR_EXÉCUTION_IPA,
+      });
     }
 
     if (retour.type === "suivrePrêt") {
@@ -230,8 +230,12 @@ export abstract class Mandatairifiable extends Callable {
     code: string;
     id?: string;
   }): void {
-    this.événements.emit("erreur", { erreur, id, code });
-    throw new Error(JSON.stringify({ erreur, id, code }));
+    // Si l'IPA n'a pas bien été initialisée, toutes les autres erreurs sont pas très importantes
+    if (this.dernièreErreur?.code !== ERREUR_INIT_IPA && this.dernièreErreur?.code !== ERREUR_INIT_IPA_DÉJÀ_LANCÉ) {
+      this.dernièreErreur = { erreur, id, code }
+    }
+    this.événements.emit("erreur", this.dernièreErreur);
+    throw new Error(JSON.stringify(this.dernièreErreur));
   }
 
   async oublierTâche(id: string): Promise<void> {
@@ -239,8 +243,6 @@ export abstract class Mandatairifiable extends Callable {
     if (tâche) await tâche.fRetour("fOublier");
     delete this.tâches[id];
   }
-
-  async souleverErreur(): Promise<void> {}
 
   abstract envoyerMessageÀIpa(message: MessagePourIpa): void;
 
@@ -258,10 +260,13 @@ export abstract class Mandatairifiable extends Callable {
       case "suivrePrêt":
       case "erreur": {
         if (message.type === "erreur" && !message.id) {
-          this.erreur({ erreur: message.erreur, code: ERREUR_EXÉCUTION_IPA });
+          this.erreur({
+            erreur: message.erreur,
+            code: message.erreur || ERREUR_EXÉCUTION_IPA,
+          });
           break;
         }
-        this.événementsInternes.emit(message.id, message);
+        this.événementsInternes.emit(message.id!, message);
         break;
       }
       default: {
@@ -275,8 +280,9 @@ export abstract class Mandatairifiable extends Callable {
   }
 
   // Fonctions publiques
-  suivreErreurs({ f }: { f: (x: ErreurMandataire) => void }) {
+  suivreErreurs({ f }: { f: (x: ErreurMandataire | undefined) => void }) {
     this.événements.on("erreur", f);
+    f(this.dernièreErreur);
     return () => this.événements.off("erreur", f);
   }
 }
