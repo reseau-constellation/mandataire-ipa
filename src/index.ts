@@ -15,7 +15,7 @@ export type {
   MessageActionPourIpa,
   MessageRetourPourIpa,
 } from "@/messages.js";
-export type {
+export {
   ERREUR_INIT_IPA,
   ERREUR_INIT_IPA_DÉJÀ_LANCÉ,
   ERREUR_EXÉCUTION_IPA,
