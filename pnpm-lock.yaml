@@ -17,7 +17,7 @@ importers:
     devDependencies:
       '@constl/ipa':
         specifier: ^1.0.31
-        version: 1.0.31(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0))
+        version: 1.0.32(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0))
       '@constl/orbit-db-types':
         specifier: ^2.0.0
         version: 2.0.0(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0))
@@ -893,12 +893,12 @@ packages:
   '@constl/bohr-db@1.1.0':
     resolution: {integrity: sha512-7XT+jASK69Y+41dYuDEjaatKfv6CSpthf+d7YT7gGcd6tyd6VNryb06pD9imTyARXFSieAeV72LpRYMnSzP1hg==}
 
-  '@constl/ipa@1.0.31':
-    resolution: {integrity: sha512-pcWI8mQhZTAT+Z1UFSlXKrBh5Yeud9wcloMMYetdFQij/8clUTgMMhFgQ78NNubSl2tyA7ANfHwtCBaHy0DfmQ==}
+  '@constl/ipa@1.0.32':
+    resolution: {integrity: sha512-3O3Rsktp6zdFzLqSOEjKNigDsEKSsmY4A9469hgQy+E5/sJYe/oH3W2yWIqsX9YI4Yrj048So1KDSEv5R1cFmQ==}
     engines: {node: '>=20'}
 
-  '@constl/mandataire@2.0.6':
-    resolution: {integrity: sha512-qoEXmMu2YCTzns1xWjBplXUaTvuG9ZaB9fkcdLuKQPXeh2u2IwbdPboxFt022ISzYaYK3k6fs6crpo1fWUjqJg==}
+  '@constl/mandataire@2.0.7':
+    resolution: {integrity: sha512-cw/uljyJeX2qaeIWHrW0iF0lhW2FyueSF2NIj9ZUB5qNSeiN9Hflk8nfvpHoPr50CdlGBB16HIlOZvzzgOud/g==}
 
   '@constl/orbit-db-types@2.0.0':
     resolution: {integrity: sha512-7B6/s6yAesWbL6IsVCfAG66b1xa7P0e49qNUjvCFxOuk6T4f05xjmi5KOljRLUi05B6GV6uwhLPTj9brPr3Alg==}
@@ -8916,19 +8916,19 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@constl/ipa@1.0.31(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0))':
+  '@constl/ipa@1.0.32(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0))':
     dependencies:
       '@chainsafe/libp2p-gossipsub': 11.2.1
       '@chainsafe/libp2p-noise': 15.1.0
       '@chainsafe/libp2p-yamux': 6.0.2
       '@chriscdn/promise-semaphore': 2.0.9
       '@constl/bohr-db': 1.1.0(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0))
-      '@constl/mandataire': 2.0.6
+      '@constl/mandataire': 2.0.7
       '@constl/utils-ipa': 1.0.1
       '@helia/block-brokers': 1.0.0
       '@helia/unixfs': 3.0.6
       '@ipld/dag-cbor': 9.2.1
-      '@lassi-js/kili': 0.3.14(@constl/ipa@1.0.31(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0)))
+      '@lassi-js/kili': 0.3.14(@constl/ipa@1.0.32(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0)))
       '@libp2p/autonat': 1.1.0
       '@libp2p/bootstrap': 10.1.0
       '@libp2p/circuit-relay-v2': 1.1.0
@@ -8957,7 +8957,7 @@ snapshots:
       crypto-js: 4.2.0
       deep-equal: 2.2.3
       deepcopy: 2.1.0
-      ennikkai: 2.3.2(@constl/ipa@1.0.31(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0)))
+      ennikkai: 2.3.2(@constl/ipa@1.0.32(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0)))
       env-paths: 3.0.0
       events: 3.3.0
       file-saver: 2.0.5
@@ -8987,7 +8987,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@constl/mandataire@2.0.6':
+  '@constl/mandataire@2.0.7':
     dependencies:
       events: 3.3.0
       uuid: 10.0.0
@@ -9482,9 +9482,9 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  '@lassi-js/kili@0.3.14(@constl/ipa@1.0.31(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0)))':
+  '@lassi-js/kili@0.3.14(@constl/ipa@1.0.32(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0)))':
     dependencies:
-      '@constl/ipa': 1.0.31(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0))
+      '@constl/ipa': 1.0.32(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0))
       '@constl/utils-ipa': 1.0.1
       '@orbitdb/core': 2.2.0
       deepcopy: 2.1.0
@@ -12561,10 +12561,10 @@ snapshots:
     dependencies:
       once: 1.4.0
 
-  ennikkai@2.3.2(@constl/ipa@1.0.31(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0))):
+  ennikkai@2.3.2(@constl/ipa@1.0.32(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0))):
     dependencies:
-      '@constl/ipa': 1.0.31(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0))
-      '@lassi-js/kili': 0.3.14(@constl/ipa@1.0.31(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0)))
+      '@constl/ipa': 1.0.32(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0))
+      '@lassi-js/kili': 0.3.14(@constl/ipa@1.0.32(react-native@0.74.2(@babel/core@7.24.7)(@babel/preset-env@7.24.7(@babel/core@7.24.7))(react@18.2.0)))
       deepmerge: 4.3.1
       events: 3.3.0
 
@@ -12775,7 +12775,7 @@ snapshots:
       eslint-plugin-jsdoc: 48.5.0(eslint@8.57.0)
       eslint-plugin-no-only-tests: 3.1.0
       eslint-plugin-node: 11.1.0(eslint@8.57.0)
-      eslint-plugin-promise: 6.4.0(eslint@9.6.0)
+      eslint-plugin-promise: 6.4.0(eslint@8.57.0)
     optionalDependencies:
       typescript: 5.5.3
     transitivePeerDependencies:
@@ -12792,7 +12792,7 @@ snapshots:
       eslint: 8.57.0
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.15.0(eslint@9.6.0)(typescript@5.5.3))(eslint@9.6.0)
       eslint-plugin-n: 16.6.2(eslint@9.6.0)
-      eslint-plugin-promise: 6.4.0(eslint@9.6.0)
+      eslint-plugin-promise: 6.4.0(eslint@8.57.0)
       typescript: 5.5.3
     transitivePeerDependencies:
       - supports-color
@@ -12806,7 +12806,7 @@ snapshots:
       eslint: 8.57.0
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.15.0(eslint@9.6.0)(typescript@5.5.3))(eslint@9.6.0)
       eslint-plugin-n: 16.6.2(eslint@9.6.0)
-      eslint-plugin-promise: 6.4.0(eslint@9.6.0)
+      eslint-plugin-promise: 6.4.0(eslint@8.57.0)
 
   eslint-etc@5.2.1(eslint@8.57.0)(typescript@5.5.3):
     dependencies:
@@ -12972,10 +12972,6 @@ snapshots:
   eslint-plugin-promise@6.4.0(eslint@8.57.0):
     dependencies:
       eslint: 8.57.0
-
-  eslint-plugin-promise@6.4.0(eslint@9.6.0):
-    dependencies:
-      eslint: 9.6.0
 
   eslint-scope@5.1.1:
     dependencies:
