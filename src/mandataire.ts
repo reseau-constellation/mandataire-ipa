@@ -175,7 +175,7 @@ export abstract class Mandatairifiable extends Callable {
       this.erreur({
         erreur: retour.erreur,
         id,
-        code: retour.erreur || ERREUR_EXÉCUTION_IPA,
+        code: retour.codeErreur || ERREUR_EXÉCUTION_IPA,
       });
     }
 
