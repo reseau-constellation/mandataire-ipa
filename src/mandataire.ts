@@ -298,6 +298,8 @@ class Handler {
   }
 
   get(obj: Mandatairifiable, prop: string): unknown {
+    // Inscrire ici les fonctions publiques du mandataire qui ne
+    // doivent pas être envoyées à Constellation
     const directes = ["suivreErreurs"];
     if (directes.includes(prop)) {
       return obj[prop as keyof Mandatairifiable].bind(obj);

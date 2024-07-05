@@ -8,43 +8,35 @@ import {
   générerMandataire,
   Mandatairifiable,
   MandataireConstellation,
+  type ErreurMandataire,
 } from "@/mandataire.js";
-
 import { isNode, isElectronMain } from "wherearewe";
 
 import { expect, chai, chaiAsPromised } from "aegir/chai";
 chai.use(chaiAsPromised);
 
 class Mandataire extends Mandatairifiable {
-  gestionnaireClient: mandataire.gestionnaireClient.GestionnaireClient;
+  ipa: mandataire.EnveloppeIpa;
   constructor({ opts }: { opts: client.optsConstellation }) {
     super();
-    this.gestionnaireClient =
-      new mandataire.gestionnaireClient.GestionnaireClient(
-        (m: MessageDIpa) => {
-          this.recevoirMessageDIpa(m);
-        },
-        ({
-          erreur,
-          idRequète,
-          code,
-        }: {
-          erreur: string;
-          idRequète?: string;
-          code?: string;
-        }) =>
-          this.recevoirMessageDIpa({
-            type: "erreur",
-            erreur,
-            id: idRequète,
-            codeErreur: code,
-          }),
-        opts,
-      );
+    this.ipa = new mandataire.EnveloppeIpa(
+      (m: MessageDIpa) => {
+        this.recevoirMessageDIpa(m);
+      },
+      (e: ErreurMandataire) => {
+        this.recevoirMessageDIpa({
+          type: "erreur",
+          erreur: e.erreur,
+          codeErreur: e.code,
+          id: e.id,
+        });
+      },
+      opts,
+    );
   }
 
   envoyerMessageÀIpa(message: MessagePourIpa): void {
-    this.gestionnaireClient.gérerMessage(message);
+    this.ipa.gérerMessage(message);
   }
 }
 
