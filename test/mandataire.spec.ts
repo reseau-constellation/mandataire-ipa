@@ -218,8 +218,6 @@ describe("Mandataire Constellation", () => {
         f: faisRien,
         idCompte: "je ne suis pas un compte valide",
       }),
-    ).to.be.rejectedWith(
-      'Adresse "je ne suis pas un compte valide" non valide.',
-    );
+    ).to.be.rejected('Adresse "je ne suis pas un compte valide" non valide.');
   });
 });
