@@ -27,7 +27,7 @@ import {
 import { lorsque } from "./utils.js";
 
 interface Tâche {
-  id: string;
+  idRequête: string;
   fSuivre: types.schémaFonctionSuivi<unknown>;
   fRetour: (fonction: string, args?: unknown[]) => Promise<void>;
 }
@@ -43,7 +43,11 @@ class Callable extends Function {
   }
 }
 
-export type ErreurMandataire = { code: string; erreur: string; id?: string };
+export type ErreurMandataire = {
+  code: string;
+  erreur: string;
+  idRequête?: string;
+};
 
 type ÉvénementsMandataire = {
   erreur: (e: ErreurMandataire) => void;
@@ -84,20 +88,25 @@ export abstract class Mandatairifiable extends Callable {
         )} fut appelée avec arguments ${args}. 
       Toute fonction mandataire Constellation doit être appelée avec un seul argument en format d'objet (dictionnaire).`,
       });
-    const id = uuidv4();
+    const idRequête = uuidv4();
     const nomArgFonction = Object.entries(args).find(
       (x) => typeof x[1] === "function",
     )?.[0];
 
     if (nomArgFonction) {
-      return this.appelerFonctionSuivre(id, fonction, args, nomArgFonction);
+      return this.appelerFonctionSuivre(
+        idRequête,
+        fonction,
+        args,
+        nomArgFonction,
+      );
     } else {
-      return this.appelerFonctionAction(id, fonction, args);
+      return this.appelerFonctionAction(idRequête, fonction, args);
     }
   }
 
   async appelerFonctionSuivre(
-    id: string,
+    idRequête: string,
     fonction: string[],
     args: { [key: string]: unknown },
     nomArgFonction: string,
@@ -119,7 +128,7 @@ export abstract class Mandatairifiable extends Callable {
           nomArgFonction +
           " n'a été donnée pour " +
           fonction.join("."),
-        id,
+        idRequête,
       });
     }
     if (Object.keys(args).length > Object.keys(argsSansF).length + 1) {
@@ -130,19 +139,19 @@ export abstract class Mandatairifiable extends Callable {
           fonction.join(".") +
           " est une fonction : " +
           JSON.stringify(args),
-        id,
+        idRequête,
       });
     } else if (typeof f !== "function") {
       this.erreur({
         code: ERREUR_PAS_UNE_FONCTION,
         erreur: "Argument " + nomArgFonction + "n'est pas une fonction : ",
-        id,
+        idRequête,
       });
     }
 
     const message: MessageSuivrePourIpa = {
       type: "suivre",
-      id,
+      idRequête,
       fonction,
       args: argsSansF,
       nomArgFonction,
@@ -151,7 +160,7 @@ export abstract class Mandatairifiable extends Callable {
     const fRetour = async (fonction: string, args?: unknown[]) => {
       const messageRetour: MessageRetourPourIpa = {
         type: "retour",
-        id,
+        idRequête,
         fonction,
         args,
       };
@@ -159,17 +168,17 @@ export abstract class Mandatairifiable extends Callable {
     };
 
     const tâche: Tâche = {
-      id,
+      idRequête,
       fSuivre: f,
       fRetour,
     };
-    this.tâches[id] = tâche;
+    this.tâches[idRequête] = tâche;
 
     const fOublierTâche = async () => {
-      await this.oublierTâche(id);
+      await this.oublierTâche(idRequête);
     };
 
-    const lorsqueRetour = lorsque(this.événementsInternes, id);
+    const lorsqueRetour = lorsque(this.événementsInternes, idRequête);
 
     this.envoyerMessageÀIpa(message);
 
@@ -178,7 +187,7 @@ export abstract class Mandatairifiable extends Callable {
     if (retour.type === "erreur") {
       this.erreur({
         erreur: retour.erreur,
-        id,
+        idRequête,
         code: retour.codeErreur || ERREUR_EXÉCUTION_IPA,
       });
     }
@@ -192,7 +201,7 @@ export abstract class Mandatairifiable extends Callable {
           };
         for (const f of fonctions) {
           retour[f] = async (...args: unknown[]) => {
-            await this.tâches[id]?.fRetour(f, args);
+            await this.tâches[idRequête]?.fRetour(f, args);
           };
         }
         return retour;
@@ -202,18 +211,18 @@ export abstract class Mandatairifiable extends Callable {
   }
 
   async appelerFonctionAction<T>(
-    id: string,
+    idRequête: string,
     fonction: string[],
     args: { [key: string]: unknown },
   ): Promise<T> {
     const message: MessageActionPourIpa = {
       type: "action",
-      id,
+      idRequête,
       fonction,
       args: args,
     };
 
-    const lorsqueRetour = lorsque(this.événementsInternes, id);
+    const lorsqueRetour = lorsque(this.événementsInternes, idRequête);
 
     this.envoyerMessageÀIpa(message);
 
@@ -223,13 +232,13 @@ export abstract class Mandatairifiable extends Callable {
     } else if (retour.type === "erreur") {
       this.erreur({
         erreur: retour.erreur,
-        id,
+        idRequête,
         code: retour.codeErreur || ERREUR_EXÉCUTION_IPA,
       });
     } else {
       this.erreur({
         erreur: `Type de retour ${retour} non reconnu.`,
-        id,
+        idRequête,
         code: ERREUR_EXÉCUTION_IPA,
       });
     }
@@ -239,27 +248,27 @@ export abstract class Mandatairifiable extends Callable {
   erreur({
     erreur,
     code,
-    id,
+    idRequête,
   }: {
     erreur: string;
     code: string;
-    id?: string;
+    idRequête?: string;
   }): void {
     // Si l'IPA n'a pas bien été initialisée, toutes les autres erreurs sont pas très importantes
     if (
       this.dernièreErreur?.code !== ERREUR_INIT_IPA &&
       this.dernièreErreur?.code !== ERREUR_INIT_IPA_DÉJÀ_LANCÉ
     ) {
-      this.dernièreErreur = { erreur, id, code };
+      this.dernièreErreur = { erreur, idRequête, code };
     }
     this.événements.emit("erreur", this.dernièreErreur);
     throw new Error(JSON.stringify(this.dernièreErreur));
   }
 
-  async oublierTâche(id: string): Promise<void> {
-    const tâche = this.tâches[id];
+  async oublierTâche(idRequête: string): Promise<void> {
+    const tâche = this.tâches[idRequête];
     if (tâche) await tâche.fRetour("fOublier");
-    delete this.tâches[id];
+    delete this.tâches[idRequête];
   }
 
   abstract envoyerMessageÀIpa(message: MessagePourIpa): void;
@@ -268,30 +277,30 @@ export abstract class Mandatairifiable extends Callable {
     const { type } = message;
     switch (type) {
       case "suivre": {
-        const { id, données } = message;
-        if (!this.tâches[id]) return;
-        const { fSuivre } = this.tâches[id];
+        const { idRequête, données } = message;
+        if (!this.tâches[idRequête]) return;
+        const { fSuivre } = this.tâches[idRequête];
         fSuivre(données);
         break;
       }
       case "action":
       case "suivrePrêt":
       case "erreur": {
-        if (message.type === "erreur" && !message.id) {
+        if (message.type === "erreur" && !message.idRequête) {
           this.erreur({
             erreur: message.erreur,
             code: message.erreur || ERREUR_EXÉCUTION_IPA,
           });
           break;
         }
-        this.événementsInternes.emit(message.id!, message);
+        this.événementsInternes.emit(message.idRequête!, message);
         break;
       }
       default: {
         this.erreur({
           code: ERREUR_MESSAGE_INCONNU,
           erreur: `Type inconnu ${type} du message ${message}.`,
-          id: (message as MessageDIpa).id,
+          idRequête: (message as MessageDIpa).idRequête,
         });
       }
     }

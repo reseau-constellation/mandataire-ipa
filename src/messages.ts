@@ -6,25 +6,25 @@ export type MessageDIpa =
 
 export interface MessageSuivreDIpa {
   type: "suivre";
-  id: string;
+  idRequête: string;
   données: unknown;
 }
 
 export interface MessageSuivrePrêtDIpa {
   type: "suivrePrêt";
-  id: string;
+  idRequête: string;
   fonctions?: string[];
 }
 
 export interface MessageActionDIpa {
   type: "action";
-  id: string;
+  idRequête: string;
   résultat: unknown;
 }
 
 export interface MessageErreurDIpa {
   type: "erreur";
-  id?: string;
+  idRequête?: string;
   codeErreur?: string;
   erreur: string;
 }
@@ -36,7 +36,7 @@ export type MessagePourIpa =
 
 export interface MessageSuivrePourIpa {
   type: "suivre";
-  id: string;
+  idRequête: string;
   fonction: string[];
   args: { [key: string]: unknown };
   nomArgFonction: string;
@@ -44,14 +44,14 @@ export interface MessageSuivrePourIpa {
 
 export interface MessageActionPourIpa {
   type: "action";
-  id: string;
+  idRequête: string;
   fonction: string[];
   args: { [key: string]: unknown };
 }
 
 export interface MessageRetourPourIpa {
   type: "retour";
-  id: string;
+  idRequête: string;
   fonction: string;
   args?: unknown[];
 }
