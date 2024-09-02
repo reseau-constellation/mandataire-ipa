@@ -211,4 +211,15 @@ describe("Mandataire Constellation", () => {
       "doit être appelée avec un seul argument en format d'objet (dictionnaire)",
     );
   });
+
+  it("Erreur interne", async () => {
+    await expect(
+      mnd.profil.suivreNoms({
+        f: faisRien,
+        idCompte: "je ne suis pas un compte valide",
+      }),
+    ).to.be.rejectedWith(
+      'Adresse "je ne suis pas un compte valide" non valide.',
+    );
+  });
 });
