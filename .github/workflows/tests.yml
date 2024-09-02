@@ -26,7 +26,7 @@ jobs:
           cache: pnpm
 
       - name: Installer
-        run: pnpm install --lockfile=false
+        run: pnpm install
 
       - name: Vérifier les tests
         run: pnpm test:node
@@ -53,7 +53,7 @@ jobs:
           cache: pnpm
 
       - name: Installer
-        run: pnpm install --lockfile=false
+        run: pnpm install
 
       - name: Vérifier les tests
         run: pnpm test:navig
@@ -85,7 +85,7 @@ jobs:
           cache: pnpm
 
       - name: Installer
-        run: pnpm install --lockfile=false
+        run: pnpm install
 
       - name: Vérifier les tests
         # De cawa-93/vite-electron-builder
