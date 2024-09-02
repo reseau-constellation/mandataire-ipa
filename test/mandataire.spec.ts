@@ -212,12 +212,21 @@ describe("Mandataire Constellation", () => {
     );
   });
 
-  it("Erreur interne", async () => {
+  it("Erreur interne dans suivi", async () => {
     await expect(
       mnd.profil.suivreNoms({
         f: faisRien,
         idCompte: "je ne suis pas un compte valide",
       }),
-    ).to.be.rejected('Adresse "je ne suis pas un compte valide" non valide.');
+    ).to.be.rejectedWith("je ne suis pas un compte valide");
+  });
+
+  it("Erreur interne dans action", async () => {
+    await expect(
+      mnd.bds.ajouterMotsClefsBd({
+        idBd: "je ne suis pas une adresse bd valide",
+        idsMotsClefs: [],
+      }),
+    ).to.be.rejectedWith("accès.estAutorisé");
   });
 });

@@ -109,6 +109,8 @@ export abstract class Mandatairifiable extends Callable {
     const argsSansF = Object.fromEntries(
       Object.entries(args).filter((x) => typeof x[1] !== "function"),
     );
+
+    // Vérifier format paramètres
     if (f === undefined) {
       this.erreur({
         code: ERREUR_FONCTION_MANQUANTE,
@@ -167,9 +169,11 @@ export abstract class Mandatairifiable extends Callable {
       await this.oublierTâche(id);
     };
 
+    const lorsqueRetour = lorsque(this.événementsInternes, id);
+
     this.envoyerMessageÀIpa(message);
 
-    const retour = await lorsque(this.événementsInternes, id);
+    const retour = await lorsqueRetour;
 
     if (retour.type === "erreur") {
       this.erreur({
@@ -209,16 +213,27 @@ export abstract class Mandatairifiable extends Callable {
       args: args,
     };
 
-    const promesse = new Promise<T>((résoudre, rejeter) => {
-      lorsque(this.événementsInternes, id).then((retour) => {
-        if (retour.type === "erreur") rejeter(new Error(retour.erreur));
-        else if (retour.type === "action") résoudre(retour.résultat as T);
-      });
-    });
+    const lorsqueRetour = lorsque(this.événementsInternes, id);
 
     this.envoyerMessageÀIpa(message);
 
-    return promesse;
+    const retour = await lorsqueRetour;
+    if (retour.type === "action") {
+      return retour.résultat as T;
+    } else if (retour.type === "erreur") {
+      this.erreur({
+        erreur: retour.erreur,
+        id,
+        code: retour.codeErreur || ERREUR_EXÉCUTION_IPA,
+      });
+    } else {
+      this.erreur({
+        erreur: `Type de retour ${retour} non reconnu.`,
+        id,
+        code: ERREUR_EXÉCUTION_IPA,
+      });
+    }
+    throw new Error("On ne devrait jamais arriver ici.");
   }
 
   erreur({
