@@ -227,6 +227,6 @@ describe("Mandataire Constellation", () => {
         idBd: "je ne suis pas une adresse bd valide",
         idsMotsClefs: [],
       }),
-    ).to.be.rejectedWith("accès.estAutorisé");
+    ).to.be.rejectedWith("non valide");
   });
 });
