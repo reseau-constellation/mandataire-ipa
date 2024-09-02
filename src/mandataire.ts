@@ -261,8 +261,8 @@ export abstract class Mandatairifiable extends Callable {
     ) {
       this.dernièreErreur = { erreur, idRequête, code };
     }
-    this.événements.emit("erreur", this.dernièreErreur);
-    throw new Error(JSON.stringify(this.dernièreErreur));
+    this.événements.emit("erreur", { idRequête, ...this.dernièreErreur });
+    throw new Error(JSON.stringify({ idRequête, ...this.dernièreErreur }));
   }
 
   async oublierTâche(idRequête: string): Promise<void> {
