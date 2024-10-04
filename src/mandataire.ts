@@ -307,10 +307,16 @@ export abstract class Mandatairifiable extends Callable {
   }
 
   // Fonctions publiques
-  suivreErreurs({ f }: { f: (x: ErreurMandataire | undefined) => void }) {
+  suivreErreurs({
+    f,
+  }: {
+    f: (x: ErreurMandataire | undefined) => void;
+  }): types.schémaFonctionOublier {
     this.événements.on("erreur", f);
     f(this.dernièreErreur);
-    return () => this.événements.off("erreur", f);
+    return async () => {
+      this.événements.off("erreur", f);
+    };
   }
 }
 
