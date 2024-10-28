@@ -20,7 +20,7 @@ importers:
         version: 1.2.7(react-native@0.74.2(@babel/core@7.25.8)(@babel/preset-env@7.24.7(@babel/core@7.25.8))(react@18.2.0))
       '@constl/orbit-db-types':
         specifier: ^2.0.1
-        version: 2.0.5
+        version: 2.0.6
       '@constl/utils-ipa':
         specifier: ^1.0.3
         version: 1.0.3
@@ -1170,8 +1170,8 @@ packages:
   '@constl/mandataire@3.0.2':
     resolution: {integrity: sha512-Ijr9NHTMIIHi9jPuizPlKmPXfFZur5BDPAjykZe1IfnJNv5hPrh3juKutw0LgMfUqt0PQP53g4h7e3jex33pAg==}
 
-  '@constl/orbit-db-types@2.0.5':
-    resolution: {integrity: sha512-yWLiaPyPMkfena8s8NS7OTk8kkoMm0uMy7JE5LlomAmaLNNemMI6BeM8s3lAOaURlSzYQfZgVRez9U+G+F4CzA==}
+  '@constl/orbit-db-types@2.0.6':
+    resolution: {integrity: sha512-p23e3tEr9izE9zskwqdN66VhFWYrbhxTvJNalhWqKkXnSV/58gbtc+yFobLPClKEDNKtYAhYhO6spLiI+VpZEg==}
 
   '@constl/utils-ipa@1.0.3':
     resolution: {integrity: sha512-gWv7BhTXYactNBXPDlUol4EudIr1tsZC1/Gvqcp0Rb2SDqGLHiSURqyiXqj6xVtzPMlcyPHDkBmqsEf8cecWJg==}
@@ -9638,7 +9638,7 @@ snapshots:
       events: 3.3.0
       uuid: 10.0.0
 
-  '@constl/orbit-db-types@2.0.5': {}
+  '@constl/orbit-db-types@2.0.6': {}
 
   '@constl/utils-ipa@1.0.3':
     dependencies:
