@@ -59,7 +59,7 @@ importers:
         version: 3.12.1
       electron:
         specifier: ^33.2.0
-        version: 33.2.0
+        version: 33.2.1
       eslint:
         specifier: ^9.14.0
         version: 9.15.0
@@ -2045,11 +2045,11 @@ packages:
   '@types/node@20.17.6':
     resolution: {integrity: sha512-VEI7OdvK2wP7XHnsuXbAJnEpEkF6NjSN45QJlL4VGqZSXsnicpesdTWsg9RISeSdYd3yeRj/y3k5KGjUXYnFwQ==}
 
+  '@types/node@20.17.8':
+    resolution: {integrity: sha512-ahz2g6/oqbKalW9sPv6L2iRbhLnojxjYWspAqhjvqSWBgGebEJT5GvRmk0QXPj3sbC6rU0GTQjPLQkmR8CObvA==}
+
   '@types/node@22.10.0':
     resolution: {integrity: sha512-XC70cRZVElFHfIUB40FgZOBbgJYFKKMa5nb9lxcwYstFG/Mi+/Y0bGS+rs6Dmhmkpq4pnNiLiuZAbc02YCOnmA==}
-
-  '@types/node@22.9.1':
-    resolution: {integrity: sha512-p8Yy/8sw1caA8CdRIQBG5tiLHmxtQKObCijiAa9Ez+d4+PRffM4054xbju0msf+cvhJpnFEeNjxmVT/0ipktrg==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -3387,8 +3387,8 @@ packages:
   electron-window@0.8.1:
     resolution: {integrity: sha512-W1i9LfnZJozk3MXE8VgsL2E5wOUHSgyCvcg1H2vQQjj+gqhO9lVudgY3z3SF7LJAmi+0vy3CJkbMqsynWB49EA==}
 
-  electron@33.2.0:
-    resolution: {integrity: sha512-PVw1ICAQDPsnnsmpNFX/b1i/49h67pbSPxuIENd9K9WpGO1tsRaQt+K2bmXqTuoMJsbzIc75Ce8zqtuwBPqawA==}
+  electron@33.2.1:
+    resolution: {integrity: sha512-SG/nmSsK9Qg1p6wAW+ZfqU+AV8cmXMTIklUL18NnOKfZLlum4ZsDoVdmmmlL39ZmeCaq27dr7CgslRPahfoVJg==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -6901,8 +6901,9 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  shell-quote@1.8.1:
-    resolution: {integrity: sha512-6j1W9l1iAs/4xYBI1SYOVZyFcCis9b4KCLQ8fgAGG07QvzaRLVVRQvAy85yNmmZSjYjg4MWh4gNvlPujU/5LpA==}
+  shell-quote@1.8.2:
+    resolution: {integrity: sha512-AzqKpGKjrj7EM6rKVQEPpB288oCfnrEIuyoT9cyF4nmGa7V8Zk6f7RRqYisX8X9m+Q7bd632aZW4ky7EhbQztA==}
+    engines: {node: '>= 0.4'}
 
   shiki@0.14.7:
     resolution: {integrity: sha512-dNPAPrxSc87ua2sKJ3H5dQ/6ZaY8RNnaAqK+t0eG7p0Soi2ydiqbGOTaZCqaYvA/uZYfS1LJnemt3Q+mSfcPCg==}
@@ -10565,7 +10566,7 @@ snapshots:
       open: 6.4.0
       ora: 5.4.1
       semver: 7.6.3
-      shell-quote: 1.8.1
+      shell-quote: 1.8.2
       sudo-prompt: 9.2.1
     transitivePeerDependencies:
       - encoding
@@ -10898,7 +10899,7 @@ snapshots:
     dependencies:
       '@types/http-cache-semantics': 4.0.4
       '@types/keyv': 3.1.4
-      '@types/node': 20.17.6
+      '@types/node': 20.17.8
       '@types/responselike': 1.0.3
 
   '@types/chai-as-promised@7.1.8':
@@ -10921,7 +10922,7 @@ snapshots:
 
   '@types/dns-packet@5.6.5':
     dependencies:
-      '@types/node': 22.9.1
+      '@types/node': 22.10.0
 
   '@types/estree@1.0.6': {}
 
@@ -10943,7 +10944,7 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 20.17.6
+      '@types/node': 20.17.8
 
   '@types/lodash-es@4.17.12':
     dependencies:
@@ -10982,13 +10983,13 @@ snapshots:
     dependencies:
       undici-types: 6.19.8
 
+  '@types/node@20.17.8':
+    dependencies:
+      undici-types: 6.19.8
+
   '@types/node@22.10.0':
     dependencies:
       undici-types: 6.20.0
-
-  '@types/node@22.9.1':
-    dependencies:
-      undici-types: 6.19.8
 
   '@types/normalize-package-data@2.4.4': {}
 
@@ -10996,7 +10997,7 @@ snapshots:
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 20.17.6
+      '@types/node': 20.17.8
 
   '@types/retry@0.12.0': {}
 
@@ -11036,7 +11037,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 20.17.6
+      '@types/node': 20.17.8
     optional: true
 
   '@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.6.3))(eslint@8.57.1)(typescript@5.6.3)':
@@ -12681,10 +12682,10 @@ snapshots:
     dependencies:
       is-electron-renderer: 2.0.1
 
-  electron@33.2.0:
+  electron@33.2.1:
     dependencies:
       '@electron/get': 2.0.3
-      '@types/node': 20.17.6
+      '@types/node': 20.17.8
       extract-zip: 2.0.1
     transitivePeerDependencies:
       - supports-color
@@ -16577,7 +16578,7 @@ snapshots:
 
   react-devtools-core@5.3.2:
     dependencies:
-      shell-quote: 1.8.1
+      shell-quote: 1.8.2
       ws: 7.5.10
     transitivePeerDependencies:
       - bufferutil
@@ -17127,7 +17128,7 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  shell-quote@1.8.1: {}
+  shell-quote@1.8.2: {}
 
   shiki@0.14.7:
     dependencies:
