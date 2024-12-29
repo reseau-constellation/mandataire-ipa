@@ -17,7 +17,7 @@ importers:
     devDependencies:
       '@constl/ipa':
         specifier: ^1.3.5
-        version: 1.5.4(react-native@0.74.2(@babel/core@7.26.0)(@babel/preset-env@7.24.7(@babel/core@7.26.0))(react@18.2.0))
+        version: 1.5.5(react-native@0.74.2(@babel/core@7.26.0)(@babel/preset-env@7.24.7(@babel/core@7.26.0))(react@18.2.0))
       '@constl/orbit-db-types':
         specifier: ^2.0.6
         version: 2.0.6
@@ -914,8 +914,8 @@ packages:
   '@constl/bohr-db@1.2.1':
     resolution: {integrity: sha512-HMJyztz1hdQum7chNVY3Dso6ZkYUe35PV3JIVmL/9pvA/Hianz4FOw7EgubJGOUkMLi2aHHDLuayKx2RgHd7QA==}
 
-  '@constl/ipa@1.5.4':
-    resolution: {integrity: sha512-YqY/9tn2Hu2O3GOezhPNyajMHQfzuyRI66q9WeBCmpgNN26d/+cAS2RN65f1S7uVpdmn5qmrVRqoFnmFPE1gFQ==}
+  '@constl/ipa@1.5.5':
+    resolution: {integrity: sha512-v/nNCTxJPj1iGgfNWbZT0d+lLtTeUz68HEiQYQAuxbssdNQGkIZHLlhDcCTV+Lri4OdrBoSyMOE1UHOSz/B0dA==}
     engines: {node: '>=20'}
 
   '@constl/mandataire@3.0.3':
@@ -9159,7 +9159,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@constl/ipa@1.5.4(react-native@0.74.2(@babel/core@7.26.0)(@babel/preset-env@7.24.7(@babel/core@7.26.0))(react@18.2.0))':
+  '@constl/ipa@1.5.5(react-native@0.74.2(@babel/core@7.26.0)(@babel/preset-env@7.24.7(@babel/core@7.26.0))(react@18.2.0))':
     dependencies:
       '@chainsafe/libp2p-gossipsub': 14.1.0
       '@chainsafe/libp2p-noise': 16.0.0
@@ -9206,7 +9206,7 @@ snapshots:
       deep-equal: 2.2.3
       deepcopy: 2.1.0
       detect-browser: 5.3.0
-      ennikkai: 2.3.2(@constl/ipa@1.5.4(react-native@0.74.2(@babel/core@7.26.0)(@babel/preset-env@7.24.7(@babel/core@7.26.0))(react@18.2.0)))
+      ennikkai: 2.3.2(@constl/ipa@1.5.5(react-native@0.74.2(@babel/core@7.26.0)(@babel/preset-env@7.24.7(@babel/core@7.26.0))(react@18.2.0)))
       env-paths: 3.0.0
       events: 3.3.0
       file-saver: 2.0.5
@@ -9806,9 +9806,9 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@lassi-js/kili@0.3.16(@constl/ipa@1.5.4(react-native@0.74.2(@babel/core@7.26.0)(@babel/preset-env@7.24.7(@babel/core@7.26.0))(react@18.2.0)))':
+  '@lassi-js/kili@0.3.16(@constl/ipa@1.5.5(react-native@0.74.2(@babel/core@7.26.0)(@babel/preset-env@7.24.7(@babel/core@7.26.0))(react@18.2.0)))':
     dependencies:
-      '@constl/ipa': 1.5.4(react-native@0.74.2(@babel/core@7.26.0)(@babel/preset-env@7.24.7(@babel/core@7.26.0))(react@18.2.0))
+      '@constl/ipa': 1.5.5(react-native@0.74.2(@babel/core@7.26.0)(@babel/preset-env@7.24.7(@babel/core@7.26.0))(react@18.2.0))
       '@constl/utils-ipa': 1.0.4
       '@orbitdb/core': 2.4.3
       deepcopy: 2.1.0
@@ -13092,10 +13092,10 @@ snapshots:
     dependencies:
       once: 1.4.0
 
-  ennikkai@2.3.2(@constl/ipa@1.5.4(react-native@0.74.2(@babel/core@7.26.0)(@babel/preset-env@7.24.7(@babel/core@7.26.0))(react@18.2.0))):
+  ennikkai@2.3.2(@constl/ipa@1.5.5(react-native@0.74.2(@babel/core@7.26.0)(@babel/preset-env@7.24.7(@babel/core@7.26.0))(react@18.2.0))):
     dependencies:
-      '@constl/ipa': 1.5.4(react-native@0.74.2(@babel/core@7.26.0)(@babel/preset-env@7.24.7(@babel/core@7.26.0))(react@18.2.0))
-      '@lassi-js/kili': 0.3.16(@constl/ipa@1.5.4(react-native@0.74.2(@babel/core@7.26.0)(@babel/preset-env@7.24.7(@babel/core@7.26.0))(react@18.2.0)))
+      '@constl/ipa': 1.5.5(react-native@0.74.2(@babel/core@7.26.0)(@babel/preset-env@7.24.7(@babel/core@7.26.0))(react@18.2.0))
+      '@lassi-js/kili': 0.3.16(@constl/ipa@1.5.5(react-native@0.74.2(@babel/core@7.26.0)(@babel/preset-env@7.24.7(@babel/core@7.26.0))(react@18.2.0)))
       deepmerge: 4.3.1
       events: 3.3.0
 
@@ -13163,7 +13163,7 @@ snapshots:
       is-negative-zero: 2.0.3
       is-regex: 1.2.1
       is-shared-array-buffer: 1.0.4
-      is-string: 1.0.7
+      is-string: 1.1.1
       is-typed-array: 1.1.13
       is-weakref: 1.0.2
       object-inspect: 1.13.3
