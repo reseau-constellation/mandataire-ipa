@@ -22,6 +22,7 @@ jobs:
       - name: Préparation de Node.js
         uses: actions/setup-node@v4
         with:
+          node-version: 22
           cache: pnpm
 
       - name: Installer
@@ -31,7 +32,7 @@ jobs:
         run: pnpm test:node
 
       - name: Envoyer couverure à Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v4
 
   tests-navig:
     name: Tests sur navigateur
@@ -58,7 +59,7 @@ jobs:
         run: pnpm test:navig
 
       - name: Envoyer couverure à Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v4
 
   test-electron-principal:
     name: Tests sur Électron principal
@@ -95,6 +96,6 @@ jobs:
         run: pnpm run test:électron-principal
 
       - name: Envoyer couverure à Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
