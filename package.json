@@ -63,5 +63,21 @@
     "typescript-transform-paths": "^3.5.3",
     "url": "^0.11.4",
     "wherearewe": "^2.0.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@ipshipyard/node-datachannel",
+      "@localfirst/auth",
+      "@localfirst/crdx",
+      "@localfirst/crypto",
+      "@localfirst/shared",
+      "classic-level",
+      "core-js",
+      "electron",
+      "esbuild",
+      "iso-constants",
+      "msgpackr-extract",
+      "node-datachannel"
+    ]
   }
 }
