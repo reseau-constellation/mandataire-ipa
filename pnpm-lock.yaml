@@ -22,8 +22,8 @@ importers:
         specifier: ^2.0.6
         version: 2.0.6
       '@constl/utils-ipa':
-        specifier: ^1.0.4
-        version: 1.0.5
+        specifier: ^2.0.0
+        version: 2.0.1
       '@constl/utils-tests':
         specifier: ^1.6.7
         version: 1.6.15(react-native@0.74.2(@babel/core@7.26.10)(@babel/preset-env@7.24.7(@babel/core@7.26.10))(react@18.2.0))
@@ -874,6 +874,10 @@ packages:
 
   '@constl/utils-ipa@1.0.5':
     resolution: {integrity: sha512-br5uNxDQsFeVVe6WO2uE3cAF/WczOiJxXgE4yj7PlBEQ3NZp2qZqLyT3L3RofnSy4erm69GrUUjdOdUV1w4SUA==}
+    engines: {node: '>=20'}
+
+  '@constl/utils-ipa@2.0.1':
+    resolution: {integrity: sha512-KFIw7bZ8Bxs/vkmLa64u7MZIJFPVk1iNJ/WdwvbvvFrWcAggfuajeZrJrdVGmAPJipdbJ1CKl7AuKd3tXD1wsg==}
     engines: {node: '>=20'}
 
   '@constl/utils-tests@1.6.15':
@@ -9363,6 +9367,20 @@ snapshots:
   '@constl/orbit-db-types@2.0.6': {}
 
   '@constl/utils-ipa@1.0.5':
+    dependencies:
+      '@chriscdn/promise-semaphore': 2.0.10
+      browser-fs-access: 0.35.0
+      deep-equal: 2.2.3
+      events: 3.3.0
+      genversion: 3.2.0
+      geojson-validation: 1.0.2
+      jszip: 3.10.1
+      multiformats: 13.3.2
+      rimraf: 6.0.1
+      uint8arrays: 5.1.0
+      wherearewe: 2.0.1
+
+  '@constl/utils-ipa@2.0.1':
     dependencies:
       '@chriscdn/promise-semaphore': 2.0.10
       browser-fs-access: 0.35.0
