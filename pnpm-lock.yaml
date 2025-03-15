@@ -58,8 +58,8 @@ importers:
         specifier: ^3.12.1
         version: 3.12.1
       electron:
-        specifier: ^34.0.1
-        version: 34.3.3
+        specifier: ^35.0.0
+        version: 35.0.1
       eslint:
         specifier: ^9.19.0
         version: 9.22.0
@@ -2214,9 +2214,6 @@ packages:
   '@types/node@18.19.80':
     resolution: {integrity: sha512-kEWeMwMeIvxYkeg1gTc01awpwLbfMRZXdIhwRcakd/KlK53jmRC26LqcbIt7fnAQTu5GzlnWmzA3H6+l1u6xxQ==}
 
-  '@types/node@20.17.24':
-    resolution: {integrity: sha512-d7fGCyB96w9BnWQrOsJtpyiSaBcAYYr75bnK6ZRjDbql2cGLj/3GsL5OYmLPNq76l7Gf2q4Rv9J2o6h5CrD9sA==}
-
   '@types/node@22.13.10':
     resolution: {integrity: sha512-I6LPUvlRH+O6VRUqYOcMudhaIdUVWfsjnZavnsraHvpBwaEyMN29ry+0UVJhImYL16xsscu0aske3yA+uPOWfw==}
 
@@ -3616,8 +3613,8 @@ packages:
   electron-window@0.8.1:
     resolution: {integrity: sha512-W1i9LfnZJozk3MXE8VgsL2E5wOUHSgyCvcg1H2vQQjj+gqhO9lVudgY3z3SF7LJAmi+0vy3CJkbMqsynWB49EA==}
 
-  electron@34.3.3:
-    resolution: {integrity: sha512-7m1FiO1mwc1K/UqqnnkG7Ik/kAngDzmLfHwcl+xaWgCQ+Sts9rlEqzOh6g1GHhDqebrbs4bO/aU+NDi32fCciQ==}
+  electron@35.0.1:
+    resolution: {integrity: sha512-iQonj6lnPhqfqha2KXx6LzV1dnu6UPTCWK+b7f9Zvg828umGemi22DKbcJ3/q+Opn7iUVTWyqp9z1JQqkIi6OA==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -7881,9 +7878,6 @@ packages:
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
 
-  undici-types@6.19.8:
-    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
-
   undici-types@6.20.0:
     resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
@@ -11566,10 +11560,6 @@ snapshots:
     dependencies:
       undici-types: 5.26.5
 
-  '@types/node@20.17.24':
-    dependencies:
-      undici-types: 6.19.8
-
   '@types/node@22.13.10':
     dependencies:
       undici-types: 6.20.0
@@ -13392,10 +13382,10 @@ snapshots:
     dependencies:
       is-electron-renderer: 2.0.1
 
-  electron@34.3.3:
+  electron@35.0.1:
     dependencies:
       '@electron/get': 2.0.3
-      '@types/node': 20.17.24
+      '@types/node': 22.13.10
       extract-zip: 2.0.1
     transitivePeerDependencies:
       - supports-color
@@ -18663,8 +18653,6 @@ snapshots:
       which-boxed-primitive: 1.1.1
 
   undici-types@5.26.5: {}
-
-  undici-types@6.19.8: {}
 
   undici-types@6.20.0: {}
 
