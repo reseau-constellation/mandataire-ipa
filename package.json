@@ -35,7 +35,7 @@
   "devDependencies": {
     "@constl/ipa": "^1.5.6",
     "@constl/orbit-db-types": "^2.0.6",
-    "@constl/utils-ipa": "^1.0.4",
+    "@constl/utils-ipa": "^2.0.0",
     "@constl/utils-tests": "^1.6.7",
     "@eslint/js": "^9.19.0",
     "@orbitdb/core": "^2.4.3",
