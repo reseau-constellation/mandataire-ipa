@@ -9,7 +9,7 @@ on:
 jobs:
   tests-nodejs:
     name: Tests sur Node.js
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Ouvrir la branche
         uses: actions/checkout@v4
