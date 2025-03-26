@@ -59,7 +59,7 @@ importers:
         version: 3.12.1
       electron:
         specifier: ^35.0.0
-        version: 35.0.3
+        version: 35.1.0
       eslint:
         specifier: ^9.19.0
         version: 9.23.0
@@ -3747,8 +3747,8 @@ packages:
   electron-window@0.8.1:
     resolution: {integrity: sha512-W1i9LfnZJozk3MXE8VgsL2E5wOUHSgyCvcg1H2vQQjj+gqhO9lVudgY3z3SF7LJAmi+0vy3CJkbMqsynWB49EA==}
 
-  electron@35.0.3:
-    resolution: {integrity: sha512-kjQAYEWXSr2TyK19IZoF85dzFIBaYuX7Yp/C+34b5Y/jmI2z270CGie+RjmEGMMitsy0G8YJKftukhYMuWlK6g==}
+  electron@35.1.0:
+    resolution: {integrity: sha512-yHaKPlsgDgjkwsiXgJG5DAmr9BgD4wSxtDGL6aBmUaN7QTs6qppNgtGkjHsS/pXJb4ZZBIH4IpPAx9d59Epbeg==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -12028,7 +12028,7 @@ snapshots:
     dependencies:
       '@types/http-cache-semantics': 4.0.4
       '@types/keyv': 3.1.4
-      '@types/node': 22.13.10
+      '@types/node': 22.13.13
       '@types/responselike': 1.0.3
 
   '@types/chai-as-promised@7.1.8':
@@ -12051,7 +12051,7 @@ snapshots:
 
   '@types/dns-packet@5.6.5':
     dependencies:
-      '@types/node': 22.13.10
+      '@types/node': 22.13.13
 
   '@types/estree@1.0.6': {}
 
@@ -12073,7 +12073,7 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 22.13.10
+      '@types/node': 22.13.13
 
   '@types/mdast@4.0.4':
     dependencies:
@@ -12114,7 +12114,7 @@ snapshots:
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 22.13.10
+      '@types/node': 22.13.13
 
   '@types/retry@0.12.0': {}
 
@@ -12154,7 +12154,7 @@ snapshots:
 
   '@types/yauzl@2.10.3':
     dependencies:
-      '@types/node': 22.13.10
+      '@types/node': 22.13.13
     optional: true
 
   '@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@7.18.0(eslint@8.57.1)(typescript@5.8.2))(eslint@8.57.1)(typescript@5.8.2)':
@@ -13945,10 +13945,10 @@ snapshots:
     dependencies:
       is-electron-renderer: 2.0.1
 
-  electron@35.0.3:
+  electron@35.1.0:
     dependencies:
       '@electron/get': 2.0.3
-      '@types/node': 22.13.10
+      '@types/node': 22.13.13
       extract-zip: 2.0.1
     transitivePeerDependencies:
       - supports-color
