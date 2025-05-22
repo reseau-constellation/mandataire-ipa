@@ -2,7 +2,8 @@ export type MessageDIpa =
   | MessageSuivreDIpa
   | MessageSuivrePrêtDIpa
   | MessageActionDIpa
-  | MessageErreurDIpa;
+  | MessageErreurDIpa
+  | MessageConfirmationRéceptionRetourDIpa;
 
 export interface MessageSuivreDIpa {
   type: "suivre";
@@ -29,6 +30,12 @@ export interface MessageErreurDIpa {
   erreur: string;
 }
 
+export interface MessageConfirmationRéceptionRetourDIpa {
+  type: "confirmation";
+  idRequête: string;
+  idRetour: string;
+}
+
 export type MessagePourIpa =
   | MessageSuivrePourIpa
   | MessageActionPourIpa
@@ -52,6 +59,7 @@ export interface MessageActionPourIpa {
 export interface MessageRetourPourIpa {
   type: "retour";
   idRequête: string;
+  idRetour: string;
   fonction: string;
   args?: unknown[];
 }

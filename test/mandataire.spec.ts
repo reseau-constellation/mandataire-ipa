@@ -213,12 +213,13 @@ describe("Mandataire Constellation", () => {
   });
 
   it("Erreur interne dans suivi", async () => {
-    await expect(
-      mnd.profil.suivreNoms({
-        f: faisRien,
-        idCompte: "je ne suis pas un compte valide",
-      }),
-    ).to.be.rejectedWith("je ne suis pas un compte valide");
+    const fOublier = await mnd.profil.suivreNoms({
+      f: faisRien,
+      idCompte: "je ne suis pas un compte valide",
+    });
+    await expect(fOublier()).to.be.rejectedWith(
+      "je ne suis pas un compte valide",
+    );
   });
 
   it("Erreur interne dans action", async () => {

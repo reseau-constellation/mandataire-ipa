@@ -7,6 +7,7 @@ import { EventEmitter } from "events";
 import {
   MessageActionDIpa,
   MessageActionPourIpa,
+  MessageConfirmationRéceptionRetourDIpa,
   MessageDIpa,
   MessageErreurDIpa,
   MessagePourIpa,
@@ -58,7 +59,11 @@ export abstract class Mandatairifiable extends Callable {
   événements: TypedEmitter<ÉvénementsMandataire>;
   événementsInternes: TypedEmitter<{
     [id: string]: (
-      x: MessageActionDIpa | MessageSuivrePrêtDIpa | MessageErreurDIpa,
+      x:
+        | MessageActionDIpa
+        | MessageSuivrePrêtDIpa
+        | MessageErreurDIpa
+        | MessageConfirmationRéceptionRetourDIpa,
     ) => void;
   }>;
   tâches: { [key: string]: Tâche };
@@ -69,7 +74,11 @@ export abstract class Mandatairifiable extends Callable {
     this.événements = new EventEmitter() as TypedEmitter<ÉvénementsMandataire>;
     this.événementsInternes = new EventEmitter() as TypedEmitter<{
       [id: string]: (
-        x: MessageActionDIpa | MessageSuivrePrêtDIpa | MessageErreurDIpa,
+        x:
+          | MessageActionDIpa
+          | MessageSuivrePrêtDIpa
+          | MessageErreurDIpa
+          | MessageConfirmationRéceptionRetourDIpa,
       ) => void;
     }>;
 
@@ -158,13 +167,26 @@ export abstract class Mandatairifiable extends Callable {
     };
 
     const fRetour = async (fonction: string, args?: unknown[]) => {
+      const idRetour = uuidv4();
       const messageRetour: MessageRetourPourIpa = {
         type: "retour",
         idRequête,
         fonction,
+        idRetour,
         args,
       };
+
+      const lorsqueRetour = lorsque(this.événementsInternes, idRetour);
       this.envoyerMessageÀIpa(messageRetour);
+
+      const retour = await lorsqueRetour;
+      if (retour.type !== "confirmation") {
+        this.erreur({
+          erreur: `Type de retour ${retour} non reconnu.`,
+          idRequête,
+          code: ERREUR_EXÉCUTION_IPA,
+        });
+      }
     };
 
     const tâche: Tâche = {
@@ -280,7 +302,7 @@ export abstract class Mandatairifiable extends Callable {
         const { idRequête, données } = message;
         if (!this.tâches[idRequête]) return;
         const { fSuivre } = this.tâches[idRequête];
-        fSuivre(données);
+        await fSuivre(données);
         break;
       }
       case "action":
@@ -296,6 +318,10 @@ export abstract class Mandatairifiable extends Callable {
         this.événementsInternes.emit(message.idRequête!, message);
         break;
       }
+      case "confirmation":
+        // Important - on utiliser l'id du message de retour
+        this.événementsInternes.emit(message.idRetour, message);
+        break;
       default: {
         this.erreur({
           code: ERREUR_MESSAGE_INCONNU,
