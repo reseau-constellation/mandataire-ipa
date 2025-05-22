@@ -1,6 +1,13 @@
-import {TypedEmitter, type ListenerSignature, type DefaultListener} from "tiny-typed-emitter";
+import {
+  TypedEmitter,
+  type ListenerSignature,
+  type DefaultListener,
+} from "tiny-typed-emitter";
 
-export const lorsque = async <U extends keyof L, L extends ListenerSignature<L> = DefaultListener>(
+export const lorsque = async <
+  U extends keyof L,
+  L extends ListenerSignature<L> = DefaultListener,
+>(
   émetteur: TypedEmitter<L>,
   clef: U,
 ): Promise<Parameters<L[U]>[0]> => {
