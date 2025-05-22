@@ -1,10 +1,10 @@
-import TypedEmitter, { type EventMap } from "typed-emitter";
+import {TypedEmitter, type ListenerSignature, type DefaultListener} from "tiny-typed-emitter";
 
-export const lorsque = async <Events extends EventMap, E extends keyof Events>(
-  émetteur: TypedEmitter<Events>,
-  clef: E,
-): Promise<Parameters<Events[E]>[0]> => {
+export const lorsque = async <U extends keyof L, L extends ListenerSignature<L> = DefaultListener>(
+  émetteur: TypedEmitter<L>,
+  clef: U,
+): Promise<Parameters<L[U]>[0]> => {
   return new Promise((résoudre) => {
-    return émetteur.once(clef, résoudre as Events[E]);
+    return émetteur.once(clef, résoudre as L[U]);
   });
 };
