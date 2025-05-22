@@ -1,8 +1,7 @@
-import type TypedEmitter from "typed-emitter";
+import { TypedEmitter } from "tiny-typed-emitter";
 import type { types } from "@constl/ipa";
 
 import { v4 as uuidv4 } from "uuid";
-import { EventEmitter } from "events";
 
 import {
   MessageActionDIpa,
@@ -71,8 +70,8 @@ export abstract class Mandatairifiable extends Callable {
   constructor() {
     super();
 
-    this.événements = new EventEmitter() as TypedEmitter<ÉvénementsMandataire>;
-    this.événementsInternes = new EventEmitter() as TypedEmitter<{
+    this.événements = new TypedEmitter<ÉvénementsMandataire>();
+    this.événementsInternes = new TypedEmitter<{
       [id: string]: (
         x:
           | MessageActionDIpa
@@ -80,7 +79,7 @@ export abstract class Mandatairifiable extends Callable {
           | MessageErreurDIpa
           | MessageConfirmationRéceptionRetourDIpa,
       ) => void;
-    }>;
+    }>();
 
     this.tâches = {};
   }
