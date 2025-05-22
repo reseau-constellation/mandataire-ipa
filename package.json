@@ -1,6 +1,6 @@
 {
   "name": "@constl/mandataire",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "Un mandataire très léger pour le client Constellation.",
   "author": "Julien Jean Malard-Adam",
   "keywords": [
@@ -34,9 +34,9 @@
     "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "@constl/ipa": "^1.6.19",
+    "@constl/ipa": "^1.6.21",
     "@constl/orbit-db-types": "^2.0.6",
-    "@constl/utils-ipa": "^2.0.4",
+    "@constl/utils-ipa": "^2.0.6",
     "@constl/utils-tests": "^1.6.15",
     "@eslint/js": "^9.27.0",
     "@orbitdb/core": "^2.5.0",

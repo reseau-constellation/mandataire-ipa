@@ -19,14 +19,14 @@ importers:
         version: 11.1.0
     devDependencies:
       '@constl/ipa':
-        specifier: ^1.6.19
-        version: 1.6.19(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
+        specifier: ^1.6.21
+        version: 1.6.21(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
       '@constl/orbit-db-types':
         specifier: ^2.0.6
         version: 2.0.6
       '@constl/utils-ipa':
-        specifier: ^2.0.4
-        version: 2.0.4
+        specifier: ^2.0.6
+        version: 2.0.6
       '@constl/utils-tests':
         specifier: ^1.6.15
         version: 1.6.15(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
@@ -864,8 +864,8 @@ packages:
   '@chainsafe/netmask@2.0.0':
     resolution: {integrity: sha512-I3Z+6SWUoaljh3TBzCnCxjlUyN8tA+NAk5L6m9IxvCf1BENQTePzPMis97CoN/iMW1St3WN+AWCCRp+TTBRiDg==}
 
-  '@chriscdn/promise-semaphore@2.0.12':
-    resolution: {integrity: sha512-hgbaEg1n+q2ZKKBCrzjRK56pB+IDkj4tFHywz5aVq4sX+2nvyxmD/MuPO8ULe+xOpoCkS3djTliWnXUyGOi3Yg==}
+  '@chriscdn/promise-semaphore@3.0.1':
+    resolution: {integrity: sha512-fVlCnoYE4hDzpcYRPtmN7dmcpmd2zxyPWjyfjIKI9Y+gsI7rwZSkjtuwMi8HFtlkSmNh8L7Zr37hdqeL13sYrw==}
 
   '@colors/colors@1.5.0':
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
@@ -874,18 +874,18 @@ packages:
   '@constl/bohr-db@1.2.3':
     resolution: {integrity: sha512-IJXOqeMnJEOqD7DRNMowwPOY7bVKlTdQNu3DNn9zoSKj+fBzTXLzkxl4uRbKLu9vwWzjoXyxgvp2iw7vkt/amQ==}
 
-  '@constl/ipa@1.6.19':
-    resolution: {integrity: sha512-8Bvi4APGWK/xfS/lierU2/v3F0C9WN8TUI+UnpqZV1r9eIbtVOt1K2ha+AaXszVKEfHrBkf5n3W5VZdA0inpmg==}
+  '@constl/ipa@1.6.21':
+    resolution: {integrity: sha512-gAS79wIt65F6n5iZe+dKPYuzhb6Xx6IuVA0jcSMA+fQFHMXUbdFLyam17Og6IYtGNaDR4Rn3jAm6oXv1+Nfg9Q==}
     engines: {node: '>=20'}
 
-  '@constl/mandataire@3.0.3':
-    resolution: {integrity: sha512-J7zWtq2EOA46EIzAGjiOP/FVYvQrjvxXT7aLyKEA6chm6i/3kJnmv5pgYSF0rofGgzIyRUwsTLuzSB23DoZNyg==}
+  '@constl/mandataire@3.1.1':
+    resolution: {integrity: sha512-tt4YNQiauhFXAp8NWqkgjxTVpBXvOeCEDFTxhGDjyG1FJeHIP6uTuOw6+UrrV5cvUE9b+C2aBfgbd1UzRZfWcg==}
 
   '@constl/orbit-db-types@2.0.6':
     resolution: {integrity: sha512-p23e3tEr9izE9zskwqdN66VhFWYrbhxTvJNalhWqKkXnSV/58gbtc+yFobLPClKEDNKtYAhYhO6spLiI+VpZEg==}
 
-  '@constl/utils-ipa@2.0.4':
-    resolution: {integrity: sha512-Op6g67LkElx8RAaPtFOADmYrh1CgDSN8vd+Ymtw++MLHTgyCfyqOMwYEnEdFTt8z5u2HiyuXeEFVJuBR1lcc4Q==}
+  '@constl/utils-ipa@2.0.6':
+    resolution: {integrity: sha512-4XbDFuewVJD5dhATVfILEPqfef+QwIfYMjThC7f9zAFHUSbsarkm7WTI5wvQHLV4MLADzUmyh40MFE15+qPEyw==}
     engines: {node: '>=20'}
 
   '@constl/utils-tests@1.6.15':
@@ -1511,26 +1511,26 @@ packages:
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
 
-  '@helia/bitswap@2.1.1':
-    resolution: {integrity: sha512-hqWEV+fQ6ko1QT7Q+yZGY8vsQ9kleB2X9HP5Ho+HKnP3ZX97OhOtSXzRBpkbqvY1GSk2kgqOnh7QIDTcRqkTug==}
+  '@helia/bitswap@2.1.2':
+    resolution: {integrity: sha512-gleOYd5jJPA0jVkm/LKkfEh+Z/TQNviv4e8pCdPlD3V/Sg6q0htdO/ttlAlMyYGY6187fwsCP+fZkqWNao/h9Q==}
 
-  '@helia/block-brokers@4.2.1':
-    resolution: {integrity: sha512-Ndu728nzNoZJEYiIFbfDKhCviFnnBII20HueCn3R6cmUlPsSkpZ1NBkno6HRzewWGqBAvLV1rVd7ccx3b/zHIw==}
+  '@helia/block-brokers@4.2.2':
+    resolution: {integrity: sha512-2Iq5basphEn8RcRK+wMiSfy5EJWgjI69wKH8CB66dSyaiduV7etP8E69eP5oGv43ShPycel4Xnmb2mNl6WWp5w==}
 
   '@helia/delegated-routing-v1-http-api-client@4.2.5':
     resolution: {integrity: sha512-fFqVhs7a4TnpKQ1cZ4im3tj53v+8UZLFkQo85otl/GpbIVBmBoGbjkDHGPv4UdjJ2lmYM/cRdnHsYbfjuc5pwA==}
 
-  '@helia/interface@5.3.1':
-    resolution: {integrity: sha512-MDUIVUHwH2eMDy5msA/cnU+nonpWDgSdWK76lN6st8YFmRjxoDNW7E4L0hOajVzYavZDZWPeUbbgpTKjlK+2CQ==}
+  '@helia/interface@5.3.2':
+    resolution: {integrity: sha512-+NOQrBxsz6i0FOsz16OgTlGAcyQ+cSYGzd9VJE7cMMrrGo9IcDEKp5Kvh980Ajg1LJFgeqYyqmxefnPExUUsBg==}
 
-  '@helia/routers@3.1.1':
-    resolution: {integrity: sha512-7yLsaKBoTbfdwNVBM5Ys1w71ikADEYRbqXoGCaVDgIzVRrolT5eGq0H/mPT9SE6aJxM+MFHUrP2qWx2a0rAV/Q==}
+  '@helia/routers@3.1.2':
+    resolution: {integrity: sha512-Fq5mj7JkeDVHXUak+HJYIK7TGjKGErvWzyjjcOMNrCk0UyWCfLcw3iFwWWfkMOP+e8IN7bgPxXVxxyOir9iL+w==}
 
   '@helia/unixfs@4.0.3':
     resolution: {integrity: sha512-sbcnS64B6LCTHrGH6RPx2BuwLFjmVAoiX53RR/E0YCQMcHTDCF4bQ3I7P+7kzYkQLQkbLEekl7V2fnVOWxG7MA==}
 
-  '@helia/utils@1.3.1':
-    resolution: {integrity: sha512-EXkxXqUCsGD4ASZf8IAcxd5JBm5GDBGfarxmZhp1K6PYx1aU3vItuMpXLV7hDmFCBzLJsji8UBOZg1bjJC1ZkA==}
+  '@helia/utils@1.3.2':
+    resolution: {integrity: sha512-epMlRqLyJ95NDem4jc6kNRUlWkW5+HOwxvgJzOn70mMdXFkyYIOx24BpZurCFi+Cg6/k9vSfKsU5V1teWxYfRQ==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1555,12 +1555,12 @@ packages:
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
 
-  '@ipld/dag-cbor@9.2.3':
-    resolution: {integrity: sha512-x78CdVhtctIMBpwOnzbojsvDy6qNxdeR3RC2W+/fMo2sccqlYkPXbjpmghAVdKx/g0xfHYvSMU8cgCnYvLwRag==}
+  '@ipld/dag-cbor@9.2.4':
+    resolution: {integrity: sha512-GbDWYl2fdJgkYtIJN0HY9oO0o50d1nB4EQb7uYWKUd2ztxCjxiEW3PjwGG0nqUpN1G4Cug6LX8NzbA7fKT+zfA==}
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
 
-  '@ipld/dag-json@10.2.4':
-    resolution: {integrity: sha512-u1Pp4Tqz4r9GHGeLIJUJat5slasSxpBiBlL/i5pmGVEkCnQ1plrp5rQ5e+x3wZaPabxvsirQpfR76TPoGAiXiw==}
+  '@ipld/dag-json@10.2.5':
+    resolution: {integrity: sha512-Q4Fr3IBDEN8gkpgNefynJ4U/ZO5Kwr7WSUMBDbZx0c37t0+IwQCTM9yJh8l5L4SRFjm31MuHwniZ/kM+P7GQ3Q==}
     engines: {node: '>=16.0.0', npm: '>=7.0.0'}
 
   '@ipld/dag-pb@4.1.5':
@@ -3871,8 +3871,8 @@ packages:
     resolution: {integrity: sha512-rcOwbfvP1WTViVoUjcfZicVzjhjTuhSMntHh6mW3IrEiyE6mJyXvsToJUJGlGlw/2xU9P5whlWNGlIDVeCiT4A==}
     engines: {node: '>= 0.8'}
 
-  es-abstract@1.23.9:
-    resolution: {integrity: sha512-py07lI0wjxAC/DcfK1S6G7iANonniZwTISvdPzk9hzeH0IZIshbuuFxLIU96OyF89Yb9hiqWn8M/bY83KY5vzA==}
+  es-abstract@1.23.10:
+    resolution: {integrity: sha512-MtUbM072wlJNyeYAe0mhzrD+M6DIJa96CZAOBBrhDbgKnB4MApIKefcyAB1eOdYn8cUNZgvwBvEzdoAYsxgEIw==}
     engines: {node: '>= 0.4'}
 
   es-define-property@1.0.1:
@@ -4392,8 +4392,8 @@ packages:
   flow-enums-runtime@0.0.6:
     resolution: {integrity: sha512-3PYnM29RFXwvAN6Pc/scUfkI7RwhQ/xqyLUyPNlXUp9S40zI8nup9tUSrTLSVnWGBN38FNiGWbwZOB6uR4OGdw==}
 
-  flow-parser@0.271.0:
-    resolution: {integrity: sha512-o1GuBHfApKnqxoPEiZhsz5Gj8W+kn+xaKFPwjPafKN0a876FMRB6VXyRqPmzfHVPWHeWwGUEzYeV806SV9FzCQ==}
+  flow-parser@0.272.0:
+    resolution: {integrity: sha512-tm1arF6of/Kg/QL7MFOnBbBYXIRKUgF23L+BIX2tTKr5FrMv8ZcL/mewIw/aw4KBzZ+4zm05tzyjSJJXZwKqwg==}
     engines: {node: '>=0.4.0'}
 
   follow-redirects@1.15.9:
@@ -4733,8 +4733,8 @@ packages:
   helia@5.2.1:
     resolution: {integrity: sha512-H5oqxXV4uFae5eWRv5aopUyKfO7pxdT7sVNomw/ImZabkidz2BrHqsNy6JaZPIQTSUP9yBlkKK2Sq3tmHngYaQ==}
 
-  helia@5.4.1:
-    resolution: {integrity: sha512-doKPI/xD71xdN3RI3OTJaWBoKVz9/2oqdbYbCoI1L+4fY4JQn5+eeVnbqa5ft4U/ri5GibWh791ZMYkTrLxg7Q==}
+  helia@5.4.2:
+    resolution: {integrity: sha512-4jFBFE+dn+1UClCDbJBP+dA6OT9TrD+f8m5VIle7TCTAYTkDfR4mi0VtaWM4CWvrbDYwBk26xR9roYtXlG9oHw==}
 
   hermes-estree@0.19.1:
     resolution: {integrity: sha512-daLGV3Q2MKk8w4evNMKwS8zBE/rcpA800nu1Q5kM08IKijoSnPe9Uo1iIxzPKRkn95IxxsgBMPeYHt3VG4ej2g==}
@@ -9554,7 +9554,7 @@ snapshots:
     dependencies:
       '@chainsafe/is-ip': 2.1.0
 
-  '@chriscdn/promise-semaphore@2.0.12': {}
+  '@chriscdn/promise-semaphore@3.0.1': {}
 
   '@colors/colors@1.5.0': {}
 
@@ -9567,7 +9567,7 @@ snapshots:
       '@orbitdb/set-db': 1.1.2(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
       ajv: 8.17.1
       events: 3.3.0
-      helia: 5.4.1(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
+      helia: 5.4.2(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
       uuid: 11.1.0
     transitivePeerDependencies:
       - bufferutil
@@ -9575,18 +9575,18 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@constl/ipa@1.6.19(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))':
+  '@constl/ipa@1.6.21(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))':
     dependencies:
       '@chainsafe/libp2p-gossipsub': 14.1.1
       '@chainsafe/libp2p-noise': 16.1.3
       '@chainsafe/libp2p-yamux': 7.0.1
-      '@chriscdn/promise-semaphore': 2.0.12
+      '@chriscdn/promise-semaphore': 3.0.1
       '@constl/bohr-db': 1.2.3(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
-      '@constl/mandataire': 3.0.3
-      '@constl/utils-ipa': 2.0.4
-      '@helia/block-brokers': 4.2.1
+      '@constl/mandataire': 3.1.1
+      '@constl/utils-ipa': 2.0.6
+      '@helia/block-brokers': 4.2.2
       '@helia/unixfs': 4.0.3
-      '@ipld/dag-cbor': 9.2.3
+      '@ipld/dag-cbor': 9.2.4
       '@lassi-js/kili': 0.4.5
       '@libp2p/autonat': 2.0.32
       '@libp2p/bootstrap': 11.0.37
@@ -9632,7 +9632,7 @@ snapshots:
       file-saver: 2.0.5
       genversion: 3.2.0
       geojson-validation: 1.0.2
-      helia: 5.4.1(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
+      helia: 5.4.2(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
       indexed-db-stream: 1.0.0
       iso-constants: https://codeload.github.com/inverted-capital/iso-constants/tar.gz/2af6fdfb2cacaa03ebd58543703918783e62649f
       it-drain: 3.0.9
@@ -9664,14 +9664,15 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@constl/mandataire@3.0.3':
+  '@constl/mandataire@3.1.1':
     dependencies:
       events: 3.3.0
+      tiny-typed-emitter: 2.1.0
       uuid: 11.1.0
 
   '@constl/orbit-db-types@2.0.6': {}
 
-  '@constl/utils-ipa@2.0.4':
+  '@constl/utils-ipa@2.0.6':
     dependencies:
       browser-fs-access: 0.37.0
       deep-equal: 2.2.3
@@ -9690,7 +9691,7 @@ snapshots:
   '@constl/utils-tests@1.6.15(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))':
     dependencies:
       '@chainsafe/libp2p-gossipsub': 14.1.0
-      '@helia/block-brokers': 4.2.1
+      '@helia/block-brokers': 4.2.2
       '@libp2p/peer-id': 5.1.4
       '@libp2p/webrtc': 5.2.14(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
       '@orbitdb/core': 2.5.0
@@ -10258,10 +10259,10 @@ snapshots:
     dependencies:
       '@hapi/hoek': 9.3.0
 
-  '@helia/bitswap@2.1.1':
+  '@helia/bitswap@2.1.2':
     dependencies:
-      '@helia/interface': 5.3.1
-      '@helia/utils': 1.3.1
+      '@helia/interface': 5.3.2
+      '@helia/utils': 1.3.2
       '@libp2p/interface': 2.10.1
       '@libp2p/logger': 5.1.17
       '@libp2p/peer-collections': 6.0.29
@@ -10284,11 +10285,11 @@ snapshots:
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
 
-  '@helia/block-brokers@4.2.1':
+  '@helia/block-brokers@4.2.2':
     dependencies:
-      '@helia/bitswap': 2.1.1
-      '@helia/interface': 5.3.1
-      '@helia/utils': 1.3.1
+      '@helia/bitswap': 2.1.2
+      '@helia/interface': 5.3.2
+      '@helia/utils': 1.3.2
       '@libp2p/interface': 2.10.1
       '@libp2p/utils': 6.6.4
       '@multiformats/multiaddr': 12.4.0
@@ -10316,7 +10317,7 @@ snapshots:
       p-queue: 8.1.0
       uint8arrays: 5.1.0
 
-  '@helia/interface@5.3.1':
+  '@helia/interface@5.3.2':
     dependencies:
       '@libp2p/interface': 2.10.1
       '@multiformats/dns': 1.0.6
@@ -10327,10 +10328,10 @@ snapshots:
       multiformats: 13.3.6
       progress-events: 1.0.1
 
-  '@helia/routers@3.1.1':
+  '@helia/routers@3.1.2':
     dependencies:
       '@helia/delegated-routing-v1-http-api-client': 4.2.5
-      '@helia/interface': 5.3.1
+      '@helia/interface': 5.3.2
       '@libp2p/interface': 2.10.1
       '@libp2p/peer-id': 5.1.4
       '@multiformats/uri-to-multiaddr': 9.0.1
@@ -10342,7 +10343,7 @@ snapshots:
 
   '@helia/unixfs@4.0.3':
     dependencies:
-      '@helia/interface': 5.3.1
+      '@helia/interface': 5.3.2
       '@ipld/dag-pb': 4.1.5
       '@libp2p/interface': 2.10.1
       '@libp2p/logger': 5.1.17
@@ -10365,11 +10366,11 @@ snapshots:
       - encoding
       - supports-color
 
-  '@helia/utils@1.3.1':
+  '@helia/utils@1.3.2':
     dependencies:
-      '@helia/interface': 5.3.1
-      '@ipld/dag-cbor': 9.2.3
-      '@ipld/dag-json': 10.2.4
+      '@helia/interface': 5.3.2
+      '@ipld/dag-cbor': 9.2.4
+      '@ipld/dag-json': 10.2.5
       '@ipld/dag-pb': 4.1.5
       '@libp2p/interface': 2.10.1
       '@libp2p/logger': 5.1.17
@@ -10417,12 +10418,12 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
-  '@ipld/dag-cbor@9.2.3':
+  '@ipld/dag-cbor@9.2.4':
     dependencies:
       cborg: 4.2.11
       multiformats: 13.3.6
 
-  '@ipld/dag-json@10.2.4':
+  '@ipld/dag-json@10.2.5':
     dependencies:
       cborg: 4.2.11
       multiformats: 13.3.6
@@ -10547,7 +10548,7 @@ snapshots:
 
   '@lassi-js/kili@0.4.5':
     dependencies:
-      '@constl/utils-ipa': 2.0.4
+      '@constl/utils-ipa': 2.0.6
       '@orbitdb/core': 2.5.0
       deepcopy: 2.1.0
 
@@ -11215,7 +11216,7 @@ snapshots:
 
   '@orbitdb/core@2.5.0':
     dependencies:
-      '@ipld/dag-cbor': 9.2.3
+      '@ipld/dag-cbor': 9.2.4
       '@libp2p/crypto': 5.1.3
       it-pipe: 3.0.1
       level: 8.0.1
@@ -11228,7 +11229,7 @@ snapshots:
   '@orbitdb/feed-db@1.1.2(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))':
     dependencies:
       '@orbitdb/core': 2.5.0
-      helia: 5.4.1(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
+      helia: 5.4.2(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
     transitivePeerDependencies:
       - bufferutil
       - react-native
@@ -11238,7 +11239,7 @@ snapshots:
   '@orbitdb/ordered-keyvalue-db@1.1.2(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))':
     dependencies:
       '@orbitdb/core': 2.5.0
-      helia: 5.4.1(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
+      helia: 5.4.2(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
     transitivePeerDependencies:
       - bufferutil
       - react-native
@@ -11248,7 +11249,7 @@ snapshots:
   '@orbitdb/set-db@1.1.2(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))':
     dependencies:
       '@orbitdb/core': 2.5.0
-      helia: 5.4.1(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
+      helia: 5.4.2(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
     transitivePeerDependencies:
       - bufferutil
       - react-native
@@ -12698,7 +12699,7 @@ snapshots:
     dependencies:
       call-bind: 1.0.8
       define-properties: 1.2.1
-      es-abstract: 1.23.9
+      es-abstract: 1.23.10
       es-object-atoms: 1.1.1
       get-intrinsic: 1.3.0
       is-string: 1.1.1
@@ -12721,7 +12722,7 @@ snapshots:
       call-bind: 1.0.8
       call-bound: 1.0.4
       define-properties: 1.2.1
-      es-abstract: 1.23.9
+      es-abstract: 1.23.10
       es-errors: 1.3.0
       es-object-atoms: 1.1.1
       es-shim-unscopables: 1.1.0
@@ -12730,14 +12731,14 @@ snapshots:
     dependencies:
       call-bind: 1.0.8
       define-properties: 1.2.1
-      es-abstract: 1.23.9
+      es-abstract: 1.23.10
       es-shim-unscopables: 1.1.0
 
   array.prototype.flatmap@1.3.3:
     dependencies:
       call-bind: 1.0.8
       define-properties: 1.2.1
-      es-abstract: 1.23.9
+      es-abstract: 1.23.10
       es-shim-unscopables: 1.1.0
 
   array.prototype.tosorted@1.1.4:
@@ -12753,7 +12754,7 @@ snapshots:
       array-buffer-byte-length: 1.0.2
       call-bind: 1.0.8
       define-properties: 1.2.1
-      es-abstract: 1.23.9
+      es-abstract: 1.23.10
       es-errors: 1.3.0
       get-intrinsic: 1.3.0
       is-array-buffer: 3.0.5
@@ -14044,7 +14045,7 @@ snapshots:
       accepts: 1.3.8
       escape-html: 1.0.3
 
-  es-abstract@1.23.9:
+  es-abstract@1.23.10:
     dependencies:
       array-buffer-byte-length: 1.0.2
       arraybuffer.prototype.slice: 1.0.4
@@ -14966,7 +14967,7 @@ snapshots:
 
   flow-enums-runtime@0.0.6: {}
 
-  flow-parser@0.271.0: {}
+  flow-parser@0.272.0: {}
 
   follow-redirects@1.15.9(debug@4.4.1):
     optionalDependencies:
@@ -15352,11 +15353,11 @@ snapshots:
     dependencies:
       '@chainsafe/libp2p-noise': 16.1.3
       '@chainsafe/libp2p-yamux': 7.0.1
-      '@helia/block-brokers': 4.2.1
+      '@helia/block-brokers': 4.2.2
       '@helia/delegated-routing-v1-http-api-client': 4.2.5
-      '@helia/interface': 5.3.1
-      '@helia/routers': 3.1.1
-      '@helia/utils': 1.3.1
+      '@helia/interface': 5.3.2
+      '@helia/routers': 3.1.2
+      '@helia/utils': 1.3.2
       '@ipshipyard/libp2p-auto-tls': 1.0.0
       '@libp2p/autonat': 2.0.32
       '@libp2p/bootstrap': 11.0.37
@@ -15389,15 +15390,15 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  helia@5.4.1(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0)):
+  helia@5.4.2(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0)):
     dependencies:
       '@chainsafe/libp2p-noise': 16.1.3
       '@chainsafe/libp2p-yamux': 7.0.1
-      '@helia/block-brokers': 4.2.1
+      '@helia/block-brokers': 4.2.2
       '@helia/delegated-routing-v1-http-api-client': 4.2.5
-      '@helia/interface': 5.3.1
-      '@helia/routers': 3.1.1
-      '@helia/utils': 1.3.1
+      '@helia/interface': 5.3.2
+      '@helia/routers': 3.1.2
+      '@helia/utils': 1.3.2
       '@ipshipyard/libp2p-auto-tls': 1.0.0
       '@libp2p/autonat': 2.0.32
       '@libp2p/bootstrap': 11.0.37
@@ -15620,8 +15621,8 @@ snapshots:
 
   ipfs-unixfs-exporter@13.6.2:
     dependencies:
-      '@ipld/dag-cbor': 9.2.3
-      '@ipld/dag-json': 10.2.4
+      '@ipld/dag-cbor': 9.2.4
+      '@ipld/dag-json': 10.2.5
       '@ipld/dag-pb': 4.1.5
       '@multiformats/murmur3': 2.1.8
       hamt-sharding: 3.0.6
@@ -16241,7 +16242,7 @@ snapshots:
       '@babel/register': 7.27.1(@babel/core@7.27.1)
       babel-core: 7.0.0-bridge.0(@babel/core@7.27.1)
       chalk: 4.1.2
-      flow-parser: 0.271.0
+      flow-parser: 0.272.0
       graceful-fs: 4.2.11
       micromatch: 4.0.8
       neo-async: 2.6.2
@@ -17610,14 +17611,14 @@ snapshots:
     dependencies:
       call-bind: 1.0.8
       define-properties: 1.2.1
-      es-abstract: 1.23.9
+      es-abstract: 1.23.10
       es-object-atoms: 1.1.1
 
   object.groupby@1.0.3:
     dependencies:
       call-bind: 1.0.8
       define-properties: 1.2.1
-      es-abstract: 1.23.9
+      es-abstract: 1.23.10
 
   object.values@1.2.1:
     dependencies:
@@ -18440,7 +18441,7 @@ snapshots:
     dependencies:
       call-bind: 1.0.8
       define-properties: 1.2.1
-      es-abstract: 1.23.9
+      es-abstract: 1.23.10
       es-errors: 1.3.0
       es-object-atoms: 1.1.1
       get-intrinsic: 1.3.0
@@ -19050,7 +19051,7 @@ snapshots:
       call-bound: 1.0.4
       define-data-property: 1.1.4
       define-properties: 1.2.1
-      es-abstract: 1.23.9
+      es-abstract: 1.23.10
       es-object-atoms: 1.1.1
       has-property-descriptors: 1.0.2
 

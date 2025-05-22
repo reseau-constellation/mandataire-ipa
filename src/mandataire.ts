@@ -179,9 +179,16 @@ export abstract class Mandatairifiable extends Callable {
       this.envoyerMessageÀIpa(messageRetour);
 
       const retour = await lorsqueRetour;
+      if (retour.type === "erreur") {
+        this.erreur({
+          erreur: retour.erreur,
+          idRequête,
+          code: retour.codeErreur || ERREUR_EXÉCUTION_IPA,
+        });
+      }
       if (retour.type !== "confirmation") {
         this.erreur({
-          erreur: `Type de retour ${retour} non reconnu.`,
+          erreur: `Type de retour ${JSON.stringify(retour)} non reconnu.`,
           idRequête,
           code: ERREUR_EXÉCUTION_IPA,
         });
