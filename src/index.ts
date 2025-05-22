@@ -10,6 +10,7 @@ export type {
   MessageErreurDIpa,
   MessageSuivreDIpa,
   MessageSuivrePrêtDIpa,
+  MessageConfirmationRéceptionRetourDIpa,
   MessagePourIpa,
   MessageSuivrePourIpa,
   MessageActionPourIpa,
