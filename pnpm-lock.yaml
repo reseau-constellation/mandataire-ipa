@@ -20,7 +20,7 @@ importers:
     devDependencies:
       '@constl/ipa':
         specifier: ^1.6.21
-        version: 1.6.21(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
+        version: 1.6.22(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))
       '@constl/orbit-db-types':
         specifier: ^2.0.6
         version: 2.0.6
@@ -50,7 +50,7 @@ importers:
         version: 8.32.1(eslint@9.27.0)(typescript@5.8.3)
       aegir:
         specifier: ^47.0.0
-        version: 47.0.12(@babel/core@7.27.1)
+        version: 47.0.13(@babel/core@7.27.1)
       browserify-fs:
         specifier: ^1.0.0
         version: 1.0.0
@@ -62,7 +62,7 @@ importers:
         version: 3.12.1
       electron:
         specifier: ^36.2.1
-        version: 36.2.1
+        version: 36.3.1
       eslint:
         specifier: ^9.27.0
         version: 9.27.0
@@ -74,7 +74,7 @@ importers:
         version: 3.2.0
       mocha:
         specifier: ^11.4.0
-        version: 11.4.0
+        version: 11.5.0
       os-browserify:
         specifier: ^0.3.0
         version: 0.3.0
@@ -869,8 +869,8 @@ packages:
   '@constl/bohr-db@1.2.3':
     resolution: {integrity: sha512-IJXOqeMnJEOqD7DRNMowwPOY7bVKlTdQNu3DNn9zoSKj+fBzTXLzkxl4uRbKLu9vwWzjoXyxgvp2iw7vkt/amQ==}
 
-  '@constl/ipa@1.6.21':
-    resolution: {integrity: sha512-gAS79wIt65F6n5iZe+dKPYuzhb6Xx6IuVA0jcSMA+fQFHMXUbdFLyam17Og6IYtGNaDR4Rn3jAm6oXv1+Nfg9Q==}
+  '@constl/ipa@1.6.22':
+    resolution: {integrity: sha512-g9DVkaFtkKVNuyUVF76CfX6TfgfsbzytWDD2pGagyJyQ/rlwZex5/tbumPwOVIw6SkDNhc7HPdftzxMD42PLXA==}
     engines: {node: '>=20'}
 
   '@constl/mandataire@3.1.1':
@@ -2480,8 +2480,8 @@ packages:
     engines: {node: '>=0.4.0'}
     hasBin: true
 
-  aegir@47.0.12:
-    resolution: {integrity: sha512-wHe/gmpJIV+OSc02Qg5vXfodgJUcdiCUKRLrZ7qMs2TmENSFnoNi4mpR7CzjFlfodn7ln3NRcUzwik+fxIEsug==}
+  aegir@47.0.13:
+    resolution: {integrity: sha512-tyFCtjjGG8Db1DzEwZ2YbLiG+r/GuE1/6TfPk/YbZONcgq0zLXUO0kyVRB3+XwwnCDIeXV21VuSM1BUutPWcQQ==}
     hasBin: true
 
   agent-base@7.1.3:
@@ -3628,8 +3628,8 @@ packages:
   electron-window@0.8.1:
     resolution: {integrity: sha512-W1i9LfnZJozk3MXE8VgsL2E5wOUHSgyCvcg1H2vQQjj+gqhO9lVudgY3z3SF7LJAmi+0vy3CJkbMqsynWB49EA==}
 
-  electron@36.2.1:
-    resolution: {integrity: sha512-mm1Y+Ms46xcOTA69h8hpqfX392HfV4lga9aEkYkd/Syx1JBStvcACOIouCgGrnZpxNZPVS1jM8NTcMkNjuK6BQ==}
+  electron@36.3.1:
+    resolution: {integrity: sha512-LeOZ+tVahmctHaAssLCGRRUa2SAO09GXua3pKdG+WzkbSDMh+3iOPONNVPTqGp8HlWnzGj4r6mhsIbM2RgH+eQ==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -5921,8 +5921,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  mocha@11.4.0:
-    resolution: {integrity: sha512-O6oi5Y9G6uu8f9iqXR6iKNLWHLRex3PKbmHynfpmUnMJJGrdgXh8ZmS85Ei5KR2Gnl+/gQ9s+Ktv5CqKybNw4A==}
+  mocha@11.5.0:
+    resolution: {integrity: sha512-VKDjhy6LMTKm0WgNEdlY77YVsD49LZnPSXJAaPNL9NRYQADxvORsyG1DIQY6v53BKTnlNbEE2MbVCDbnxr4K3w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     hasBin: true
 
@@ -9311,7 +9311,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@constl/ipa@1.6.21(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))':
+  '@constl/ipa@1.6.22(react-native@0.74.2(@babel/core@7.27.1)(@babel/preset-env@7.24.7(@babel/core@7.27.1))(react@18.2.0))':
     dependencies:
       '@chainsafe/libp2p-gossipsub': 14.1.1
       '@chainsafe/libp2p-noise': 16.1.3
@@ -11861,7 +11861,7 @@ snapshots:
 
   acorn@8.14.1: {}
 
-  aegir@47.0.12(@babel/core@7.27.1):
+  aegir@47.0.13(@babel/core@7.27.1):
     dependencies:
       '@electron/get': 4.0.0
       '@polka/send-type': 0.5.2
@@ -11923,7 +11923,7 @@ snapshots:
       micromark-extension-gfm-strikethrough: 2.1.0
       micromark-extension-gfm-table: 2.1.1
       micromark-extension-gfm-task-list-item: 2.1.0
-      mocha: 11.4.0
+      mocha: 11.5.0
       neostandard: 0.12.1(eslint-plugin-import@2.31.0(@typescript-eslint/parser@8.32.1(eslint@9.27.0)(typescript@5.8.3))(eslint@9.27.0))(eslint@9.27.0)(typescript@5.8.3)
       npm-package-json-lint: 8.0.0(typescript@5.8.3)
       nyc: 17.1.0
@@ -13324,7 +13324,7 @@ snapshots:
     dependencies:
       ansi-colors: 4.1.3
       electron-window: 0.8.1
-      mocha: 11.4.0
+      mocha: 11.5.0
       which: 5.0.0
       yargs: 17.7.2
 
@@ -13334,7 +13334,7 @@ snapshots:
     dependencies:
       is-electron-renderer: 2.0.1
 
-  electron@36.2.1:
+  electron@36.3.1:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 22.15.21
@@ -16421,7 +16421,7 @@ snapshots:
 
   mkdirp@1.0.4: {}
 
-  mocha@11.4.0:
+  mocha@11.5.0:
     dependencies:
       browser-stdout: 1.3.1
       chokidar: 4.0.3
@@ -16433,7 +16433,7 @@ snapshots:
       he: 1.2.0
       js-yaml: 4.1.0
       log-symbols: 4.1.0
-      minimatch: 5.1.6
+      minimatch: 9.0.5
       ms: 2.1.3
       picocolors: 1.1.1
       serialize-javascript: 6.0.2
