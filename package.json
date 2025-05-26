@@ -39,7 +39,7 @@
     "@constl/utils-ipa": "^2.0.6",
     "@constl/utils-tests": "^1.6.15",
     "@eslint/js": "^9.27.0",
-    "@orbitdb/core": "^2.5.0",
+    "@orbitdb/core": "^3.0.0",
     "@types/mocha": "^10.0.10",
     "@types/uuid": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^8.32.1",
