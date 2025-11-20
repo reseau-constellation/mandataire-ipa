@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ouvrir la branche
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Installer pnpm
         uses: pnpm/action-setup@v4.2.0
@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ouvrir la branche
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Installer pnpm
         uses: pnpm/action-setup@v4.2.0
@@ -70,7 +70,7 @@ jobs:
     needs: tests-nodejs
     steps:
       - name: Ouvrir la branche
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Installer pnpm
         uses: pnpm/action-setup@v4.2.0
