@@ -62,7 +62,7 @@ importers:
         version: 3.12.1
       electron:
         specifier: ^40.0.0
-        version: 40.6.0
+        version: 40.6.1
       eslint:
         specifier: ^10.0.0
         version: 10.0.2
@@ -4115,8 +4115,8 @@ packages:
   electron-window@0.8.1:
     resolution: {integrity: sha512-W1i9LfnZJozk3MXE8VgsL2E5wOUHSgyCvcg1H2vQQjj+gqhO9lVudgY3z3SF7LJAmi+0vy3CJkbMqsynWB49EA==}
 
-  electron@40.6.0:
-    resolution: {integrity: sha512-ett8W+yOFGDuM0vhJMamYSkrbV3LoaffzJd9GfjI96zRAxyrNqUSKqBpf/WGbQCweDxX2pkUCUfrv4wwKpsFZA==}
+  electron@40.6.1:
+    resolution: {integrity: sha512-u9YfoixttdauciHV9Ut9Zf3YipJoU093kR1GSYTTXTAXqhiXI0G1A0NnL/f0O2m2UULCXaXMf2W71PloR6V9pQ==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -6466,6 +6466,9 @@ packages:
 
   minimatch@3.1.3:
     resolution: {integrity: sha512-M2GCs7Vk83NxkUyQV1bkABc4yxgz9kILhHImZiBPAZ9ybuvCb0/H7lEl5XvIg3g+9d4eNotkZA5IWwYl0tibaA==}
+
+  minimatch@3.1.4:
+    resolution: {integrity: sha512-twmL+S8+7yIsE9wsqgzU3E8/LumN3M3QELrBZ20OdmQ9jB2JvW5oZtBEmft84k/Gs5CG9mqtWc6Y9vW+JEzGxw==}
 
   minimatch@5.1.7:
     resolution: {integrity: sha512-FjiwU9HaHW6YB3H4a1sFudnv93lvydNjz2lmyUXR6IwKhGI+bgL3SOZrBGn6kvvX2pJvhEkGSGjyTHN47O4rqA==}
@@ -15323,7 +15326,7 @@ snapshots:
     dependencies:
       is-electron-renderer: 2.0.1
 
-  electron@40.6.0:
+  electron@40.6.1:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 24.10.13
@@ -16382,7 +16385,7 @@ snapshots:
       es6-error: 4.1.1
       matcher: 3.0.0
       roarr: 2.15.4
-      semver: 7.7.3
+      semver: 7.7.4
       serialize-error: 7.0.1
     optional: true
 
@@ -18530,6 +18533,10 @@ snapshots:
     dependencies:
       brace-expansion: 1.1.12
 
+  minimatch@3.1.4:
+    dependencies:
+      brace-expansion: 1.1.12
+
   minimatch@5.1.7:
     dependencies:
       brace-expansion: 2.0.2
@@ -18706,7 +18713,7 @@ snapshots:
 
   node-dir@0.1.17:
     dependencies:
-      minimatch: 3.1.3
+      minimatch: 3.1.4
 
   node-emoji@2.2.0:
     dependencies:
