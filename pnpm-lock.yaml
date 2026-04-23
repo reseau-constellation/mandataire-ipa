@@ -62,7 +62,7 @@ importers:
         version: 3.12.1
       electron:
         specifier: ^41.0.0
-        version: 41.2.2
+        version: 41.3.0
       eslint:
         specifier: ^10.0.0
         version: 10.2.1
@@ -4113,8 +4113,8 @@ packages:
   electron-window@0.8.1:
     resolution: {integrity: sha512-W1i9LfnZJozk3MXE8VgsL2E5wOUHSgyCvcg1H2vQQjj+gqhO9lVudgY3z3SF7LJAmi+0vy3CJkbMqsynWB49EA==}
 
-  electron@41.2.2:
-    resolution: {integrity: sha512-3rzz/hVIpF726W9g7nleQzyF2IOEZbzZnUTUYGhMaEfsoab8fDyOYAWbdBdo4+DczS1Ifz11rdYo8IAAGcRx/g==}
+  electron@41.3.0:
+    resolution: {integrity: sha512-2Q5aeocmFdeheZGDUTrAvSR3t+n0c3d104AJWWEnt7syJU0tE4VdibMYaPtQ47QuXSoUf0/xSsfUUvu/uSXIfg==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -4690,8 +4690,8 @@ packages:
   flow-enums-runtime@0.0.6:
     resolution: {integrity: sha512-3PYnM29RFXwvAN6Pc/scUfkI7RwhQ/xqyLUyPNlXUp9S40zI8nup9tUSrTLSVnWGBN38FNiGWbwZOB6uR4OGdw==}
 
-  flow-parser@0.310.0:
-    resolution: {integrity: sha512-LyOrE2R6Emgkp41ODL5L7giPJRYB70nbNYjzJUcMWl8Sh7vBhcWXvPmWIFhVoFuIOBxckO/+42CGnWUOE16UVw==}
+  flow-parser@0.311.0:
+    resolution: {integrity: sha512-3tbmV0VdoFXdNqJjNksVLIksu78BvUMK5eAR5ZF1TAsV+wVu4jXipRpHKquDGhPRKrLl2DCafjRTV99jVMlMwQ==}
     engines: {node: '>=0.4.0'}
 
   follow-redirects@1.15.11:
@@ -15316,7 +15316,7 @@ snapshots:
     dependencies:
       is-electron-renderer: 2.0.1
 
-  electron@41.2.2:
+  electron@41.3.0:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 24.12.2
@@ -16131,7 +16131,7 @@ snapshots:
 
   flow-enums-runtime@0.0.6: {}
 
-  flow-parser@0.310.0: {}
+  flow-parser@0.311.0: {}
 
   follow-redirects@1.15.11(debug@4.4.3):
     optionalDependencies:
@@ -17451,7 +17451,7 @@ snapshots:
       '@babel/register': 7.28.6(@babel/core@7.29.0)
       babel-core: 7.0.0-bridge.0(@babel/core@7.29.0)
       chalk: 4.1.2
-      flow-parser: 0.310.0
+      flow-parser: 0.311.0
       graceful-fs: 4.2.11
       micromatch: 4.0.8
       neo-async: 2.6.2
