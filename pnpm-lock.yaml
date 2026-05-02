@@ -62,7 +62,7 @@ importers:
         version: 3.12.1
       electron:
         specifier: ^41.0.0
-        version: 41.4.0
+        version: 41.5.0
       eslint:
         specifier: ^10.0.0
         version: 10.3.0
@@ -4123,8 +4123,8 @@ packages:
   electron-window@0.8.1:
     resolution: {integrity: sha512-W1i9LfnZJozk3MXE8VgsL2E5wOUHSgyCvcg1H2vQQjj+gqhO9lVudgY3z3SF7LJAmi+0vy3CJkbMqsynWB49EA==}
 
-  electron@41.4.0:
-    resolution: {integrity: sha512-1afmxJGyrZ4bve+PDCs8YtNjjVu4cPwUtSjx36o6gyJWI0NvhebMKtIzzKNOScRyXntH2hX0i350Xgm3BKiEYQ==}
+  electron@41.5.0:
+    resolution: {integrity: sha512-x9j9//PubUA4EjDtQbZhtk3prolandqCKgit0uCIqc1jb8FTskPbnJtxcDFB1aejczJcuERgjPixBUaMwoWyJg==}
     engines: {node: '>= 12.20.55'}
     hasBin: true
 
@@ -15347,7 +15347,7 @@ snapshots:
     dependencies:
       is-electron-renderer: 2.0.1
 
-  electron@41.4.0:
+  electron@41.5.0:
     dependencies:
       '@electron/get': 2.0.3
       '@types/node': 24.12.2
