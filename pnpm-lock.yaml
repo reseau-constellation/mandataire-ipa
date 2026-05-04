@@ -16,7 +16,7 @@ importers:
         version: 2.1.0
       uuid:
         specifier: ^13.0.0
-        version: 13.0.1
+        version: 13.0.2
     devDependencies:
       '@constl/ipa':
         specifier: ^1.6.21
@@ -8772,8 +8772,8 @@ packages:
     resolution: {integrity: sha512-vIYxrBCC/N/K+Js3qSN88go7kIfNPssr/hHCesKCQNAjmgvYS2oqr69kIufEG+O4+PfezOH4EbIeHCfFov8ZgQ==}
     hasBin: true
 
-  uuid@13.0.1:
-    resolution: {integrity: sha512-9ezox2roIft6ExBVTVqibSd5dc5/47Sw/uY6b4SjQUT2TzQ0tltNquWA46y4xPQmdZYqvnio22SgWd41M86+jw==}
+  uuid@13.0.2:
+    resolution: {integrity: sha512-vzi9uRZ926x4XV73S/4qQaTwPXM2JBj6/6lI/byHH1jOpCzb0zDbfytgA9LcN/hzb2l7WQSQnxITOVx5un/wGw==}
     hasBin: true
 
   uuid@8.0.0:
@@ -9035,6 +9035,11 @@ packages:
 
   yaml@2.8.3:
     resolution: {integrity: sha512-AvbaCLOO2Otw/lW5bmh9d/WEdcDFdQp2Z2ZUH3pX9U2ihyUY0nvLv7J6TrWowklRGPYbB/IuIMfYgxaCPg5Bpg==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
+
+  yaml@2.8.4:
+    resolution: {integrity: sha512-ml/JPOj9fOQK8RNnWojA67GbZ0ApXAUlN2UQclwv2eVgTgn7O9gg9o7paZWKMp4g0H3nTLtS9LVzhkpOFIKzog==}
     engines: {node: '>= 14.6'}
     hasBin: true
 
@@ -12899,7 +12904,7 @@ snapshots:
       semver: 7.7.4
       strip-ansi: 5.2.0
       wcwidth: 1.0.1
-      yaml: 2.8.3
+      yaml: 2.8.4
     transitivePeerDependencies:
       - encoding
 
@@ -13451,7 +13456,7 @@ snapshots:
 
   '@types/uuid@11.0.0':
     dependencies:
-      uuid: 13.0.1
+      uuid: 13.0.2
 
   '@types/ws@8.18.1':
     dependencies:
@@ -13902,9 +13907,9 @@ snapshots:
       strong-log-transformer: 2.1.0
       tempy: 3.2.0
       typedoc: 0.28.19(typescript@5.8.3)
-      typedoc-plugin-mdn-links: 5.1.1(typedoc@0.28.19(typescript@5.8.3))
-      typedoc-plugin-mermaid: 1.12.0(typedoc@0.28.19(typescript@5.8.3))
-      typedoc-plugin-missing-exports: 4.1.3(typedoc@0.28.19(typescript@5.8.3))
+      typedoc-plugin-mdn-links: 5.1.1(typedoc@0.28.19(typescript@5.9.3))
+      typedoc-plugin-mermaid: 1.12.0(typedoc@0.28.19(typescript@5.9.3))
+      typedoc-plugin-missing-exports: 4.1.3(typedoc@0.28.19(typescript@5.9.3))
       typescript: 5.8.3
       typescript-docs-verifier: 3.0.2(typescript@5.8.3)
       wherearewe: 2.0.1
@@ -20820,16 +20825,16 @@ snapshots:
 
   typedarray@0.0.6: {}
 
-  typedoc-plugin-mdn-links@5.1.1(typedoc@0.28.19(typescript@5.8.3)):
+  typedoc-plugin-mdn-links@5.1.1(typedoc@0.28.19(typescript@5.9.3)):
     dependencies:
       typedoc: 0.28.19(typescript@5.8.3)
 
-  typedoc-plugin-mermaid@1.12.0(typedoc@0.28.19(typescript@5.8.3)):
+  typedoc-plugin-mermaid@1.12.0(typedoc@0.28.19(typescript@5.9.3)):
     dependencies:
       html-escaper: 3.0.3
       typedoc: 0.28.19(typescript@5.8.3)
 
-  typedoc-plugin-missing-exports@4.1.3(typedoc@0.28.19(typescript@5.8.3)):
+  typedoc-plugin-missing-exports@4.1.3(typedoc@0.28.19(typescript@5.9.3)):
     dependencies:
       typedoc: 0.28.19(typescript@5.8.3)
 
@@ -21053,7 +21058,7 @@ snapshots:
 
   uuid@11.1.1: {}
 
-  uuid@13.0.1: {}
+  uuid@13.0.2: {}
 
   uuid@8.0.0: {}
 
@@ -21292,6 +21297,8 @@ snapshots:
   yaml@2.8.0: {}
 
   yaml@2.8.3: {}
+
+  yaml@2.8.4: {}
 
   yargs-parser@18.1.3:
     dependencies:
