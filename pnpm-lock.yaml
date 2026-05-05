@@ -26,7 +26,7 @@ importers:
         version: 2.0.6
       '@constl/utils-ipa':
         specifier: ^3.0.0
-        version: 3.0.5
+        version: 3.0.6
       '@constl/utils-tests':
         specifier: ^1.6.15
         version: 1.7.0(react-native@0.74.2(@babel/core@7.29.0)(@babel/preset-env@7.24.7(@babel/core@7.29.0))(react@18.2.0))
@@ -686,8 +686,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
-  '@babel/plugin-transform-modules-systemjs@7.29.0':
-    resolution: {integrity: sha512-PrujnVFbOdUpw4UHiVwKvKRLMMic8+eC0CuNlxjsyZUiBjhFdPsewdXCkveh2KqBA9/waD0W1b4hXSOBQJezpQ==}
+  '@babel/plugin-transform-modules-systemjs@7.29.4':
+    resolution: {integrity: sha512-N7QmZ0xRZfjHOfZeQLJjwgX2zS9pdGHSVl/cjSGlo4dXMqvurfxXDMKY4RqEKzPozV78VMcd0lxyG13mlbKc4w==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -989,8 +989,8 @@ packages:
     resolution: {integrity: sha512-ypThNw7fa47lu5HSRkEL12nqKz1CjCFeY9ticpOaEBMbqXvpTVNw9044+fvgIaI/KsXWrDf8RQZvTwOU1zz5yw==}
     engines: {node: '>=20'}
 
-  '@constl/utils-ipa@3.0.5':
-    resolution: {integrity: sha512-zgpA3zkrfKTuFlci6PoXjOjVy+jWy1Io57arJjv43wKJuneI0a9y7Ay5tQhAFKGUrEwscPha4zFrvbOsjpp0/Q==}
+  '@constl/utils-ipa@3.0.6':
+    resolution: {integrity: sha512-wYW8anB4Ukp3MK+KemORWXmjCAatUosUaPjNff4ItqAWkrXEQhUZTsf66MBxlA5HeYJs+eMfrtIJyFoPxCDHiQ==}
     engines: {node: '>=20'}
 
   '@constl/utils-tests@1.7.0':
@@ -9869,7 +9869,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/plugin-transform-modules-systemjs@7.29.0(@babel/core@7.29.0)':
+  '@babel/plugin-transform-modules-systemjs@7.29.4(@babel/core@7.29.0)':
     dependencies:
       '@babel/core': 7.29.0
       '@babel/helper-module-transforms': 7.28.6(@babel/core@7.29.0)
@@ -10135,7 +10135,7 @@ snapshots:
       '@babel/plugin-transform-member-expression-literals': 7.27.1(@babel/core@7.29.0)
       '@babel/plugin-transform-modules-amd': 7.27.1(@babel/core@7.29.0)
       '@babel/plugin-transform-modules-commonjs': 7.28.6(@babel/core@7.29.0)
-      '@babel/plugin-transform-modules-systemjs': 7.29.0(@babel/core@7.29.0)
+      '@babel/plugin-transform-modules-systemjs': 7.29.4(@babel/core@7.29.0)
       '@babel/plugin-transform-modules-umd': 7.27.1(@babel/core@7.29.0)
       '@babel/plugin-transform-named-capturing-groups-regex': 7.29.0(@babel/core@7.29.0)
       '@babel/plugin-transform-new-target': 7.27.1(@babel/core@7.29.0)
@@ -10483,7 +10483,7 @@ snapshots:
       uint8arrays: 5.1.0
       wherearewe: 2.0.1
 
-  '@constl/utils-ipa@3.0.5':
+  '@constl/utils-ipa@3.0.6':
     dependencies:
       browser-fs-access: 0.38.0
       events: 3.3.0
@@ -11170,9 +11170,9 @@ snapshots:
       it-first: 3.0.9
       it-map: 3.1.4
       it-ndjson: 1.1.4
-      multiformats: 13.4.2
+      multiformats: 13.3.7
       p-defer: 4.0.1
-      p-queue: 8.1.1
+      p-queue: 8.1.0
       uint8arrays: 5.1.0
 
   '@helia/interface@5.3.2':
@@ -11331,7 +11331,7 @@ snapshots:
   '@ipld/dag-json@10.2.5':
     dependencies:
       cborg: 4.2.13
-      multiformats: 13.4.2
+      multiformats: 13.3.7
 
   '@ipld/dag-pb@4.1.5':
     dependencies:
@@ -11353,7 +11353,7 @@ snapshots:
       any-signal: 4.1.1
       delay: 6.0.0
       interface-datastore: 8.3.2
-      multiformats: 13.4.2
+      multiformats: 13.3.7
       uint8arrays: 5.1.0
     transitivePeerDependencies:
       - supports-color
@@ -11593,7 +11593,7 @@ snapshots:
       '@libp2p/interface': 2.10.5
       '@noble/curves': 1.9.7
       '@noble/hashes': 1.8.0
-      multiformats: 13.4.2
+      multiformats: 13.3.7
       protons-runtime: 5.6.0
       uint8arraylist: 2.4.8
       uint8arrays: 5.1.0
@@ -11750,7 +11750,7 @@ snapshots:
       it-pushable: 3.2.3
       it-stream-types: 2.0.2
       main-event: 1.0.1
-      multiformats: 13.4.2
+      multiformats: 13.3.7
       progress-events: 1.0.1
       uint8arraylist: 2.4.8
 
@@ -12363,7 +12363,7 @@ snapshots:
       buffer: 6.0.3
       dns-packet: 5.6.1
       hashlru: 2.3.0
-      p-queue: 8.1.1
+      p-queue: 8.1.0
       progress-events: 1.0.1
       uint8arrays: 5.1.0
 
@@ -12381,7 +12381,7 @@ snapshots:
     dependencies:
       '@chainsafe/is-ip': 2.1.0
       '@multiformats/multiaddr': 12.5.1
-      multiformats: 13.4.2
+      multiformats: 13.3.7
 
   '@multiformats/multiaddr-matcher@2.0.2':
     dependencies:
@@ -12410,7 +12410,7 @@ snapshots:
       '@chainsafe/netmask': 2.0.0
       '@multiformats/dns': 1.0.6
       abort-error: 1.0.1
-      multiformats: 13.4.2
+      multiformats: 13.3.7
       uint8-varint: 2.0.4
       uint8arrays: 5.1.0
 
@@ -16851,7 +16851,7 @@ snapshots:
   interface-blockstore@5.3.2:
     dependencies:
       interface-store: 6.0.3
-      multiformats: 13.4.2
+      multiformats: 13.3.7
 
   interface-datastore@8.3.2:
     dependencies:
