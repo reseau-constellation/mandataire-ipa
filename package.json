@@ -37,7 +37,7 @@
     "@constl/ipa": "^1.6.21",
     "@constl/orbit-db-types": "^2.0.6",
     "@constl/utils-ipa": "^3.0.0",
-    "@constl/utils-tests": "^1.6.15",
+    "@constl/utils-tests": "^2.0.0",
     "@eslint/js": "^10.0.0",
     "@orbitdb/core": "^3.0.0",
     "@types/mocha": "^10.0.10",
