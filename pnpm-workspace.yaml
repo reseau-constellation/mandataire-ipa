@@ -1,0 +1,13 @@
+allowBuilds:
+  bun: set this to true or false
+  classic-level: set this to true or false
+  deno: set this to true or false
+  esbuild: set this to true or false
+  iso-constants@https://codeload.github.com/inverted-capital/iso-constants/tar.gz/2af6fdfb2cacaa03ebd58543703918783e62649f: set this to true or false
+  unrs-resolver: set this to true or false
+blockExoticSubdeps: false
+minimumReleaseAgeExclude:
+  - '@constl/ipa@2.0.0'
+  - '@constl/utils-ipa@3.2.0'
+  - '@constl/utils-tests@2.3.1 || 2.3.3 || 2.3.4'
+  - '@constl/interface@1.0.0 || 1.0.1'

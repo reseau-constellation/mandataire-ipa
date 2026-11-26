@@ -37,9 +37,7 @@ export interface MessageConfirmationRéceptionRetourDIpa {
 }
 
 export type MessagePourIpa =
-  | MessageSuivrePourIpa
-  | MessageActionPourIpa
-  | MessageRetourPourIpa;
+  MessageSuivrePourIpa | MessageActionPourIpa | MessageRetourPourIpa;
 
 export interface MessageSuivrePourIpa {
   type: "suivre";

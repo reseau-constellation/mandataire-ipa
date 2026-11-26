@@ -1,25 +1,33 @@
-import type { MessageDIpa, MessagePourIpa } from "@/messages.js";
-
-import { client, types, mandataire } from "@constl/ipa";
 import { faisRien } from "@constl/utils-ipa";
-import { attente, sfip } from "@constl/utils-tests";
 import { isValidAddress } from "@orbitdb/core";
 import {
   générerMandataire,
   Mandatairifiable,
-  MandataireConstellation,
+  type MandataireConstellation,
   type ErreurMandataire,
-} from "@/mandataire.js";
-import { isNode, isElectronMain } from "wherearewe";
-
+  type MessageDIpa,
+  type MessagePourIpa,
+} from "../src/index.ts";
 import { expect, chai, chaiAsPromised } from "aegir/chai";
+import { Constellation } from "@constl/ipa";
+import { EnveloppeNébuleuse } from "@constl/ipa/src/nébuleuse/mandataire/enveloppe.js";
+import {
+  créerHéliasTest,
+  dossierTempo,
+  obtenir,
+  rechercher,
+  type ServicesLibp2pTest,
+} from "@constl/utils-tests";
+import type { InfoRésultatTexte, Oublier } from "@constl/interface";
+import type { TraducsTexte } from "./types.ts";
+import { type HeliaWithLibp2p } from "@helia/libp2p";
 chai.use(chaiAsPromised);
 
 class Mandataire extends Mandatairifiable {
-  ipa: mandataire.EnveloppeIpa;
-  constructor({ opts }: { opts: client.optsConstellation }) {
+  ipa: EnveloppeNébuleuse;
+  constructor({ options }: { options: OptionsConstellation }) {
     super();
-    this.ipa = new mandataire.EnveloppeIpa(
+    this.ipa = new EnveloppeNébuleuse(
       (m: MessageDIpa) => {
         this.recevoirMessageDIpa(m);
       },
@@ -31,7 +39,9 @@ class Mandataire extends Mandatairifiable {
           idRequête: e.idRequête,
         });
       },
-      opts,
+      new Constellation({
+        options,
+      }),
     );
   }
 
@@ -41,148 +51,126 @@ class Mandataire extends Mandatairifiable {
 }
 
 describe("Mandataire Constellation", () => {
-  let mnd: MandataireConstellation<client.Constellation>;
-  let fOublierConstellation: types.schémaFonctionOublier;
-
-  const attendreNoms = new attente.AttendreRésultat<{
-    [clef: string]: string;
-  }>();
-  const attendreMC = new attente.AttendreRésultat<
-    types.résultatRecherche<types.infoRésultatTexte>[]
-  >();
+  let mnd: MandataireConstellation<Constellation>;
+  let hélias: HeliaWithLibp2p<ServicesLibp2pTest>[];
+  let fermerHélias: Oublier;
 
   before(async () => {
-    let dossierTempo: string | undefined = undefined;
-    let dossierSFIP: string | undefined = undefined;
-
-    if (isNode || isElectronMain) {
-      const fs = await import("fs");
-      const path = await import("path");
-      const os = await import("os");
-      dossierTempo = fs.mkdtempSync(path.join(os.tmpdir(), "constl-ipa"));
-      dossierSFIP = path.join(dossierTempo, "sfip");
-    }
-
-    const sfip1 = await sfip.créerHéliaTest({ dossier: dossierSFIP });
+    ({ hélias, fermer: fermerHélias } = await créerHéliasTest({ n: 1 }));
 
     mnd = générerMandataire(
       new Mandataire({
-        opts: {
+        options: {
           dossier: dossierTempo,
           orbite: {
-            ipfs: sfip1,
+            ipfs: hélias[0],
           },
         },
       }),
     );
-    fOublierConstellation = async () => {
-      await mnd.fermer();
-      await sfip1.stop();
-      if (isNode || isElectronMain) {
-        const rimraf = await import("rimraf");
-        if (dossierTempo) rimraf.sync(dossierTempo);
-      }
-    };
   });
 
   after(async () => {
-    attendreNoms.toutAnnuler();
-    attendreMC.toutAnnuler();
-    if (fOublierConstellation) await fOublierConstellation();
+    await mnd?.fermer();
+    await fermerHélias?.();
   });
 
-  it("Action", async () => {
-    const idCompte = await mnd.obtIdCompte();
+  it("action", async () => {
+    const idCompte = await mnd.compte.obtIdCompte();
     expect(isValidAddress(idCompte)).to.be.true();
   });
 
-  it("Action avec arguments", async () => {
+  it("action avec arguments", async () => {
     const idVariable = await mnd.variables.créerVariable({
       catégorie: "audio",
     });
     expect(isValidAddress(idVariable)).to.be.true();
   });
 
-  it("Suivi", async () => {
-    const oublierNoms = await mnd.profil!.suivreNoms({
-      f: (n) => attendreNoms.mettreÀJour(n),
-    });
+  it("suivi", async () => {
+    const noms = await obtenir<TraducsTexte>(({ siDéfini }) =>
+      mnd.profil.suivreNoms({
+        f: siDéfini(),
+      }),
+    );
 
-    const val = await attendreNoms.attendreExiste();
-    expect(Object.keys(val).length).to.eq(0);
+    expect(noms).to.deep.equal({});
 
-    await mnd.profil!.sauvegarderNom({
+    await mnd.profil.sauvegarderNom({
       langue: "fr",
       nom: "Julien Jean Malard-Adam",
     });
-    const val2 = await attendreNoms.attendreQue(
-      (x) => Object.keys(x).length > 0,
+    const val2 = await obtenir<TraducsTexte>(({ siPasVide }) =>
+      mnd.profil.suivreNoms({
+        f: siPasVide(),
+      }),
     );
     expect(val2).to.deep.equal({ fr: "Julien Jean Malard-Adam" });
 
-    await oublierNoms();
-
-    await mnd.profil!.sauvegarderNom({
+    const nomsAprèsAjout = await mnd.profil.sauvegarderNom({
       langue: "es",
       nom: "Julien Jean Malard-Adam",
     });
-    expect(attendreNoms.val).to.deep.equal({ fr: "Julien Jean Malard-Adam" });
+    expect(nomsAprèsAjout).to.deep.equal({
+      fr: "Julien Jean Malard-Adam",
+    });
   });
 
-  it("Recherche", async () => {
+  it("recherche", async () => {
     // Eléments détectés
-    const { fOublier, fChangerN } =
-      await mnd.recherche.rechercherMotsClefsSelonNom({
+    const recherche = await rechercher<InfoRésultatTexte>(({ f }) =>
+      mnd.motsClefs.recherche.selonNom({
         nomMotClef: "Météo Montréal",
-        f: (x) => attendreMC.mettreÀJour(x),
-        nRésultatsDésirés: 1,
-      });
+        f,
+      }),
+    );
 
     const idMotClef1 = await mnd.motsClefs.créerMotClef();
-    await mnd.motsClefs.sauvegarderNomsMotClef({
+    await mnd.motsClefs.sauvegarderNoms({
       idMotClef: idMotClef1,
       noms: { fr: "Météo à Montréal" },
     });
 
     const idMotClef2 = await mnd.motsClefs.créerMotClef();
-    await mnd.motsClefs.sauvegarderNomsMotClef({
+    await mnd.motsClefs.sauvegarderNoms({
       idMotClef: idMotClef2,
       noms: { fr: "Météo Montréal" },
     });
 
-    const val = await attendreMC.attendreQue(
-      (x) => x.length > 0 && x[0].id === idMotClef2,
+    const motsClefs = await recherche.si(
+      (x) => !!x && x.length > 0 && x[0].id === idMotClef2,
     );
-    expect(val.map((r) => r.id)).to.deep.equal([idMotClef2]);
+    expect(motsClefs.map((r) => r.id)).to.deep.equal([idMotClef2]);
 
     // Augmenter N résultats désirés
-    await fChangerN(2);
-    const val2 = await attendreMC.attendreQue((x) => x.length > 1);
-    expect(val2.map((r) => r.id)).to.have.members([idMotClef1, idMotClef2]);
+    await recherche.n(2);
+    const nomsNAugementé = await recherche.siAuMoins(1);
+    expect(nomsNAugementé.map((r) => r.id)).to.have.members([
+      idMotClef1,
+      idMotClef2,
+    ]);
 
     // Diminuer N
-    await fChangerN(1);
-    const val3 = await attendreMC.attendreQue((x) => x.length <= 1);
-    expect(val3.map((r) => r.id)).to.deep.equal([idMotClef2]);
-
-    await fOublier();
+    await recherche.n(1);
+    const nomsNDiminué = await recherche.siPasPlusQue(1);
+    expect(nomsNDiminué.map((r) => r.id)).to.deep.equal([idMotClef2]);
   });
 
-  it("Erreur fonction suivi inexistante", async () => {
+  it("erreur fonction suivi inexistante", async () => {
     await expect(
       // @ts-expect-error on fait exprès
       mnd.jeNeSuisPasUneFonction(),
     ).to.be.rejectedWith("n'existe pas ou n'est pas une fonction");
   });
 
-  it("Erreur action inexistante", async () => {
+  it("erreur action inexistante", async () => {
     await expect(
       // @ts-expect-error on fait exprès
       mnd.jeNeSuisPasUnAtribut.ouUneFonction(),
     ).to.be.rejectedWith("n'existe pas ou n'est pas une fonction");
   });
 
-  it("Erreur suivi trop de fonctions", async () => {
+  it("erreur suivi trop de fonctions", async () => {
     await expect(
       // @ts-expect-error on fait exprès
       mnd.profil.suivreNoms({ f: faisRien, f2: faisRien }),
@@ -224,7 +212,7 @@ describe("Mandataire Constellation", () => {
 
   it("Erreur interne dans action", async () => {
     await expect(
-      mnd.bds.ajouterMotsClefsBd({
+      mnd.bds.ajouterMotsClefs({
         idBd: "je ne suis pas une adresse bd valide",
         idsMotsClefs: [],
       }),

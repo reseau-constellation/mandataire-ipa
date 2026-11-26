@@ -1,9 +1,8 @@
 import { TypedEmitter } from "tiny-typed-emitter";
-import type { types } from "@constl/ipa";
 
 import { v4 as uuidv4 } from "uuid";
 
-import {
+import type {
   MessageActionDIpa,
   MessageActionPourIpa,
   MessageConfirmationRéceptionRetourDIpa,
@@ -25,10 +24,11 @@ import {
   ERREUR_PAS_UNE_FONCTION,
 } from "./codes.js";
 import { lorsque } from "./utils.js";
+import type { Oublier, Suivi } from "./types.js";
 
 interface Tâche {
   idRequête: string;
-  fSuivre: types.schémaFonctionSuivi<unknown>;
+  fSuivre: Suivi<unknown>;
   fRetour: (fonction: string, args?: unknown[]) => Promise<void>;
 }
 
@@ -118,11 +118,8 @@ export abstract class Mandatairifiable extends Callable {
     fonction: string[],
     args: { [key: string]: unknown },
     nomArgFonction: string,
-  ): Promise<
-    | types.schémaFonctionOublier
-    | { [key: string]: (...args: unknown[]) => void }
-  > {
-    const f = args[nomArgFonction] as types.schémaFonctionSuivi<unknown>;
+  ): Promise<Oublier | { [key: string]: (...args: unknown[]) => void }> {
+    const f = args[nomArgFonction] as Suivi<unknown>;
     const argsSansF = Object.fromEntries(
       Object.entries(args).filter((x) => typeof x[1] !== "function"),
     );
@@ -343,7 +340,7 @@ export abstract class Mandatairifiable extends Callable {
     f,
   }: {
     f: (x: ErreurMandataire | undefined) => void;
-  }): types.schémaFonctionOublier {
+  }): Oublier {
     this.événements.on("erreur", f);
     f(this.dernièreErreur);
     return async () => {
