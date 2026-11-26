@@ -12,7 +12,7 @@ import type {
   MessageRetourPourIpa,
   MessageSuivrePourIpa,
   MessageSuivrePrêtDIpa,
-} from "./messages.js";
+} from "./messages.ts";
 import {
   ERREUR_EXÉCUTION_IPA,
   ERREUR_FONCTION_MANQUANTE,
@@ -22,9 +22,9 @@ import {
   ERREUR_MESSAGE_INCONNU,
   ERREUR_MULTIPLES_FONCTIONS,
   ERREUR_PAS_UNE_FONCTION,
-} from "./codes.js";
-import { lorsque } from "./utils.js";
-import type { Oublier, Suivi } from "./types.js";
+} from "./codes.ts";
+import { lorsque } from "./utils.ts";
+import type { Oublier, Suivi } from "@constl/interface";
 
 interface Tâche {
   idRequête: string;

@@ -3,7 +3,7 @@ export {
   Mandatairifiable,
   générerMandataire,
   type ErreurMandataire,
-} from "./mandataire.js";
+} from "./mandataire.ts";
 export type {
   MessageDIpa,
   MessageActionDIpa,
@@ -15,7 +15,7 @@ export type {
   MessageSuivrePourIpa,
   MessageActionPourIpa,
   MessageRetourPourIpa,
-} from "./messages.js";
+} from "./messages.ts";
 export {
   ERREUR_INIT_IPA,
   ERREUR_INIT_IPA_DÉJÀ_LANCÉ,
@@ -25,6 +25,6 @@ export {
   ERREUR_MESSAGE_INCONNU,
   ERREUR_MULTIPLES_FONCTIONS,
   ERREUR_PAS_UNE_FONCTION,
-} from "./codes.js";
+} from "./codes.ts";
 
-export { version } from "./version.js";
+export { version } from "./version.ts";
