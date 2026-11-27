@@ -289,6 +289,7 @@ export class EnveloppeAppli<T extends Appli = Appli> {
           // @ts-expect-error Ça, ça me dépasse
           fonctionNébuleuse = fonctionNébuleuse[attr].bind(fonctionNébuleuse);
         } else {
+          // @ts-expect-error Ça, ça me dépasse
           fonctionNébuleuse =
             fonctionNébuleuse[attr as keyof typeof fonctionNébuleuse];
         }
