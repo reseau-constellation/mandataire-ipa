@@ -18,9 +18,12 @@ importers:
         specifier: ^14.0.3
         version: 14.0.3
     devDependencies:
+      '@chriscdn/promise-semaphore':
+        specifier: ^4.0.1
+        version: 4.0.1
       '@constl/interface':
-        specifier: 1.0.1
-        version: 1.0.1
+        specifier: 1.0.5
+        version: 1.0.5
       '@constl/ipa':
         specifier: ^2.0.0
         version: 2.0.0(debug@4.4.3(supports-color@10.2.2))(react-native@0.88.1(@babel/core@7.29.13(supports-color@10.2.2))(react@19.3.1)(supports-color@10.2.2))(supports-color@10.2.2)
@@ -42,6 +45,9 @@ importers:
       '@orbitdb/core':
         specifier: ^4.0.0
         version: 4.0.0
+      '@orbitdb/nested-db':
+        specifier: ^2.2.0
+        version: 2.2.0(react-native@0.88.1(@babel/core@7.29.13(supports-color@10.2.2))(react@19.3.1)(supports-color@10.2.2))(supports-color@10.2.2)
       '@types/mocha':
         specifier: ^10.0.10
         version: 10.0.10
@@ -554,8 +560,8 @@ packages:
   '@constl/bohr-db@2.3.1':
     resolution: {integrity: sha512-fY01DbdMtdmvq3c9+PWDAD6I0eH8/dmBRAzbC32ZzLofxlNHLtkEWhVhpe7OUCW8WSy4llK5kskSR8pE7ZPfOQ==}
 
-  '@constl/interface@1.0.1':
-    resolution: {integrity: sha512-ic9wSUVFq+kca6VmItHFrp8XtcuwTAXGv+IodWRwA1DUzbIWYgPogr5iKO/a1NUNYViuFvO1tyAJkUWTLcSfpg==}
+  '@constl/interface@1.0.5':
+    resolution: {integrity: sha512-Fd88cMgwblbIrZJlm/g3QcfnQ1TfgBy6SqkJFPhew8f+9CqQG9DTFdRyFh1d8bK546quHoP3dyWn5Cgu/ImoZA==}
     engines: {node: '>=20'}
 
   '@constl/ipa@2.0.0':
@@ -8383,7 +8389,7 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  '@constl/interface@1.0.1':
+  '@constl/interface@1.0.5':
     dependencies:
       genversion: 3.2.0
 

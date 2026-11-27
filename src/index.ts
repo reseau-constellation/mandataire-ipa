@@ -26,5 +26,5 @@ export {
   ERREUR_MULTIPLES_FONCTIONS,
   ERREUR_PAS_UNE_FONCTION,
 } from "./codes.ts";
-
+export { EnveloppeAppli } from "./enveloppe.ts";
 export { version } from "./version.ts";

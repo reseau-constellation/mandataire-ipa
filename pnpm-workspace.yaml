@@ -10,4 +10,4 @@ minimumReleaseAgeExclude:
   - '@constl/ipa@2.0.0'
   - '@constl/utils-ipa@3.2.0'
   - '@constl/utils-tests@2.3.1 || 2.3.3 || 2.3.4'
-  - '@constl/interface@1.0.0 || 1.0.1'
+  - '@constl/interface@1.0.0 || 1.0.1 || 1.0.5'
