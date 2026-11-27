@@ -1,6 +1,5 @@
 import { Semaphore } from "@chriscdn/promise-semaphore";
 import { v4 as uuidv4 } from "uuid";
-// @ts-expect-error Pour l'instant...
 import type { Appli } from "@constl/ipa";
 import type { Oublier } from "@constl/interface";
 import type {

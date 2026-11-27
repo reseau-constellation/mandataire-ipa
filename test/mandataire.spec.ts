@@ -9,8 +9,7 @@ import {
   type MessagePourIpa,
 } from "../src/index.ts";
 import { expect, chai, chaiAsPromised } from "aegir/chai";
-// @ts-expect-error Pour l'instant...
-import { Constellation, type OptionsConstellation } from "@constl/ipa";
+import { Appli, Constellation, type OptionsConstellation } from "@constl/ipa";
 import { EnveloppeAppli } from "../src/enveloppe.ts";
 import {
   créerHéliasTest,
@@ -42,7 +41,7 @@ class Mandataire extends Mandatairifiable {
           idRequête: e.idRequête,
         });
       },
-      () => new Constellation(options),
+      () => new Constellation(options) as Appli,
     );
   }
 
