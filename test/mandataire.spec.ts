@@ -9,8 +9,9 @@ import {
   type MessagePourIpa,
 } from "../src/index.ts";
 import { expect, chai, chaiAsPromised } from "aegir/chai";
-import { Constellation } from "@constl/ipa";
-import { EnveloppeNébuleuse } from "@constl/ipa/src/nébuleuse/mandataire/enveloppe.js";
+// @ts-expect-error Pour l'instant...
+import { Constellation, type OptionsConstellation } from "@constl/ipa";
+import { EnveloppeAppli } from "../src/enveloppe.ts";
 import {
   créerHéliasTest,
   dossierTempo,
@@ -18,16 +19,18 @@ import {
   rechercher,
   type ServicesLibp2pTest,
 } from "@constl/utils-tests";
-import type { InfoRésultatTexte, Oublier } from "@constl/interface";
+import type { Oublier } from "@constl/interface";
 import type { TraducsTexte } from "./types.ts";
 import { type HeliaWithLibp2p } from "@helia/libp2p";
+import type { InfoRésultatTexte } from "@constl/interface/recherche";
+
 chai.use(chaiAsPromised);
 
 class Mandataire extends Mandatairifiable {
-  ipa: EnveloppeNébuleuse;
+  ipa: EnveloppeAppli;
   constructor({ options }: { options: OptionsConstellation }) {
     super();
-    this.ipa = new EnveloppeNébuleuse(
+    this.ipa = new EnveloppeAppli(
       (m: MessageDIpa) => {
         this.recevoirMessageDIpa(m);
       },
@@ -39,9 +42,10 @@ class Mandataire extends Mandatairifiable {
           idRequête: e.idRequête,
         });
       },
-      new Constellation({
-        options,
-      }),
+      () =>
+        new Constellation({
+          options,
+        }),
     );
   }
 
@@ -61,7 +65,7 @@ describe("Mandataire Constellation", () => {
     mnd = générerMandataire(
       new Mandataire({
         options: {
-          dossier: dossierTempo,
+          dossier: dossierTempo(),
           orbite: {
             ipfs: hélias[0],
           },
