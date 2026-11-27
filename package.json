@@ -1,6 +1,6 @@
 {
   "name": "@constl/mandataire",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Un mandataire très léger pour le client Constellation.",
   "author": "Julien Jean Malard-Adam",
   "keywords": [
@@ -25,7 +25,7 @@
     "test:électron-principal": "pnpm compiler && pnpm aegir test -t electron-main -- --exit",
     "couverture": "pnpm test -- --coverage",
     "formatter": "pnpm prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\" && pnpm eslint src",
-    "publier": "pnpm test && pnpm compiler:prod && (git commit -a -m 'version' || true) && pnpm publish",
+    "publier": "pnpm test && pnpm compiler:prod && (git commit -a -m 'version' || true) && pnpm stage publish",
     "versioner": "pnpm genversion  --es6 --semi src/version.ts"
   },
   "dependencies": {
