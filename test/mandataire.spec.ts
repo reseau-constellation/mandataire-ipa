@@ -110,7 +110,6 @@ describe("Mandataire Constellation", () => {
     const val2 = await obtenir<TraducsTexte>(({ si }) =>
       mnd.profil.suivreNoms({
         f: si((x) => {
-          console.log(x);
           return !!x && Object.keys(x).length > 0;
         }),
       }),
@@ -207,13 +206,14 @@ describe("Mandataire Constellation", () => {
     );
   });
 
-  it.skip("erreur interne dans suivi", async () => {
-    const fOublier = await mnd.profil.suivreNoms({
+  it("erreur interne dans suivi", async () => {
+    const suivi = mnd.profil.suivreNoms({
       f: faisRien,
-      idCompte: "je ne suis pas un compte valide",
+      // @ts-expect-error On fait exprès...
+      idCompte: 123,
     });
-    await expect(fOublier()).to.be.rejectedWith(
-      "je ne suis pas un compte valide",
+    await expect(suivi).to.be.rejectedWith(
+      "TypeError: id.split is not a function",
     );
   });
 
@@ -221,9 +221,10 @@ describe("Mandataire Constellation", () => {
     await expect(
       mnd.bds.ajouterMotsClefs({
         idBd: "je ne suis pas une adresse bd valide",
-        // @ts-expect-error  On fait exprès...
-        idsMotsClefs: 123,
+        idsMotsClefs: [],
       }),
-    ).to.be.rejectedWith("non valide");
+    ).to.be.rejectedWith(
+      "L'identifiant je ne suis pas une adresse bd valide n'est pas un identifiant valide pour bds",
+    );
   });
 });
