@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@chriscdn/promise-semaphore": "^4.0.1",
-    "@constl/interface": "1.0.5",
+    "@constl/interface": "1.0.6",
     "@constl/ipa": "^2.0.3",
     "@constl/orbit-db-types": "^2.0.6",
     "@constl/utils-ipa": "^3.2.0",
