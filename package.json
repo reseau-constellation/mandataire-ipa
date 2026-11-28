@@ -61,7 +61,7 @@
     "prettier": "^3.10.1",
     "process": "^0.11.10",
     "rimraf": "^6.1.4",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.0",
     "typescript-eslint": "^8.74.0",
     "url": "^0.11.4",
     "wherearewe": "^2.0.1"
